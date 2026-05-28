@@ -530,7 +530,7 @@ public class OptConfigScreen extends Screen {
 
         String[] pageTitles = {"", I18n.get("androidopt.page.render"), I18n.get("androidopt.page.memory"),
             I18n.get("androidopt.page.create"), I18n.get("androidopt.page.sound"), I18n.get("androidopt.page.world"),
-            I18n.get("androidopt.page.soc"), I18n.get("androidopt.page.diag"), I18n.get("androidopt.page.thermal"), "Documentation"};
+            I18n.get("androidopt.page.soc"), I18n.get("androidopt.page.diag"), I18n.get("androidopt.page.thermal"), "Documentation", "NativeGL Engine"};
         String sub = currentPage == Page.HOME
             ? (OptConfig.isActive() ? "§aACTIF" : "§7INACTIF")
             : "§e── " + pageTitles[currentPage.ordinal()] + " ──";
