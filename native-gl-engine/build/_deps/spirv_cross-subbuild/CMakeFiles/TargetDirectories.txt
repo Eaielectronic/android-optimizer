@@ -1,0 +1,3 @@
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/CMakeFiles/spirv_cross-populate.dir
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/CMakeFiles/edit_cache.dir
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/CMakeFiles/rebuild_cache.dir

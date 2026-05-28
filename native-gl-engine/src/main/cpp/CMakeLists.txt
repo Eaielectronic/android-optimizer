@@ -38,6 +38,7 @@ FetchContent_Declare(vma
 
 FetchContent_MakeAvailable(shaderc spirv_cross vma)
 
+
 # ─── etcpak (ETC2 encoder) ───
 add_library(etcpak_lib STATIC
     deps/etcpak/ProcessRGB.cpp
@@ -48,6 +49,7 @@ target_compile_options(etcpak_lib PRIVATE -O3 -ffast-math)
 
 # ─── astcenc (ARM ASTC Encoder) ───
 # ISA_NEON=ON : utilise les intrinsics NEON arm64
+set(ASTCENC_ISA_NEON ON CACHE BOOL "" FORCE)
 add_subdirectory(deps/astcenc EXCLUDE_FROM_ALL)
 
 # ─── Bibliothèque principale ───

@@ -1,0 +1,2 @@
+"/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar" cr libastcenc-native-veneer2.a "CMakeFiles/astcenc-native-veneer2.dir/astcenccli_entry2.cpp.o"
+"/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib" libastcenc-native-veneer2.a

@@ -1,0 +1,2 @@
+/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libetcpak_lib.a CMakeFiles/etcpak_lib.dir/deps/etcpak/ProcessRGB.cpp.o CMakeFiles/etcpak_lib.dir/deps/etcpak/ProcessDxtc.cpp.o
+/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libetcpak_lib.a

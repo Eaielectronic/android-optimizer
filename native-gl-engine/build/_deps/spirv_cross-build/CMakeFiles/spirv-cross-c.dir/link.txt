@@ -1,0 +1,2 @@
+/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libspirv-cross-c.a "CMakeFiles/spirv-cross-c.dir/spirv_cross_c.cpp.o"
+/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libspirv-cross-c.a

@@ -1,0 +1,14 @@
+# Target labels
+ spirv_cross-populate
+# Source files and their labels
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/CMakeFiles/spirv_cross-populate
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/CMakeFiles/spirv_cross-populate.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/CMakeFiles/spirv_cross-populate-complete.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-build.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-configure.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-download.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-install.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-mkdir.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-patch.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-test.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-subbuild/spirv_cross-populate-prefix/src/spirv_cross-populate-stamp/spirv_cross-populate-update.rule

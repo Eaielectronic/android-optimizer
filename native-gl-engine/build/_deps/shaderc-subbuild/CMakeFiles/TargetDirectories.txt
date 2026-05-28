@@ -1,3 +1,0 @@
-/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/CMakeFiles/shaderc-populate.dir
-/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/CMakeFiles/edit_cache.dir
-/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/CMakeFiles/rebuild_cache.dir
