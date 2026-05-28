@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public class TextureAtlasResolutionMixin {
 
     @ModifyVariable(method = "<init>", at = @At("HEAD"), argsOnly = true)
-    private NativeImage androidopt$reduceResolution(NativeImage original) {
+    private static NativeImage androidopt$reduceResolution(NativeImage original) {
         if (!fr.eaielectronic.androidopt.ConfigGuard.isReady() || !fr.eaielectronic.androidopt.OptConfig.TEXTURE_DOWNSCALE_ENABLED.get()) return original;
         if (!fr.eaielectronic.androidopt.AndroidDetector.IS_ANDROID) return original;
         if (original.getWidth() <= 16 || original.getHeight() <= 16) return original;
@@ -29,7 +29,7 @@ public class TextureAtlasResolutionMixin {
     }
 
     @ModifyVariable(method = "<init>", at = @At("HEAD"), argsOnly = true)
-    private FrameSize androidopt$reduceFrameSize(FrameSize original) {
+    private static FrameSize androidopt$reduceFrameSize(FrameSize original) {
         if (!fr.eaielectronic.androidopt.ConfigGuard.isReady() || !fr.eaielectronic.androidopt.OptConfig.TEXTURE_DOWNSCALE_ENABLED.get()) return original;
         if (!fr.eaielectronic.androidopt.AndroidDetector.IS_ANDROID || original == null) return original;
         if (original.width() <= 16 || original.height() <= 16) return original;

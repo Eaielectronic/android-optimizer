@@ -201,6 +201,118 @@ Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeDrainTextureQueue
 }
 
 // ════════════════════════════════════════════════════
+// Async Texture Compression Pipeline (Java Mixin → C++)
+// ════════════════════════════════════════════════════
+
+extern "C" JNIEXPORT jboolean JNICALL
+Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeSubmitAsyncCompress(
+        JNIEnv* env, jclass clazz,
+        jint target, jint level, jint internalFormat,
+        jint width, jint height, jint border,
+        jint format, jint type,
+        jobject pixelsBuffer) {
+
+    if (!pixelsBuffer) return JNI_FALSE;
+
+    // Récupérer le pointeur direct vers les pixels Java (zéro-copie)
+    void* pixels = env->GetDirectBufferAddress(pixelsBuffer);
+    jlong bufferCapacity = env->GetDirectBufferCapacity(pixelsBuffer);
+
+    if (!pixels || bufferCapacity <= 0) {
+        // IntBuffer non-direct — fallback via GetIntArrayElements
+        // (les IntBuffer Minecraft ne sont pas toujours direct)
+        LOGV("nativeSubmitAsyncCompress: buffer not direct, using position-based copy");
+
+        // Calculer la taille des pixels : width * height * 4 bytes (RGBA)
+        size_t pixelSize = (size_t)width * height * 4;
+        if (pixelSize == 0) return JNI_FALSE;
+
+        // Lire les éléments via JNI
+        jclass bufferClass = env->GetObjectClass(pixelsBuffer);
+        jmethodID getMethod = env->GetMethodID(bufferClass, "get", "([I)Ljava/nio/IntBuffer;");
+        jmethodID posMethod = env->GetMethodID(bufferClass, "position", "(I)Ljava/nio/IntBuffer;");
+        jmethodID remainingMethod = env->GetMethodID(bufferClass, "remaining", "()I");
+
+        // Save position, rewind, copy, restore
+        jint remaining = env->CallIntMethod(pixelsBuffer, remainingMethod);
+        if (remaining <= 0) return JNI_FALSE;
+
+        jintArray tempArray = env->NewIntArray(remaining);
+        if (!tempArray) return JNI_FALSE;
+
+        env->CallObjectMethod(pixelsBuffer, getMethod, tempArray);
+
+        jint* rawInts = env->GetIntArrayElements(tempArray, nullptr);
+        if (!rawInts) {
+            env->DeleteLocalRef(tempArray);
+            return JNI_FALSE;
+        }
+
+        bool accepted = texture_manager_submit(
+            target, level, internalFormat,
+            width, height, border,
+            format, type,
+            rawInts, (size_t)remaining * sizeof(jint)
+        );
+
+        env->ReleaseIntArrayElements(tempArray, rawInts, JNI_ABORT);
+        env->DeleteLocalRef(tempArray);
+
+        return accepted ? JNI_TRUE : JNI_FALSE;
+    }
+
+    // Direct buffer — fast path
+    size_t pixelSize = (size_t)bufferCapacity;
+    bool accepted = texture_manager_submit(
+        target, level, internalFormat,
+        width, height, border,
+        format, type,
+        pixels, pixelSize
+    );
+
+    return accepted ? JNI_TRUE : JNI_FALSE;
+}
+
+extern "C" JNIEXPORT jboolean JNICALL
+Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeCompressAndUploadSync(
+        JNIEnv* env, jclass clazz,
+        jint target, jint level, jint internalFormat,
+        jint width, jint height, jint border,
+        jint format, jint type,
+        jobject pixelsBuffer) {
+
+    if (!pixelsBuffer) return JNI_FALSE;
+
+    void* pixels = env->GetDirectBufferAddress(pixelsBuffer);
+    if (!pixels) {
+        // Fallback for non-direct buffers is omitted for sync upload
+        // as it's meant to be fast and small textures usually use direct buffers
+        return JNI_FALSE;
+    }
+
+    // Delegate to TextureCompressor::intercept which compresses synchronously and uploads immediately
+    bool success = NativeGLEngine::TextureCompressor::intercept(
+        target, level, internalFormat, width, height, format, type, pixels
+    );
+    
+    return success ? JNI_TRUE : JNI_FALSE;
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeDrainCompressedQueue(
+        JNIEnv* env, jclass clazz,
+        jint maxUploads, jint maxTimeUs) {
+    return texture_manager_drain_compressed(maxUploads, maxTimeUs);
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeGetPendingCount(
+        JNIEnv* env, jclass clazz) {
+    return texture_manager_get_pending_count();
+}
+
+
+// ════════════════════════════════════════════════════
 // OffHeapArenaBridge (Module 7)
 // ════════════════════════════════════════════════════
 

@@ -22,11 +22,18 @@ public class NativeGLTickHandler {
     public static void onClientTick(ClientTickEvent.Post event) {
         ticks++;
 
-        // ═══ Chaque tick : drain texture queue ═══
-        if (NativeLib.isLoaded() && GLInterceptorBridge.isInstalled()) {
+        // ═══ Chaque tick : drain texture queues ═══
+        if (NativeLib.isLoaded()) {
             try {
                 int maxUploads = NativeGLConfig.MAX_TEXTURE_UPLOADS_PER_FRAME.get();
-                GLInterceptorBridge.drainTextureQueue(maxUploads);
+
+                // Pipeline async (Java Mixin → C++ compression → GL upload)
+                GLInterceptorBridge.drainCompressedQueue(maxUploads, 2000); // 2ms budget
+
+                // Pipeline legacy PLT (si les hooks natifs sont installés)
+                if (GLInterceptorBridge.isInstalled()) {
+                    GLInterceptorBridge.drainTextureQueue(maxUploads);
+                }
             } catch (Exception ignored) {}
         }
 
@@ -68,6 +75,7 @@ public class NativeGLTickHandler {
                 "SysAvail={}MB | GPU budget={}MB usage={}MB pressure={}% | " +
                 "Temp={}°C throttle={} | " +
                 "GL total={} deduped={} deferred={} | " +
+                "Async submitted={} uploaded={} pending={} | " +
                 "ShaderCache mem={} disk={}",
                 ticks,
                 NativeLib.isLoaded() ? "OK" : "NO",
@@ -81,6 +89,9 @@ public class NativeGLTickHandler {
                 GLInterceptorBridge.getTotalGLCalls(),
                 GLInterceptorBridge.getDedupedCalls(),
                 GLInterceptorBridge.getDeferredTextures(),
+                GLInterceptorBridge.getAsyncSubmitted(),
+                GLInterceptorBridge.getAsyncUploaded(),
+                GLInterceptorBridge.getPendingCount(),
                 ShaderCacheManager.getMemoryCacheSize(),
                 ShaderCacheManager.getDiskCacheSize()
             );

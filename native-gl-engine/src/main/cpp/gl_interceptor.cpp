@@ -10,6 +10,7 @@
 #define LOG_TAG "NativeGLEngine"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN, LOG_TAG, __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
 static std::atomic<uint64_t> g_total_calls{0};
 static std::atomic<uint64_t> g_deduped_calls{0};
@@ -26,6 +27,9 @@ static glTexImage2D_t orig_glTexImage2D = nullptr;
 
 static bytehook_stub_t stub_glTexImage2D = nullptr;
 static bytehook_stub_t stub_eglGetProcAddress = nullptr;
+
+// Forward declaration
+static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void* pixels);
 
 static void* proxy_eglGetProcAddress(const char* procname) {
     BYTEHOOK_STACK_SCOPE();
