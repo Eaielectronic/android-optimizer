@@ -203,13 +203,11 @@ bool TextureCompressor::intercept(
     GLenum compressedFormat;
 
     bool ok = false;
-    if (s_hasASTCLDR) {
-        ok = compressASTCIfAvailable(src_copy.data(), width, height, compressed);
-        if (ok) compressedFormat = 0x93D5; // GL_COMPRESSED_RGBA_ASTC_6x6_KHR
-    }
-    if (!ok) {
-        ok = compressETC2(src_copy.data(), width, height, compressed);
-        if (ok) compressedFormat = GL_COMPRESSED_RGBA8_ETC2_EAC;
+    // ASTC encoding with astcenc is way too slow for real-time interception,
+    // causing massive stutters (saccades). We force ETC2 (etcpak) which is real-time.
+    ok = compressETC2(src_copy.data(), width, height, compressed);
+    if (ok) {
+        compressedFormat = GL_COMPRESSED_RGBA8_ETC2_EAC;
     }
 
     if (!ok) return false;
