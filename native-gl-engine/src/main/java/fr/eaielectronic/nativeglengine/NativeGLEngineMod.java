@@ -38,6 +38,11 @@ public class NativeGLEngineMod {
 
         // Tenter le chargement de la bibliothèque native (.so)
         NativeLib.tryLoad();
+        if (NativeLib.isLoaded()) {
+            // Installer les hooks GL le plus tôt possible, AVANT l'initialisation de LWJGL !
+            GLInterceptorBridge.install();
+            LOGGER.info("[NativeGLEngine] Hooks GL installés précocement");
+        }
     }
 
     /**
@@ -85,9 +90,8 @@ public class NativeGLEngineMod {
                 NativeMemoryBridge.init();
                 LOGGER.info("[NativeGLEngine] NativeMemoryManager initialisé (VMA)");
 
-                // Installer les hooks GL
-                GLInterceptorBridge.install();
-                LOGGER.info("[NativeGLEngine] Hooks GL installés");
+                // Hooks déjà installés dans le constructeur
+                LOGGER.info("[NativeGLEngine] Hooks GL vérifiés");
             } else {
                 LOGGER.warn("[NativeGLEngine] Bibliothèque native non disponible — mode Java seul");
                 LOGGER.warn("[NativeGLEngine] Le shader cache et le renderer detector fonctionnent normalement");
