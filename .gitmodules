@@ -1,0 +1,9 @@
+[submodule "native-gl-engine/src/main/cpp/deps/etcpak"]
+	path = native-gl-engine/src/main/cpp/deps/etcpak
+	url = https://github.com/wolfpld/etcpak.git
+[submodule "native-gl-engine/src/main/cpp/deps/astcenc"]
+	path = native-gl-engine/src/main/cpp/deps/astcenc
+	url = https://github.com/ARM-software/astc-encoder.git
+[submodule "native-gl-engine/src/main/cpp/deps/fp16"]
+	path = native-gl-engine/src/main/cpp/deps/fp16
+	url = https://github.com/Maratyszcza/FP16.git

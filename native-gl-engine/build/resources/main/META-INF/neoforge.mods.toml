@@ -1,0 +1,40 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/Eaielectronic/native-gl-engine/issues"
+
+[[mods]]
+    modId = "nativeglengine"
+    version = "0.1.0"
+    displayName = "NativeGLEngine"
+    description = '''
+        Moteur de rendu natif Android pour Minecraft Java Edition.
+        Compilation shader async (GLSL → SPIR-V), cache SHA-256 persistant,
+        gestion mémoire GPU via VMA, interception GL avec déduplication d'état.
+        Se connecte à Android Optimizer si présent pour les réglages unifiés.
+    '''
+
+[[mixins]]
+    config = "nativeglengine.mixins.json"
+
+[[dependencies.nativeglengine]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[1,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.nativeglengine]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "[1.21.1]"
+    ordering = "NONE"
+    side = "BOTH"
+
+# Dépendance optionnelle vers Android Optimizer
+[[dependencies.nativeglengine]]
+    modId = "androidopt"
+    type = "optional"
+    versionRange = "[1.0.5,)"
+    ordering = "AFTER"
+    side = "CLIENT"

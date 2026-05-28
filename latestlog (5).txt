@@ -1,0 +1,1048 @@
+--------- Starting game with Launcher Debug!
+Info: Launcher version: amethyst-legacy-20260421-bdee4e1-1.1.4
+Info: Architecture: arm64
+Info: Device model: samsung SM-G781B
+Info: API version: 33
+Info: Selected Minecraft version: neoforge-21.1.227
+Info: Custom Java arguments: "-XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=100 -XX:G1HeapRegionSize=16M -XX:+DisableExplicitGC -XX:G1HeapWastePercent=5 -Dimgui.library.name=disabled"
+Info: Graphics device: Qualcomm Adreno (TM) 650 (OpenGL ES 3)
+Writing MG configs to /data/user/0/org.angelauramc.amethyst/MobileGlues/config.json
+MG Config is {
+  "enableANGLE": 1,
+  "enableNoError": 0,
+  "fsr1Setting": 0,
+  "enableExtComputeShader": 0,
+  "angleDepthClearFixMode": 0,
+  "enableExtTimerQuery": 0,
+  "enableExtDirectStateAccess": 0,
+  "multidrawMode": 0,
+  "maxGlslCacheSize": 128
+}
+Added custom env: TMPDIR=/data/user/0/org.angelauramc.amethyst/cache
+Added custom env: AWTSTUB_WIDTH=1618
+Added custom env: FORCE_VSYNC=true
+Added custom env: POJAV_NATIVEDIR=/data/app/~~RYdO0KyPJpWtxO-MGcflAA==/org.angelauramc.amethyst-JIxqiqEhNTNq9JjpruWtWw==/lib/arm64
+Added custom env: MG_DIR_PATH=/data/user/0/org.angelauramc.amethyst/MobileGlues
+Added custom env: LIBGL_MIPMAP=3
+Added custom env: allow_higher_compat_version=true
+Added custom env: AMETHYST_RENDERER=opengles_mobileglues
+Added custom env: MESA_GLSL_CACHE_DIR=/data/user/0/org.angelauramc.amethyst/cache
+Added custom env: HOME=/storage/emulated/0/Android/data/org.angelauramc.amethyst/files
+Added custom env: PATH=/data/user/0/org.angelauramc.amethyst/runtimes/External-21/bin:/product/bin:/apex/com.android.runtime/bin:/apex/com.android.art/bin:/system_ext/bin:/system/bin:/system/xbin:/odm/bin:/vendor/bin:/vendor/xbin
+Added custom env: LIBGL_NOINTOVLHACK=1
+Added custom env: POJAV_LOAD_TURNIP=1
+Added custom env: force_glsl_extensions_warn=true
+Added custom env: LIBGL_NORMALIZE=1
+Added custom env: LD_LIBRARY_PATH=/data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/jli:/data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib:/system/lib64:/vendor/lib64:/vendor/lib64/hw:/data/app/~~RYdO0KyPJpWtxO-MGcflAA==/org.angelauramc.amethyst-JIxqiqEhNTNq9JjpruWtWw==/lib/arm64:/data/user/0/org.angelauramc.amethyst/lwjgl-3.3.3-natives/arm64-v8a
+Added custom env: LIBGL_NOERROR=1
+Added custom env: LIBGL_ES=2
+Added custom env: VTEST_SOCKET_NAME=/data/user/0/org.angelauramc.amethyst/cache/.virgl_test
+Added custom env: MESA_LOADER_DRIVER_OVERRIDE=zink
+Added custom env: POJAVEXEC_EGL=libmobileglues.so
+Added custom env: JAVA_HOME=/data/user/0/org.angelauramc.amethyst/runtimes/External-21
+Added custom env: allow_glsl_extension_directive_midshader=true
+Added custom env: AWTSTUB_HEIGHT=756
+Initializing MobileGlues ...
+The Open Source License of MobileGlues: 
+  GNU LGPL-2.1 License
+MG_DIR_PATH = /data/user/0/org.angelauramc.amethyst/MobileGlues
+[MobileGlues] Setting: enableAngle                 = false
+[MobileGlues] Setting: ignoreError                 = 0
+[MobileGlues] Setting: enableExtComputeShader      = false
+[MobileGlues] Setting: enableExtTimerQuery         = false
+[MobileGlues] Setting: enableExtDirectStateAccess  = false
+[MobileGlues] Setting: maxGlslCacheSize            = 128
+[MobileGlues] Setting: angleDepthClearFixMode      = 0
+[MobileGlues] Setting: bufferCoherentAsFlush       = 1
+[MobileGlues] Setting: customGLVersion             = 4.0.0
+[MobileGlues] Setting: fsr1Setting                 = 0
+[MobileGlues] Setting: hideMGEnvLevel              = 0
+EGL initialized successfully
+OpenGL ES Version: OpenGL ES 3.2 (320)
+Not Detected GL_EXT_multi_draw_indirect!
+[MobileGlues] Setting: multidrawMode               = Auto
+multidrawMode = Auto
+    -> Indirect (Auto detected)
+--------- beginning of main
+D/jrelog  (12622): dlopen libmobileglues.so success
+
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjli.so success
+E/jrelog  (12622): dlopen libjvm.so failed: dlopen failed: library "libjvm.so" not found
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/server/libjvm.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libverify.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjava.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libnet.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libnio.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libawt.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libawt_headless.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amet
+hyst/runtimes/External-21/lib/libfreetype.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libfontmanager.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libj2gss.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libprefs.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libextnet.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libmanagement_ext.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjimage.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libawt.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libfontmanager.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/Exter
+nal-21/lib/libzip.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjdwp.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjawt.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libfreetype.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjava.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libj2pkcs11.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libinstrument.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libdt_socket.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libawt_headless.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/liblcms.so succ
+ess
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libsctp.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libverify.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libmanagement.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libnet.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/librmi.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjaas.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libsyslookup.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjli.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjavajpeg.so success
+D/jrelog  (12622): dlopen /data/us
+er/0/org.angelauramc.amethyst/runtimes/External-21/lib/server/libjsig.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/server/libjvm.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libnio.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libjsig.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libmlib_image.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libmanagement_agent.so success
+D/jrelog  (12622): dlopen /data/user/0/org.angelauramc.amethyst/runtimes/External-21/lib/libawt_xawt.so success
+D/jrelog  (12622): dlopen /data/app/~~RYdO0KyPJpWtxO-MGcflAA==/org.angelauramc.amethyst-JIxqiqEhNTNq9JjpruWtWw==/lib/arm64/libopenal.so success
+D/jrelog  (12622): Done processing args
+D/jrelog  (12622): Found JLI lib
+D/jrelog  (12622): Calling JLI_Launch
+
+Amethyst-Android: Detected ASM version: not found
+ERROR StatusConsoleListener appender Console has no parameter that matches element Policies
+[15:25:57] [main/INFO]: ModLauncher running: args [--username, Craftelectron, --version, 1.21.1, --gameDir, /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft, --assetsDir, /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/assets, --assetIndex, 17, --uuid, ade32b9cbed44ad28de4a231b2558f10, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, ${clientid}, --xuid, 11518949844466164315, --userType, msa, --versionType, release, --fml.neoForgeVersion, 21.1.227, --fml.fmlVersion, 4.0.42, --fml.mcVersion, 1.21.1, --fml.neoFormVersion, 20240808.144430, --launchTarget, forgeclient]
+[15:25:57] [main/INFO]: JVM identified as Oracle Corporation OpenJDK 64-Bit Server VM 21.0.1-internal-adhoc.runner.openjdk-21
+[15:25:57] [main/INFO]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.1-internal by N/A; OS Linux arch aarch64 version Android-13
+[15:25:57] [main/INFO]: Loading ImmediateWindowProvider fmlearlywindow
+Registered forkAndExec
+[15:25:58] [main/INFO]: Trying GL version 4.6
+EGLBridge: Binding to OpenGL ES
+Driver opengles_mobileglues GL string returned 40
+Driver opengles_mobileglues GL version returned 40
+Using GL version 40 for GLFW window context!
+[15:25:58] [main/INFO]: Requested GL version 4.6 got version 4.0
+GLFW: Set size for window 533246385216, width=1618, height=756
+[15:25:58] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar%23144!/ Service=ModLauncher Env=CLIENT
+[15:25:58] [pool-2-thread-1/INFO]: GL info: Adreno (TM) 650 | OpenGL ES 3.2 GL version 4.0.0 MobileGlues 1.3.4, Swung0x48, BZLZHH, Tungsten
+[15:25:58] [main/INFO]: Found mod file "client-1.21.1-20240808.144430-srg.jar" [locator: production client provider +net.neoforged:neoforge:21.1.227:client]
+[15:25:58] [main/INFO]: Found mod file "neoforge-21.1.227-universal.jar" [locator: PathBasedLocator[name=neoforge, paths=[/storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/libraries/net/neoforged/neoforge/21.1.227/neoforge-21.1.227-universal.jar]], reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "11nuclearscience-1.21.1-0.8.1-0.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "alloyed-3.0.7+1.21.1-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "almostunified-neoforge-1.21.1-1.4.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "amendments-1.21-2.0.15-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "androidopt-1.0.0.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "architectury-13.0.8-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "ballistix-1.21.1-1.0.1-0.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "blastcraft-1.21.1-0.6.0-1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "cloth-config-15.0.140-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "copycats-3.0.4+mc.1.21.1-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create-1.21.1-6.0.10.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create-aeronautics-bundled-1.21.1-1.2.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create-new-age-1.1.7c+neoforge-mc1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create-stuff-additions1.21.1_v2.1.0e.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create_connected-1.1.13-mc1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create_hypertube-0.4.0-COMPAT-NEOFORGE.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "create_mechanical_extruder-1.21.1-2.2.0-6.0.8.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "createbigcannons-5.11.4-dev+mc.1.21.1-build.314(1).jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "createdeco-2.1.3.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "dynamic-fps-3.11.4+minecraft-1.21.0-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "electrodynamics-1.21.1-1.0.2.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "entityculling-neoforge-1.10.2-mc1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "ferritecore-7.0.3-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "jei-1.21.1-neoforge-19.27.0.340.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "kubejs-neoforge-2101.7.2-build.348.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "mechanicals-1.21.1-1.1.0.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "modernfix-neoforge-5.27.2+mc1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "modularforcefields-1.21.1-0.4.0-1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "moonlight-neoforge-1.21.1-3.0.5.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "moreculling-neoforge-1.21.1-1.0.8.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "railways-0.2.0+neoforge-mc1.21.1.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "rhino-2101.2.7-build.81.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "ritchiesprojectilelib-2.1.2-mc.1.21.1-neoforge.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "sable-android-patch.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "sable-neoforge-1.21.1-1.2.2.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "supplementaries-neoforge-1.21.1-3.6.3.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "tfmg-1.2.0.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:25:58] [main/INFO]: Found mod file "voltaic-1.21.1-1.0.2-0.jar" [locator: {mods folder locator at /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods}, reader: mod manifest]
+[15:26:00] [main/WARN]: Attempted to select two dependency jars from JarJar which have the same identification: Nested Mod File  in Mod File: /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods/moreculling-neoforge-1.21.1-1.0.8.jar and Nested Mod File  in Mod File: /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods/moreculling-neoforge-1.21.1-1.0.8.jar. Using Nested Mod File  in Mod File: /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/mods/moreculling-neoforge-1.21.1-1.0.8.jar
+[15:26:00] [main/INFO]: Found 27 dependencies adding them to mods collection
+[15:26:00] [main/INFO]: Found gamelibrary file "mixinextras-neoforge-0.5.3.jar" [parent: neoforge-21.1.227-universal.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "glsl-processor-0.2.3.jar" [parent: veil-neoforge-1.21.1-4.0.0.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found mod file "ponder-neoforge-1.0.82+mc1.21.1.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "sewlia-config-1.0.0-20250810.044244-13.jar" [parent: krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found library file "net.neoforged.neoforge-coremods-21.1.227.jar" [parent: neoforge-21.1.227-universal.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found gamelibrary file "mixinsquared-neoforge-0.2.0.jar" [parent: moreculling-neoforge-1.21.1-1.0.8.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found mod file "dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.2.1.jar" [parent: create-aeronautics-bundled-1.21.1-1.2.1.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "MixinSquared-0.3.3.jar" [parent: mixinsquared-forge-0.3.3.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found mod file "TRender-1.0.13-1.21.1-neoforge-SNAPSHOT.jar" [parent: entityculling-neoforge-1.10.2-mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found mod file "flywheel-neoforge-1.21.1-1.0.6.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found mod file "sable-companion-common-1.21.1-1.6.0.jar" [parent: sable-neoforge-1.21.1-1.2.2.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "velocity-native-3.4.0-SNAPSHOT.jar" [parent: krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found mod file "veil-neoforge-1.21.1-4.0.0.jar" [parent: sable-neoforge-1.21.1-1.2.2.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "kaleido-config-0.3.3+1.3.2.jar" [parent: alloyed-3.0.7+1.21.1-neoforge.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found mod file "dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.2.1.jar" [parent: create-aeronautics-bundled-1.21.1-1.2.1.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found gamelibrary file "mixinsquared-forge-0.3.3.jar" [parent: supplementaries-neoforge-1.21.1-3.6.3.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found mod file "conditional-mixin-neoforge-0.6.3.jar" [parent: moreculling-neoforge-1.21.1-1.0.8.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found mod file "TRansition-1.0.19-1.21.1-neoforge-SNAPSHOT.jar" [parent: entityculling-neoforge-1.10.2-mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "Reflect-1.6.1+curseforge.jar" [parent: ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found library file "battery-2.0.0.jar" [parent: dynamic-fps-3.11.4+minecraft-1.21.0-neoforge.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found library file "molang-compiler-3.1.1.19.jar" [parent: veil-neoforge-1.21.1-4.0.0.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found library file "animated-gif-lib-for-java-animated-gif-lib-1.7.jar" [parent: kubejs-neoforge-2101.7.2-build.348.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found gamelibrary file "Registrate-MC1.21-1.3.0+67.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "tiny-java-server-1.0.0-build.33.jar" [parent: kubejs-neoforge-2101.7.2-build.348.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found mod file "dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.2.1.jar" [parent: create-aeronautics-bundled-1.21.1-1.2.1.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: Found library file "snakeyaml-2.4.jar" [parent: krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar, locator: jarinjar]
+[15:26:00] [main/INFO]: Found mod file "esl-neoforge-1.21.1-1.0.3+neoforge-mc1.21.1.jar" [parent: create-new-age-1.1.7c+neoforge-mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[15:26:00] [main/INFO]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Alloyed 3.0.7+1.21.1 (alloyed)
+		AlmostUnified 1.21.1-1.4.1 (almostunified)
+		Amendments 1.21-2.0.15 (amendments)
+		Android Optimizer 1.0.0 (androidopt)
+		Architectury 13.0.8 (architectury)
+		Ballistix 1.0.1-0 (ballistix)
+		Blastcraft 0.6.0-1 (blastcraft)
+		Cloth Config v15 API 15.0.140 (cloth_config)
+		conditional mixin 0.6.3 (conditional_mixin)
+		Create 6.0.10 (create)
+		Create Aeronautics 1.2.1 (aeronautics)
+		Create Aeronautics 1.2.1 (aeronautics_bundled)
+		Create Big Cannons 5.11.4 (createbigcannons)
+		Create Deco 2.1.3 (createdeco)
+		Create Hypertube 0.4.0-COMPAT (create_hypertube)
+		Create Mechanical Extruder 1.21.1-2.2.0-6.0.8 (create_mechanical_extruder)
+		Create Offroad 1.2.1 (offroad)
+		Create Simulated 1.2.1 (simulated)
+		Create Stuff 'N Additions 2.1.0. (create_sa)
+		Create: Connected 1.1.13-mc1.21.1 (create_connected)
+		Create: Copycats+ 3.0.4+mc.1.21.1-neoforge (copycats)
+		Create: New Age 1.1.7c+mc1.21.1 (create_new_age)
+		Create: Steam 'n' Rails 1.21.1 0.2.0+neoforge-mc1.21.1 (railways)
+		Create: The Factory Must Grow 1.2.0 (tfmg)
+		Dynamic FPS 3.11.4 (dynamic_fps)
+		Electrodynamics 1.0.2 (electrodynamics)
+		EntityCulling 1.10.2 (entityculling)
+		ESL 1.0.3 (esl)
+		Ferrite Core 7.0.3 (ferritecore)
+		Flywheel 1.0.6 (flywheel)
+		ImmediatelyFast 1.6.10+1.21.1 (immediatelyfast)
+		Just Enough Items 19.27.0.340 (jei)
+		Krypton FNP 0.2.28.1-1.21.1 (krypton_fnp)
+		KubeJS 2101.7.2-build.348 (kubejs)
+		Mechanicals Lib 1.1.0 (mechanicals)
+		Minecraft 1.21.1 (minecraft)
+		ModernFix 5.27.2+mc1.21.1 (modernfix)
+		Modular Force Fields 0.4.0-1 (modularforcefields)
+		Moonlight Lib 1.21.1-3.0.5 (moonlight)
+		More Culling 1.0.8 (moreculling)
+		NeoForge 21.1.227 (neoforge)
+		No Chat Reports 1.21.1-v2.9.1 (nochatreports)
+		Nuclear Science 0.8.1-0 (nuclearscience)
+		Ponder 1.0.82+mc1.21.1 (ponder)
+		Rhino 2101.2.7-build.81 (rhino)
+		Ritchie's Projectile Library 2.1.2 (ritchiesprojectilelib)
+		Sable 1.2.2 (sable)
+		Sable Companion 1.6.0 (sablecompanion)
+		SableAndroidPatch 1.0.0 (sableandroidpatch)
+		Supplementaries 1.21.1-3.6.3 (supplementaries)
+		TRansition 1.0.19 (transition)
+		TRender 1.0.13 (trender)
+		Veil 4.0.0 (veil)
+		Voltaic 1.0.2-0 (voltaic)
+[15:26:01] [main/INFO]: Compatibility level set to JAVA_17
+[15:26:01] [main/INFO]: Compatibility level set to JAVA_18
+[15:26:01] [main/INFO]: Compatibility level set to JAVA_21
+[15:26:02] [main/INFO]: Launching target 'forgeclient' with arguments [--version, 1.21.1, --gameDir, /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft, --assetsDir, /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/assets, --uuid, ade32b9cbed44ad28de4a231b2558f10, --username, Craftelectron, --assetIndex, 17, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, ${clientid}, --xuid, 11518949844466164315, --userType, msa, --versionType, release]
+[15:26:02] [main/WARN]: Reference map 'aeronautics.refmap.json' for aeronautics.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/INFO]: Loaded configuration file for ModernFix 5.27.2+mc1.21.1: 88 options available, 0 override(s) found
+[15:26:02] [main/INFO]: Applying Nashorn fix
+[15:26:02] [main/INFO]: Configuring Minecraft's max.bg.threads option with 5 threads
+[15:26:02] [main/WARN]: Reference map 'modernfix.refmap.json' for modernfix-modernfix.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/INFO]: All configurations saved
+[15:26:02] [main/INFO]: Reloaded configuration: ModConfig
+[15:26:02] [main/INFO]: Successfully initialized configuration manager, loaded 1 configuration classes
+[15:26:02] [main/WARN]: Reference map '' for krypton_fnp.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.command.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.debug.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.dynamicbuffer.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.fix.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.framebuffer.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.necromancer.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.network.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.performance.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.perspective.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.pipeline.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.quasar.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.registry.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.rendertype.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.resource.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.scheduler.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.shader.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'veil.refmap.json' for veil.neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'simulated.refmap.json' for simulated.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'Steam_Rails-neoforge-refmap.json' for railways.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'electrodynamics.refmap.json' for electrodynamics.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'tfmg.refmap.json' for tfmg.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'offroad.refmap.json' for offroad.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'create_connected.refmap.json' for create_connected.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'nochatreports.refmap.json' for mixins/common/nochatreports.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'ponder.refmap.json' for ponder-common.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/INFO]: Using Vanilla renderer mixins
+[15:26:02] [main/INFO]: Using Vanilla renderer mixins
+[15:26:02] [main/WARN]: Reference map 'entityculling.refmap.mixins.json' for entityculling.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'moreculling.refmap.json' for moreculling.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'create_hypertube.refmap.json' for create_hypertube.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map 'conflict_fix.refmap.json' for conflict_fix.mixins.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.predicates.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.fastmap.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.mrl.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.dedupmultipart.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.blockstatecache.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.dedupbakedquad.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:02] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.threaddetec.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:03] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.modelsides.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:03] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.datacomponents.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:03] [main/WARN]: Reference map '${refmap_target}refmap.json' for ferritecore.accessors.mixin.json could not be read. If this is a development environment you can ignore this message
+[15:26:03] [main/WARN]: Error loading class: xfacthd/framedblocks/common/blockentity/doubled/slab/FramedAdjustableDoubleBlockEntity (java.lang.ClassNotFoundException: xfacthd.framedblocks.common.blockentity.doubled.slab.FramedAdjustableDoubleBlockEntity)
+[15:26:03] [main/WARN]: @Mixin target xfacthd.framedblocks.common.blockentity.doubled.slab.FramedAdjustableDoubleBlockEntity was not found createbigcannons.mixins.json:compat.framedblocks.FramedAdjustableDoubleBlockEntityAccessor from mod createbigcannons
+[15:26:03] [main/WARN]: Error loading class: vectorwing/farmersdelight/common/block/StandingCanvasSignBlock (java.lang.ClassNotFoundException: vectorwing.farmersdelight.common.block.StandingCanvasSignBlock)
+[15:26:03] [main/WARN]: Error loading class: vectorwing/farmersdelight/common/block/WallCanvasSignBlock (java.lang.ClassNotFoundException: vectorwing.farmersdelight.common.block.WallCanvasSignBlock)
+[15:26:03] [main/WARN]: Error loading class: vectorwing/farmersdelight/client/renderer/HangingCanvasSignRenderer (java.lang.ClassNotFoundException: vectorwing.farmersdelight.client.renderer.HangingCanvasSignRenderer)
+[15:26:03] [main/WARN]: Error loading class: vectorwing/farmersdelight/client/renderer/CanvasSignRenderer (java.lang.ClassNotFoundException: vectorwing.farmersdelight.client.renderer.CanvasSignRenderer)
+[15:26:03] [main/WARN]: Error loading class: vectorwing/farmersdelight/client/gui/CanvasSignEditScreen (java.lang.ClassNotFoundException: vectorwing.farmersdelight.client.gui.CanvasSignEditScreen)
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.experimental.RconClientMixin disabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.microopt.ServerEntityMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.microopt.Utf8StringMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.microopt.VarIntMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.microopt.VarLongMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.LegacyQueryHandlerMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.Varint21FrameDecoderMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.compression.ConnectionMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.encryption.ConnectionMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.encryption.ServerLoginPacketListenerImplMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.prepender.ConnectionMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.thread.ServerLoginPacketListenerImplMixin enabled
+[15:26:04] [main/INFO]: Mixin one.pkg.kfnp.mixin.network.pipeline.encryption.ClientLoginMixin enabled
+[15:26:04] [main/WARN]: Error loading class: net/irisshaders/iris/pipeline/PipelineManager (java.lang.ClassNotFoundException: net.irisshaders.iris.pipeline.PipelineManager)
+[15:26:04] [main/WARN]: @Mixin target net.irisshaders.iris.pipeline.PipelineManager was not found veil.neoforge.mixins.json:client.perspective.iris.PipelineManagerMixin from mod veil
+[15:26:05] [main/WARN]: Error loading class: net/minecraft/client/gui/screens/controls/KeyBindsList$KeyEntry (java.lang.ClassNotFoundException: net.minecraft.client.gui.screens.controls.KeyBindsList$KeyEntry)
+[15:26:05] [main/WARN]: @Mixin target net.minecraft.client.gui.screens.controls.KeyBindsList$KeyEntry was not found railways-common.mixins.json:client.MixinKeyBindsListKeyEntry from mod railways
+[15:26:05] [main/WARN]: Error loading class: org/embeddedt/embeddium/impl/render/chunk/compile/pipeline/FluidRenderer (java.lang.ClassNotFoundException: org.embeddedt.embeddium.impl.render.chunk.compile.pipeline.FluidRenderer)
+[15:26:05] [main/WARN]: Error loading class: net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/DefaultFluidRenderer (java.lang.ClassNotFoundException: net.caffeinemc.mods.sodium.client.render.chunk.compile.pipeline.DefaultFluidRenderer)
+[15:26:05] [main/WARN]: Error loading class: traben/entity_model_features/models/parts/EMFModelPartCustom (java.lang.ClassNotFoundException: traben.entity_model_features.models.parts.EMFModelPartCustom)
+[15:26:05] [main/WARN]: Error loading class: me/jellysquid/mods/lithium/common/ai/pathing/PathNodeDefaults (java.lang.ClassNotFoundException: me.jellysquid.mods.lithium.common.ai.pathing.PathNodeDefaults)
+[15:26:05] [main/WARN]: Error loading class: io/socol/betterthirdperson/api/CustomCamera (java.lang.ClassNotFoundException: io.socol.betterthirdperson.api.CustomCamera)
+[15:26:05] [main/WARN]: @Mixin target io.socol.betterthirdperson.api.CustomCamera was not found conflict_fix.mixins.json:MixinBetterThirdPerson from mod create_hypertube
+[15:26:05] [main/WARN]: Error loading class: com/simibubi/create/content/fluids/pipes/FluidPipeRenderer (java.lang.ClassNotFoundException: com.simibubi.create.content.fluids.pipes.FluidPipeRenderer)
+[15:26:05] [main/WARN]: @Mixin target com.simibubi.create.content.fluids.pipes.FluidPipeRenderer was not found androidopt.mixins.json:FluidRenderCullerMixin from mod androidopt
+[15:26:06] [main/WARN]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[15:26:06] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+ERROR StatusConsoleListener appender Console has no parameter that matches element Policies
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+[15:26:07] [main/WARN] [mixin/]: Static binding violation: PRIVATE @Overwrite method decoratedId in modernfix-modernfix.mixins.json:perf.tag_id_caching.TagOrElementLocationMixin from mod modernfix cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[15:26:09] [main/WARN] [os.so.os.li.LinuxOperatingSystem/]: Did not find udev library in operating system. Some features may not work.
+[15:26:10] [main/WARN] [os.ut.FileUtil/]: File not found or not readable: /proc/stat
+[15:26:10] [Datafixer Bootstrap/INFO] [mojang/DataFixerBuilder]: 229 Datafixer optimizations took 782 milliseconds
+[15:26:11] [pool-11-thread-1/INFO] [minecraft/Bootstrap]: ModernFix reached bootstrap stage (15.96 s after launch)
+[15:26:18] [pool-11-thread-1/INFO] [minecraft/Bootstrap]: Vanilla bootstrap took 6959 milliseconds
+[15:26:19] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar%23208!/assets/.mcassetsroot' uses unexpected schema
+[15:26:19] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar%23208!/data/.mcassetsroot' uses unexpected schema
+[15:26:19] [Render thread/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[15:26:19] [Render thread/INFO] [minecraft/Minecraft]: Setting user: Craftelectron
+[15:26:19] [Render thread/ERROR] [minecraft/Options]: Error parsing option value off for option Fullscreen: Not a boolean: "off"
+[15:26:19] [Render thread/INFO] [minecraft/Minecraft]: Backend library: LWJGL version 3.3.3-snapshot+SNAPSHOT
+[15:26:19] [Render thread/INFO] [ImmediatelyFast/]: Initializing ImmediatelyFast 1.6.10+1.21.1 on Adreno (TM) 650 | OpenGL ES 3.2 (Swung0x48, BZLZHH, Tungsten) with OpenGL 4.0.0 MobileGlues 1.3.4
+[15:26:20] [modloading-worker-0/INFO] [STDOUT/]: [dev.tr7zw.trender.gui.impl.client.LibGuiClient:onInitializeClient:36]: [LibGui] Initializing Client...
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[15:26:20] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.227, for MC 1.21.1
+[15:26:20] [modloading-worker-0/INFO] [ModSharedBootstrap/]: KryptonFNP is now accelerating your Minecraft client's networking stack 🚀
+[15:26:20] [modloading-worker-0/INFO] [ModSharedBootstrap/]: Note that KryptonFNP is most effective on servers, not the client.
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[15:26:20] [modloading-worker-0/INFO] [ModSharedBootstrap/]: Compression will use Java, encryption will use Java
+[15:26:20] [modloading-worker-0/INFO] [Veil/]: Veil is initializing.
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[15:26:20] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[15:26:21] [modloading-worker-0/INFO] [STDOUT/]: [com.sa1672ndo.sableandroidpatch.SableAndroidPatch:<init>:9]: [SAP]
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[15:26:21] [modloading-worker-0/INFO] [Railways/]: Steam 'n' Rails v1.6.13-alpha initializing! Commit hash: dev on Create version: 6.0.10 on platform: Neoforge
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[15:26:21] [modloading-worker-0/INFO] [me.je.li.lo.PluginCaller/]: Sending ConfigManager...
+[15:26:21] [modloading-worker-0/INFO] [me.je.li.lo.PluginCaller/]: Sending ConfigManager took 7.149 milliseconds
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[15:26:21] [modloading-worker-0/INFO] [KubeJS/]: Loading vanilla registries...
+[15:26:21] [modloading-worker-0/INFO] [KubeJS/]: Looking for KubeJS plugins...
+[15:26:21] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[15:26:21] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[15:26:21] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source mechanicals
+[15:26:21] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source create_mechanical_extruder
+[15:26:21] [modloading-worker-0/INFO] [KubeJS/]: Done in 199.3 ms
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlockEntity
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlockEntity
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlockEntity
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlockEntity
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlockEntity
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatStraightPipeBlockEntity
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlockEntity
+[15:26:22] [modloading-worker-0/FATAL] [mixin/]: Mixin apply for mod androidopt failed androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> net.createmod.catnip.render.SuperByteBufferCache: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException Mixin androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt contains non-private static method periodicCleanup()V [ -> MAIN Applicator Phase -> androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> Apply Methods -> ()V:periodicCleanup]
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: Mixin androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt contains non-private static method periodicCleanup()V [ -> MAIN Applicator Phase -> androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> Apply Methods -> ()V:periodicCleanup]
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.checkMethodVisibility(MixinApplicatorStandard.java:781) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyNormalMethod(MixinApplicatorStandard.java:466) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMethods(MixinApplicatorStandard.java:449) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:308) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-11.0.5.jar:11.0.5+main.901c6ea8] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at TRANSFORMER/copycats@3.0.4+mc.1.21.1-neoforge/com.copycatsplus.copycats.CopycatsClient.<clinit>(CopycatsClient.java:11) ~[copycats-3.0.4+mc.1.21.1-neoforge.jar%23219!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/copycats@3.0.4+mc.1.21.1-neoforge/com.copycatsplus.copycats.neoforge.CopycatsClientImpl.<init>(CopycatsClientImpl.java:17) ~[copycats-3.0.4+mc.1.21.1-neoforge.jar%23219!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:115) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {re:mixin}
+[15:26:22] [modloading-worker-0/ERROR] [ne.ne.fm.ja.FMLModContainer/LOADING]: Failed to create mod instance. ModID: copycats, class com.copycatsplus.copycats.neoforge.CopycatsClientImpl
+org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-11.0.5.jar:11.0.5+main.901c6ea8] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at TRANSFORMER/copycats@3.0.4+mc.1.21.1-neoforge/com.copycatsplus.copycats.CopycatsClient.<clinit>(CopycatsClient.java:11) ~[copycats-3.0.4+mc.1.21.1-neoforge.jar%23219!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/copycats@3.0.4+mc.1.21.1-neoforge/com.copycatsplus.copycats.neoforge.CopycatsClientImpl.<init>(CopycatsClientImpl.java:17) ~[copycats-3.0.4+mc.1.21.1-neoforge.jar%23219!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:115) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {re:mixin}
+Caused by: org.spongepowered.asm.mixin.throwables.MixinApplyError: Mixin [androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt] from phase [DEFAULT] in config [androidopt.mixins.json] FAILED during APPLY
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinError(MixinProcessor.java:638) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinApplyError(MixinProcessor.java:589) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:379) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	... 29 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: Mixin androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt contains non-private static method periodicCleanup()V [ -> MAIN Applicator Phase -> androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> Apply Methods -> ()V:periodicCleanup]
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.checkMethodVisibility(MixinApplicatorStandard.java:781) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyNormalMethod(MixinApplicatorStandard.java:466) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMethods(MixinApplicatorStandard.java:449) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:308) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	... 29 more
+[15:26:22] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Hello 1.21.1 Create!
+[15:26:22] [modloading-worker-0/WARN] [mixin/]: @Inject(@At("INVOKE")) Shift.BY=2 on create_connected.mixins.json:sequencedgearshift.SequencedGearshiftScreenMixin from mod create_connected::handler$cfk000$create_connected$updateParamsOfRow exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[15:26:23] [modloading-worker-0/FATAL] [mixin/]: Mixin apply for mod androidopt failed androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> net.createmod.catnip.render.SuperByteBufferCache: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException Mixin androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt contains non-private static method periodicCleanup()V [ -> MAIN Applicator Phase -> androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> Apply Methods -> ()V:periodicCleanup]
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: Mixin androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt contains non-private static method periodicCleanup()V [ -> MAIN Applicator Phase -> androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> Apply Methods -> ()V:periodicCleanup]
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.checkMethodVisibility(MixinApplicatorStandard.java:781) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyNormalMethod(MixinApplicatorStandard.java:466) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMethods(MixinApplicatorStandard.java:449) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:308) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-11.0.5.jar:11.0.5+main.901c6ea8] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at TRANSFORMER/simulated@1.2.1/dev.simulated_team.simulated.SimulatedClient.init(SimulatedClient.java:46) ~[dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.2.1.jar%23287!/:1.2.1] {re:classloading}
+	at TRANSFORMER/simulated@1.2.1/dev.simulated_team.simulated.neoforge.SimulatedNeoForgeClient.<init>(SimulatedNeoForgeClient.java:24) ~[dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.2.1.jar%23287!/:1.2.1] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:115) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {re:mixin}
+[15:26:23] [modloading-worker-0/ERROR] [ne.ne.fm.ja.FMLModContainer/LOADING]: Failed to create mod instance. ModID: simulated, class dev.simulated_team.simulated.neoforge.SimulatedNeoForgeClient
+org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-11.0.5.jar:11.0.5+main.901c6ea8] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at TRANSFORMER/simulated@1.2.1/dev.simulated_team.simulated.SimulatedClient.init(SimulatedClient.java:46) ~[dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.2.1.jar%23287!/:1.2.1] {re:classloading}
+	at TRANSFORMER/simulated@1.2.1/dev.simulated_team.simulated.neoforge.SimulatedNeoForgeClient.<init>(SimulatedNeoForgeClient.java:24) ~[dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.2.1.jar%23287!/:1.2.1] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:115) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {re:mixin}
+Caused by: org.spongepowered.asm.mixin.throwables.MixinApplyError: Mixin [androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt] from phase [DEFAULT] in config [androidopt.mixins.json] FAILED during APPLY
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinError(MixinProcessor.java:638) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinApplyError(MixinProcessor.java:589) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:379) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	... 29 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: Mixin androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt contains non-private static method periodicCleanup()V [ -> MAIN Applicator Phase -> androidopt.mixins.json:SuperByteBufferCacheMixin from mod androidopt -> Apply Methods -> ()V:periodicCleanup]
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.checkMethodVisibility(MixinApplicatorStandard.java:781) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyNormalMethod(MixinApplicatorStandard.java:466) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMethods(MixinApplicatorStandard.java:449) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:308) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	... 29 more
+[15:26:23] [modloading-worker-0/INFO] [KubeJS/]: Added bindings for script type STARTUP from mod 'almostunified': [AlmostUnified]
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Startup/]: startup_scripts:main.js#2: Hello, World! (Loaded startup example script)
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:main.js in 0.133 s
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 1/1 KubeJS startup scripts in 2.003 s with 0 errors and 0 warnings
+[15:26:24] [modloading-worker-0/INFO] [KubeJS/]: Added bindings for script type CLIENT from mod 'almostunified': [AlmostUnified]
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:main.js#2: Hello, World! (Loaded client example script)
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded script client_scripts:main.js in 0.001 s
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded 1/1 KubeJS client scripts in 0.034 s with 0 errors and 0 warnings
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Startup/]: Validated 2 files in kubejs/assets/ in 8ms
+[15:26:24] [modloading-worker-0/INFO] [KubeJS Startup/]: Validated 0 files in kubejs/data/ in 0ms
+[15:26:24] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-common.mixins.json:copycat.step.CopycatStepBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatStepBlock
+[15:26:24] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-common.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatBlockEntity
+[15:26:24] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-common.mixins.json:copycat.panel.CopycatPanelBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatPanelBlock
+[15:26:24] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-common.mixins.json:copycat.panel.CopycatPanelBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatPanelBlock
+[15:26:24] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-common.mixins.json:copycat.panel.CopycatPanelBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatPanelBlock
+[15:26:24] [modloading-worker-0/INFO] [co.si.cr.Create/]: Create 6.0.10 initializing! Commit hash: ac0c444d9828da3453ae8cc65338e8de063286fb
+[15:26:25] [modloading-worker-0/INFO] [Railways/]: Registered bogey styles from railways
+[15:26:26] [modloading-worker-0/INFO] [Railways/]: Registering data fixers
+[15:26:27] [modloading-worker-0/FATAL] [mixin/]: Mixin apply for mod androidopt failed androidopt.mixins.json:KineticNetworkMixin from mod androidopt -> com.simibubi.create.content.kinetics.KineticNetwork: org.spongepowered.asm.mixin.injection.throwables.InvalidInjectionException Invalid descriptor on androidopt.mixins.json:KineticNetworkMixin from mod androidopt->@Inject::androidopt$skipDistantStressUpdate(Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V! Expected (Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V but found (Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V [INJECT_APPLY Applicator Phase -> androidopt.mixins.json:KineticNetworkMixin from mod androidopt -> Apply Injections ->  -> Inject -> androidopt.mixins.json:KineticNetworkMixin from mod androidopt->@Inject::androidopt$skipDistantStressUpdate(Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V]
+org.spongepowered.asm.mixin.injection.throwables.InvalidInjectionException: Invalid descriptor on androidopt.mixins.json:KineticNetworkMixin from mod androidopt->@Inject::androidopt$skipDistantStressUpdate(Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V! Expected (Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V but found (Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V [INJECT_APPLY Applicator Phase -> androidopt.mixins.json:KineticNetworkMixin from mod androidopt -> Apply Injections ->  -> Inject -> androidopt.mixins.json:KineticNetworkMixin from mod androidopt->@Inject::androidopt$skipDistantStressUpdate(Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V]
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.callback.CallbackInjector.inject(CallbackInjector.java:560) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.callback.CallbackInjector.inject(CallbackInjector.java:490) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.code.Injector.inject(Injector.java:284) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.struct.InjectionInfo.inject(InjectionInfo.java:508) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTargetContext.applyInjections(MixinTargetContext.java:1483) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyInjections(MixinApplicatorStandard.java:752) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:330) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-11.0.5.jar:11.0.5+main.901c6ea8] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?] {re:mixin}
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[?:?] {re:mixin}
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.checkSupertypes(EventBus.java:145) ~[bus-8.0.5.jar%23133!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.checkSupertypes(EventBus.java:156) ~[bus-8.0.5.jar%23133!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:102) ~[bus-8.0.5.jar%23133!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:86) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:49) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:126) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {re:mixin}
+[15:26:27] [modloading-worker-0/ERROR] [ne.ne.fm.ja.FMLModContainer/LOADING]: Failed to register automatic subscribers. ModID: create
+org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-11.0.5.jar:11.0.5+main.901c6ea8] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?] {re:mixin}
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[?:?] {re:mixin}
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.checkSupertypes(EventBus.java:145) ~[bus-8.0.5.jar%23133!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.checkSupertypes(EventBus.java:156) ~[bus-8.0.5.jar%23133!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:102) ~[bus-8.0.5.jar%23133!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:86) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:49) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:126) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23130!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:mixin,re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {re:mixin}
+Caused by: org.spongepowered.asm.mixin.throwables.MixinApplyError: Mixin [androidopt.mixins.json:KineticNetworkMixin from mod androidopt] from phase [DEFAULT] in config [androidopt.mixins.json] FAILED during APPLY
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinError(MixinProcessor.java:638) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinApplyError(MixinProcessor.java:589) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:379) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	... 33 more
+Caused by: org.spongepowered.asm.mixin.injection.throwables.InvalidInjectionException: Invalid descriptor on androidopt.mixins.json:KineticNetworkMixin from mod androidopt->@Inject::androidopt$skipDistantStressUpdate(Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V! Expected (Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V but found (Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V [INJECT_APPLY Applicator Phase -> androidopt.mixins.json:KineticNetworkMixin from mod androidopt -> Apply Injections ->  -> Inject -> androidopt.mixins.json:KineticNetworkMixin from mod androidopt->@Inject::androidopt$skipDistantStressUpdate(Ljava/lang/Object;FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V]
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.callback.CallbackInjector.inject(CallbackInjector.java:560) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.callback.CallbackInjector.inject(CallbackInjector.java:490) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.code.Injector.inject(Injector.java:284) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.injection.struct.InjectionInfo.inject(InjectionInfo.java:508) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinTargetContext.applyInjections(MixinTargetContext.java:1483) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyInjections(MixinApplicatorStandard.java:752) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:330) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	at MC-BOOTSTRAP/org.spongepowered.mixin/org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7] {}
+	... 33 more
+[15:26:28] [Render thread/FATAL] [ne.ne.fm.ModLoader/LOADING]: Failed to wait for future Mod Construction, 3 errors found
+Amethyst-Android: Adding missing LWJGL2 methods for better sound mod compatibility...
+[LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[15:26:28] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.sound.SoundEngineLoadEvent to a broken mod state
+[15:26:28] [Render thread/INFO] [Veil/]: GL Debug unsupported
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterColorHandlersEvent$Block to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterColorHandlersEvent$Item to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterMaterialAtlasesEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event foundry.veil.forge.event.ForgeVeilRegisterBlockLayersEvent to a broken mod state
+[15:26:29] [Render thread/INFO] [co.ex.an.AndroidOptMod/]: [AndroidOpt] Android ARM64=true détecté (os.version='android-13', arch='aarch64')
+[15:26:29] [Render thread/INFO] [co.ex.an.AndroidOptMod/]: [AndroidOpt] SectionBufferMixin : pool 8 → 4 buffers (~80Mo économisés)
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterRenderBuffersEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RenderLevelStageEvent$RegisterStageEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterSpriteSourceTypesEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterMenuScreensEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.EntityRenderersEvent$RegisterLayerDefinitions to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.EntityRenderersEvent$RegisterRenderers to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterEntitySpectatorShadersEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterGuiLayersEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterDimensionSpecialEffectsEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterNamedRenderTypesEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterColorHandlersEvent$ColorResolvers to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterPresetEditorsEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.gui.map.RegisterMapDecorationRenderersEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterDimensionTransitionScreenEvent to a broken mod state
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.RegisterJsonAnimationTypesEvent to a broken mod state
+[15:26:29] [Render thread/WARN] [ModernFix/]: Failed to initialize Linux Narrator. Make sure you have libflite installed!
+[15:26:29] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, KubeJS Virtual Resource Pack [Internal, assets], KubeJS Virtual Resource Pack [After Mods, assets], KubeJS File Resource Pack [assets], KubeJS Virtual Resource Pack [Before Mods, assets], KubeJS Virtual Resource Pack [Last, assets]
+[15:26:29] [Render thread/ERROR] [ne.ne.fm.ModLoader/]: Cowardly refusing to send event net.neoforged.neoforge.client.event.ModelEvent$RegisterGeometryLoaders to a broken mod state
+[15:26:29] [Render thread/INFO] [KubeJS/]: Added bindings for script type CLIENT from mod 'almostunified': [AlmostUnified]
+[15:26:29] [Render thread/INFO] [KubeJS Client/]: Client resource reload complete!
+[15:26:29] [Worker-ResourceReload-2/INFO] [minecraft/UnihexProvider]: Found unifont_all_no_pua-15.1.05.hex, loading
+[15:26:29] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:29] [Worker-ResourceReload-0/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:29] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:29] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:29] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-6/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-4/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-6/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-0/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-1/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Worker-ResourceReload-3/ERROR] [ModernFix/]: Using vanilla stitcher implementation due to invalid loading state
+[15:26:30] [Render thread/INFO] [moreculling/]: Cached all modded block culling states
+[15:26:30] [Render thread/INFO] [co.ex.an.AndroidOptMod/]: [AndroidOpt] ArmThreadAffinity : thread Render thread (TID=12661) → gros cœurs (0xf0)
+[15:26:30] [Render thread/ERROR] [minecraft/Minecraft]: Unreported exception thrown!
+java.lang.NullPointerException: Cannot invoke "foundry.veil.api.client.render.VeilRenderer.getShaderManager()" because "foundry.veil.api.client.render.VeilRenderSystem.renderer" is null
+	at TRANSFORMER/veil@4.0.0/foundry.veil.api.client.render.VeilRenderSystem.setShader(VeilRenderSystem.java:425) ~[veil-neoforge-1.21.1-4.0.0.jar%23283!/:4.0.0] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.handler$bah000$veil$_blitToScreen(RenderTarget.java:1151) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget._blitToScreen(RenderTarget.java) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.blitToScreen(RenderTarget.java:222) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.blitToScreen(RenderTarget.java:218) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1210) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.debug.mixins.json:client.DebugMainMixin from mod veil,pl:mixin:A,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+[15:26:30] [Worker-ResourceReload-2/INFO] [minecraft/UnihexProvider]: Found unifont_jp_patch-15.1.05.hex, loading
+[15:26:31] [Render thread/FATAL] [ne.ne.ne.co.NeoForgeMod/]: Preparing crash report with UUID abe731a0-4b31-4a60-8354-e3648c23bd4f
+[15:26:31] [Render thread/INFO] [STDOUT/]: [net.minecraft.server.Bootstrap:realStdoutPrintln:135]: ---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 2026-05-24 15:26:31
+Description: Unexpected error
+
+java.lang.NullPointerException: Cannot invoke "foundry.veil.api.client.render.VeilRenderer.getShaderManager()" because "foundry.veil.api.client.render.VeilRenderSystem.renderer" is null
+	at TRANSFORMER/veil@4.0.0/foundry.veil.api.client.render.VeilRenderSystem.setShader(VeilRenderSystem.java:425) ~[veil-neoforge-1.21.1-4.0.0.jar%23283!/:4.0.0] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.handler$bah000$veil$_blitToScreen(RenderTarget.java:1151) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget._blitToScreen(RenderTarget.java) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.blitToScreen(RenderTarget.java:222) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.blitToScreen(RenderTarget.java:218) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1210) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.debug.mixins.json:client.DebugMainMixin from mod veil,pl:mixin:A,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/veil@4.0.0/foundry.veil.api.client.render.VeilRenderSystem.setShader(VeilRenderSystem.java:425) ~[veil-neoforge-1.21.1-4.0.0.jar%23283!/:4.0.0] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.handler$bah000$veil$_blitToScreen(RenderTarget.java:1151) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget._blitToScreen(RenderTarget.java) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.pipeline.RenderTarget.blitToScreen(RenderTarget.java:222) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.framebuffer.mixins.json:accessor.FramebufferRenderTargetAccessor from mod veil,pl:mixin:APP:veil.performance.mixins.json:client.PerformanceRenderTargetMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineRenderTargetMixin from mod veil,pl:mixin:APP:immediatelyfast-common.mixins.json:hud_batching.compat.MixinFramebuffer from mod immediatelyfast,pl:mixin:A,pl:runtimedistcleaner:A}
+-- Uptime --
+Details:
+	JVM uptime: 36.569s
+	Wall uptime: 12.746s
+	High-res time: 33.652s
+	Client ticks: 10 ticks / 0.500s
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2394) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.emergencySaveAndCrash(Minecraft.java:868) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:828) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:kubejs.mixins.json:MinecraftClientMixin from mod kubejs,pl:mixin:APP:modernfix-modernfix.mixins.json:bugfix.world_leaks.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.suspend_integrated_server_during_load.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.encoder_cache_leak.MinecraftMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin_Forge from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.measure_time.MinecraftMixin from mod modernfix,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:railways-common.mixins.json:conductor_possession.MixinMinecraft from mod railways,pl:mixin:APP:supplementaries-common.mixins.json:MinecraftMixin from mod supplementaries,pl:mixin:APP:moonlight-common.mixins.json:MinecraftMixin from mod moonlight,pl:mixin:APP:mixins/common/nochatreports.mixins.json:client.MixinMinecraft from mod nochatreports,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:moreculling.mixins.json:Minecraft_managersMixin from mod moreculling,pl:mixin:APP:moreculling.mixins.json:blockstates.Minecraft_loadBlocksMixin from mod moreculling,pl:mixin:APP:immediatelyfast-common.mixins.json:core.MixinMinecraftClient from mod immediatelyfast,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:dynamic_fps-common.mixins.json:MinecraftMixin from mod dynamic_fps,pl:mixin:APP:modernfix-modernfix.mixins.json:feature.remove_telemetry.MinecraftMixin_Telemetry from mod modernfix,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23208!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:veil.debug.mixins.json:client.DebugMainMixin from mod veil,pl:mixin:A,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.42.jar%23130!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23135!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: No
+	Packs: vanilla, KubeJS Virtual Resource Pack [Internal, assets], KubeJS Virtual Resource Pack [After Mods, assets], KubeJS File Resource Pack [assets], KubeJS Virtual Resource Pack [Before Mods, assets], KubeJS Virtual Resource Pack [Last, assets]
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Linux (aarch64) version Android-13
+	Java Version: 21.0.1-internal, N/A
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 663738776 bytes (632 MiB) / 2063597568 bytes (1968 MiB) up to 2063597568 bytes (1968 MiB)
+	CPUs: 8
+	Processor Vendor: 0x41
+	Processor Name: AArch64 Processor rev 0 (aarch64)
+	Identifier: 0x41 Family 8 Model 0xd0d Stepping r13p14
+	Microarchitecture: unknown
+	Frequency (GHz): -0.00
+	Number of physical packages: 3
+	Number of physical CPUs: 8
+	Number of logical CPUs: 8
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MiB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MiB): 6660.11
+	Virtual memory used (MiB): 5472.06
+	Swap memory total (MiB): 4096.00
+	Swap memory used (MiB): 1064.20
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 43715.99, total: 109772.98
+	Space in storage for workdir (MiB): available: 43715.99, total: 109772.98
+	JVM Flags: 12 total; -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=100 -XX:G1HeapRegionSize=16M -XX:G1HeapWastePercent=5 -Xms1960M -Xmx1960M -XX:ActiveProcessorCount=8 -Xbootclasspath/a:/storage/emulated/0/Android/data/org.angelauramc.amethyst/files/caciocavallo17/cacio-shared-1.18-SNAPSHOT.jar:/storage/emulated/0/Android/data/org.angelauramc.amethyst/files/caciocavallo17/cacio-tta-1.18-SNAPSHOT.jar
+	Launched Version: 1.21.1
+	Backend library: LWJGL version 3.3.3-snapshot+SNAPSHOT
+	Backend API: Adreno (TM) 650 | OpenGL ES 3.2 GL version 4.0.0 MobileGlues 1.3.4, Swung0x48, BZLZHH, Tungsten
+	Window size: 1618x756
+	GFLW Platform: x11
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: <disabled>
+	Is Modded: Definitely; Client brand changed to 'neoforge'
+	Universe: 400921fb54442d18
+	Type: Client (map_client.txt)
+	Graphics mode: fast
+	Render Distance: 2/2 chunks
+	Resource Packs: vanilla
+	Current Language: fr_fr
+	Locale: fr
+	System encoding: UTF-8
+	File encoding: UTF-8
+	CPU: 8x AArch64 Processor rev 0 (aarch64)
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclient
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		alloyed-3.0.7+1.21.1-neoforge.jar                 |Alloyed                       |alloyed                       |3.0.7+1.21.1        |Manifest: NOSIGNATURE
+		almostunified-neoforge-1.21.1-1.4.1.jar           |AlmostUnified                 |almostunified                 |1.21.1-1.4.1        |Manifest: NOSIGNATURE
+		amendments-1.21-2.0.15-neoforge.jar               |Amendments                    |amendments                    |1.21-2.0.15         |Manifest: NOSIGNATURE
+		androidopt-1.0.0.jar                              |Android Optimizer             |androidopt                    |1.0.0               |Manifest: NOSIGNATURE
+		architectury-13.0.8-neoforge.jar                  |Architectury                  |architectury                  |13.0.8              |Manifest: NOSIGNATURE
+		ballistix-1.21.1-1.0.1-0.jar                      |Ballistix                     |ballistix                     |1.0.1-0             |Manifest: NOSIGNATURE
+		blastcraft-1.21.1-0.6.0-1.jar                     |Blastcraft                    |blastcraft                    |0.6.0-1             |Manifest: NOSIGNATURE
+		cloth-config-15.0.140-neoforge.jar                |Cloth Config v15 API          |cloth_config                  |15.0.140            |Manifest: NOSIGNATURE
+		conditional-mixin-neoforge-0.6.3.jar              |conditional mixin             |conditional_mixin             |0.6.3               |Manifest: NOSIGNATURE
+		create-1.21.1-6.0.10.jar                          |Create                        |create                        |6.0.10              |Manifest: NOSIGNATURE
+		dev.eriksonn.aeronautics.aeronautics-neoforge-1.21|Create Aeronautics            |aeronautics                   |1.2.1               |Manifest: NOSIGNATURE
+		create-aeronautics-bundled-1.21.1-1.2.1.jar       |Create Aeronautics            |aeronautics_bundled           |1.2.1               |Manifest: NOSIGNATURE
+		createbigcannons-5.11.4-dev+mc.1.21.1-build.314(1)|Create Big Cannons            |createbigcannons              |5.11.4              |Manifest: NOSIGNATURE
+		createdeco-2.1.3.jar                              |Create Deco                   |createdeco                    |2.1.3               |Manifest: NOSIGNATURE
+		create_hypertube-0.4.0-COMPAT-NEOFORGE.jar        |Create Hypertube              |create_hypertube              |0.4.0-COMPAT        |Manifest: NOSIGNATURE
+		create_mechanical_extruder-1.21.1-2.2.0-6.0.8.jar |Create Mechanical Extruder    |create_mechanical_extruder    |1.21.1-2.2.0-6.0.8  |Manifest: NOSIGNATURE
+		dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.2.|Create Offroad                |offroad                       |1.2.1               |Manifest: NOSIGNATURE
+		dev.simulated_team.simulated.simulated-neoforge-1.|Create Simulated              |simulated                     |1.2.1               |Manifest: NOSIGNATURE
+		create-stuff-additions1.21.1_v2.1.0e.jar          |Create Stuff 'N Additions     |create_sa                     |2.1.0.              |Manifest: NOSIGNATURE
+		create_connected-1.1.13-mc1.21.1.jar              |Create: Connected             |create_connected              |1.1.13-mc1.21.1     |Manifest: NOSIGNATURE
+		copycats-3.0.4+mc.1.21.1-neoforge.jar             |Create: Copycats+             |copycats                      |3.0.4+mc.1.21.1-neof|Manifest: NOSIGNATURE
+		create-new-age-1.1.7c+neoforge-mc1.21.1.jar       |Create: New Age               |create_new_age                |1.1.7c+mc1.21.1     |Manifest: NOSIGNATURE
+		railways-0.2.0+neoforge-mc1.21.1.jar              |Create: Steam 'n' Rails 1.21.1|railways                      |0.2.0+neoforge-mc1.2|Manifest: NOSIGNATURE
+		tfmg-1.2.0.jar                                    |Create: The Factory Must Grow |tfmg                          |1.2.0               |Manifest: NOSIGNATURE
+		dynamic-fps-3.11.4+minecraft-1.21.0-neoforge.jar  |Dynamic FPS                   |dynamic_fps                   |3.11.4              |Manifest: NOSIGNATURE
+		electrodynamics-1.21.1-1.0.2.jar                  |Electrodynamics               |electrodynamics               |1.0.2               |Manifest: NOSIGNATURE
+		entityculling-neoforge-1.10.2-mc1.21.1.jar        |EntityCulling                 |entityculling                 |1.10.2              |Manifest: NOSIGNATURE
+		esl-neoforge-1.21.1-1.0.3+neoforge-mc1.21.1.jar   |ESL                           |esl                           |1.0.3               |Manifest: NOSIGNATURE
+		ferritecore-7.0.3-neoforge.jar                    |Ferrite Core                  |ferritecore                   |7.0.3               |Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		flywheel-neoforge-1.21.1-1.0.6.jar                |Flywheel                      |flywheel                      |1.0.6               |Manifest: NOSIGNATURE
+		ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar        |ImmediatelyFast               |immediatelyfast               |1.6.10+1.21.1       |Manifest: NOSIGNATURE
+		jei-1.21.1-neoforge-19.27.0.340.jar               |Just Enough Items             |jei                           |19.27.0.340         |Manifest: NOSIGNATURE
+		krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar   |Krypton FNP                   |krypton_fnp                   |0.2.28.1-1.21.1     |Manifest: NOSIGNATURE
+		kubejs-neoforge-2101.7.2-build.348.jar            |KubeJS                        |kubejs                        |2101.7.2-build.348  |Manifest: NOSIGNATURE
+		mechanicals-1.21.1-1.1.0.jar                      |Mechanicals Lib               |mechanicals                   |1.1.0               |Manifest: NOSIGNATURE
+		client-1.21.1-20240808.144430-srg.jar             |Minecraft                     |minecraft                     |1.21.1              |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		modernfix-neoforge-5.27.2+mc1.21.1.jar            |ModernFix                     |modernfix                     |5.27.2+mc1.21.1     |Manifest: NOSIGNATURE
+		modularforcefields-1.21.1-0.4.0-1.jar             |Modular Force Fields          |modularforcefields            |0.4.0-1             |Manifest: NOSIGNATURE
+		moonlight-neoforge-1.21.1-3.0.5.jar               |Moonlight Lib                 |moonlight                     |1.21.1-3.0.5        |Manifest: NOSIGNATURE
+		moreculling-neoforge-1.21.1-1.0.8.jar             |More Culling                  |moreculling                   |1.0.8               |Manifest: NOSIGNATURE
+		neoforge-21.1.227-universal.jar                   |NeoForge                      |neoforge                      |21.1.227            |Manifest: NOSIGNATURE
+		NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar          |No Chat Reports               |nochatreports                 |1.21.1-v2.9.1       |Manifest: NOSIGNATURE
+		11nuclearscience-1.21.1-0.8.1-0.jar               |Nuclear Science               |nuclearscience                |0.8.1-0             |Manifest: NOSIGNATURE
+		ponder-neoforge-1.0.82+mc1.21.1.jar               |Ponder                        |ponder                        |1.0.82+mc1.21.1     |Manifest: NOSIGNATURE
+		rhino-2101.2.7-build.81.jar                       |Rhino                         |rhino                         |2101.2.7-build.81   |Manifest: NOSIGNATURE
+		ritchiesprojectilelib-2.1.2-mc.1.21.1-neoforge.jar|Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.2               |Manifest: NOSIGNATURE
+		sable-neoforge-1.21.1-1.2.2.jar                   |Sable                         |sable                         |1.2.2               |Manifest: NOSIGNATURE
+		sable-companion-common-1.21.1-1.6.0.jar           |Sable Companion               |sablecompanion                |1.6.0               |Manifest: NOSIGNATURE
+		sable-android-patch.jar                           |SableAndroidPatch             |sableandroidpatch             |1.0.0               |Manifest: NOSIGNATURE
+		supplementaries-neoforge-1.21.1-3.6.3.jar         |Supplementaries               |supplementaries               |1.21.1-3.6.3        |Manifest: NOSIGNATURE
+		TRansition-1.0.19-1.21.1-neoforge-SNAPSHOT.jar    |TRansition                    |transition                    |1.0.19              |Manifest: NOSIGNATURE
+		TRender-1.0.13-1.21.1-neoforge-SNAPSHOT.jar       |TRender                       |trender                       |1.0.13              |Manifest: NOSIGNATURE
+		veil-neoforge-1.21.1-4.0.0.jar                    |Veil                          |veil                          |4.0.0               |Manifest: NOSIGNATURE
+		voltaic-1.21.1-1.0.2-0.jar                        |Voltaic                       |voltaic                       |1.0.2-0             |Manifest: NOSIGNATURE
+	Crash Report UUID: abe731a0-4b31-4a60-8354-e3648c23bd4f
+	FML: 4.0.42
+	NeoForge: 21.1.227
+	Flywheel Backend: flywheel:off
+[15:26:31] [Render thread/FATAL] [ne.ne.ne.co.NeoForgeMod/]: Preparing crash report with UUID aa123a6e-7e0f-4bfb-899c-212bb3ad6406
+[15:26:31] [Render thread/INFO] [STDOUT/]: [net.minecraft.server.Bootstrap:realStdoutPrintln:135]: #@!@# Game crashed! Crash report saved to: #@!@# /storage/emulated/0/Android/data/org.angelauramc.amethyst/files/.minecraft/crash-reports/crash-2026-05-24_15.26.31-client.txt

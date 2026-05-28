@@ -1,0 +1,45 @@
+{
+    "nativeglengine.name": "NativeGLEngine",
+    "nativeglengine.description": "Native rendering engine for Android Minecraft Java",
+
+    "nativeglengine.config.title": "NativeGLEngine Configuration",
+
+    "nativeglengine.config.shader": "Shader Compiler",
+    "nativeglengine.config.shader.cache": "Shader Cache",
+    "nativeglengine.config.shader.cache.tooltip": "Enable persistent SPIR-V/ESSL shader cache (SHA-256). Eliminates shader compilation stutter on startup.",
+    "nativeglengine.config.shader.async": "Async Compilation",
+    "nativeglengine.config.shader.async.tooltip": "Compile shaders asynchronously off the render thread. A placeholder shader is shown during compilation.",
+    "nativeglengine.config.shader.threads": "Compiler Threads",
+    "nativeglengine.config.shader.threads.tooltip": "Number of threads dedicated to shader compilation. 1-2 recommended on mobile.",
+
+    "nativeglengine.config.hooks": "GL Hooks",
+    "nativeglengine.config.hooks.enabled": "Enable GL Hooks",
+    "nativeglengine.config.hooks.enabled.tooltip": "Enable PLT hooking on OpenGL calls. Requires native library (.so). Disable if crashing.",
+    "nativeglengine.config.hooks.stateDedup": "State Deduplication",
+    "nativeglengine.config.hooks.stateDedup.tooltip": "Filter redundant glEnable/glDisable calls. Saves 2-5ms per frame with many entities.",
+    "nativeglengine.config.hooks.textureThrottle": "Texture Throttling",
+    "nativeglengine.config.hooks.textureThrottle.tooltip": "Queue texture uploads when GPU budget is tight. Prevents 5-15ms freezes during chunk loading.",
+    "nativeglengine.config.hooks.maxUploads": "Max Texture Uploads/Frame",
+
+    "nativeglengine.config.memory": "GPU Memory",
+    "nativeglengine.config.memory.monitor": "GPU Memory Monitor",
+    "nativeglengine.config.memory.monitor.tooltip": "Monitor GPU memory budget via VMA + VK_EXT_memory_budget. Requires native library.",
+    "nativeglengine.config.memory.softThreshold": "Soft Cleanup Threshold (%)",
+    "nativeglengine.config.memory.hardThreshold": "Hard Cleanup Threshold (%)",
+
+    "nativeglengine.config.debug": "Debug",
+    "nativeglengine.config.debug.verbose": "Verbose Logging",
+    "nativeglengine.config.debug.hud": "Show HUD",
+    "nativeglengine.config.debug.hud.tooltip": "Display NativeGLEngine stats overlay: renderer, cache hits, GPU pressure.",
+
+    "nativeglengine.hud.renderer": "Renderer: %s",
+    "nativeglengine.hud.shaderCache": "Shader Cache: %d hits / %d total",
+    "nativeglengine.hud.gpuPressure": "GPU: %d%%",
+    "nativeglengine.hud.glHooks": "GL Hooks: %d deduped (%d%%)",
+    "nativeglengine.hud.native": "Native: %s",
+    "nativeglengine.hud.native.loaded": "Loaded",
+    "nativeglengine.hud.native.javaOnly": "Java-only",
+
+    "nativeglengine.status.connected": "Connected to Android Optimizer",
+    "nativeglengine.status.standalone": "Standalone mode"
+}

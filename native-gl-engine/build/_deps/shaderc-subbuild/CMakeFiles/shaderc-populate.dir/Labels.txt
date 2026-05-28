@@ -1,0 +1,14 @@
+# Target labels
+ shaderc-populate
+# Source files and their labels
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/CMakeFiles/shaderc-populate
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/CMakeFiles/shaderc-populate.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/CMakeFiles/shaderc-populate-complete.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-build.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-configure.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-download.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-install.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-mkdir.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-patch.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-test.rule
+/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-subbuild/shaderc-populate-prefix/src/shaderc-populate-stamp/shaderc-populate-update.rule

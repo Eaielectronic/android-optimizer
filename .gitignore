@@ -1,0 +1,53 @@
+### Gradle ###
+.gradle
+# Ignore build/ sauf le JAR du mod
+build/*
+!build/libs/
+build/libs/*
+!build/libs/*.jar
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/**/build/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/**/out/
+
+.run/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.eclipse/
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/**/bin/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Minecraft Modding ###
+run/
+!**/src/**/run/
+**/src/generated/**/.cache/
+repo/
+!**/src/**/repo/
+
+### Android NDK and C++ builds ###
+android-ndk-r26d/
+**/src/main/cpp/build/
+
+### Project Plans ###
+plans/
+
+

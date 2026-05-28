@@ -1,0 +1,34 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "fr.eaielectronic.androidopt.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "fr.eaielectronic.androidopt.mixin.AndroidOptMixinPlugin",
+  "client": [
+    "BERDistanceMixin",
+    "ChunkRebuildMixin",
+    "RenderBudgetMixin",
+    "RenderThreadAffinityMixin",
+    "SectionBufferMixin",
+    "SoundManagerThrottleMixin",
+    "CreateParticleMixin",
+    "CreateGogglesOverlayCuller",
+    "JeiSearchThrottleMixin",
+    "JeiListLimiterMixin",
+    "PonderCacheClearMixin",
+    "SablePhysicsClientMixin",
+    "CreateRenderThrottleMixin",
+    "WeatherRenderMixin",
+    "ResourceLocationInternMixin",
+    "TextureAtlasResolutionMixin",
+    "ContraptionWorldMixin",
+    "SableUdpMixin",
+    "SodiumOptionsGUIMixin"
+  ],
+  "mixins": [
+    "ServerBETickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+logoFile="logo.png"
+authors="Eaielectronic"
+displayURL="https://github.com/Eaielectronic/android-optimizer"
+issueTrackerURL="https://github.com/Eaielectronic/android-optimizer/issues"
+description='''
+Optimise Minecraft pour Android ARM64 (Amethyst / PojavLauncher).
+Réduit les freezes GC, désactive le rendu inutile, libère la mémoire
+agressivement pour doubler/tripler les FPS sur mobile.
+Inactif sur PC — détection automatique.
+Inclut : frame budget adaptatif, BER culling, chunk rebuild throttle,
+thread affinity ARM big.LITTLE.
+'''
