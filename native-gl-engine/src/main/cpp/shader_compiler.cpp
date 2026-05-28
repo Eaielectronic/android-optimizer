@@ -38,6 +38,8 @@ bool shader_compiler_compile_glsl(const char* glsl_source, ShaderType type,
     }
 
     options.SetOptimizationLevel(shaderc_optimization_level_performance);
+    options.SetAutoMapLocations(true);
+    options.SetAutoBindUniforms(true);
     
     // CRITIQUE : Minecraft génère du GLSL Desktop (ex: #version 150).
     // Si on cible Vulkan par défaut, Shaderc rejette le code car il manque 
