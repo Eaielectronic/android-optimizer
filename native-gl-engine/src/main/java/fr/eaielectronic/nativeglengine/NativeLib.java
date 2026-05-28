@@ -23,6 +23,7 @@ public final class NativeLib {
 
     private static final String LIB_NAME = "NativeGLEngine";
     private static final String LIB_RESOURCE_PATH = "/assets/nativeglengine/native/arm64-v8a/lib" + LIB_NAME + ".so";
+    private static final String BHOOK_RESOURCE_PATH = "/assets/nativeglengine/native/arm64-v8a/libbytehook.so";
 
     private NativeLib() {}
 
@@ -48,8 +49,21 @@ public final class NativeLib {
         try {
             // Extraire la .so du JAR vers un fichier temporaire
             Path tempDir = Files.createTempDirectory("nativeglengine");
+            Path bhookFile = tempDir.resolve("libbytehook.so");
             Path libFile = tempDir.resolve("lib" + LIB_NAME + ".so");
 
+            // 1. Extraire et charger libbytehook.so (dépendance requise)
+            try (InputStream is = NativeLib.class.getResourceAsStream(BHOOK_RESOURCE_PATH)) {
+                if (is != null) {
+                    Files.copy(is, bhookFile, StandardCopyOption.REPLACE_EXISTING);
+                    System.load(bhookFile.toAbsolutePath().toString());
+                    bhookFile.toFile().deleteOnExit();
+                } else {
+                    NativeGLEngineMod.LOGGER.warn("[NativeGLEngine] libbytehook.so non trouvée dans le JAR (optionnelle si déjà chargée)");
+                }
+            }
+
+            // 2. Extraire et charger libNativeGLEngine.so
             try (InputStream is = NativeLib.class.getResourceAsStream(LIB_RESOURCE_PATH)) {
                 if (is == null) {
                     loadError = "Bibliothèque native non trouvée dans le JAR : " + LIB_RESOURCE_PATH;
