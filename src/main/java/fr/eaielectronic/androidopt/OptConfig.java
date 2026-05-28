@@ -201,8 +201,8 @@ public class OptConfig {
         CHUNK_REBUILDS_PER_FRAME = BUILDER
             .comment("Nombre max de recompilations de chunks par frame.",
                      "Plus bas = moins de freezes, mais chunks se chargent plus lentement.",
-                     "Recommandé : 2 sur mobile, 4-8 sur PC.")
-            .defineInRange("chunkRebuildsPerFrame", 2, 1, 16);
+                     "Recommandé : 1 sur mobile, 4-8 sur PC.")
+            .defineInRange("chunkRebuildsPerFrame", 1, 1, 16);
         CREATE_PARTICLES_FILTER = BUILDER
             .comment("Supprime les particules Create (fumée, poussière, étincelles).",
                      "Les particules vanilla (feu, eau, explosion) ne sont pas affectées.")

@@ -82,10 +82,22 @@ public class OptConfigScreen extends Screen {
     
     @SuppressWarnings("unchecked")
     private void saveAndClose() {
+        boolean changed = !pendingConfig.isEmpty();
         for (java.util.Map.Entry<ModConfigSpec.ConfigValue<?>, Object> entry : pendingConfig.entrySet()) {
             ((ModConfigSpec.ConfigValue<Object>) entry.getKey()).set(entry.getValue());
         }
         pendingConfig.clear();
+        
+        if (changed) {
+            java.util.concurrent.CompletableFuture.runAsync(() -> {
+                try {
+                    OptConfig.SPEC.save();
+                    fr.eaielectronic.androidopt.AndroidOptMod.LOGGER.info("[OptConfig] Configuration saved async");
+                } catch (Exception e) {
+                    fr.eaielectronic.androidopt.AndroidOptMod.LOGGER.error("[OptConfig] Failed to save config", e);
+                }
+            });
+        }
         minecraft.setScreen(parent);
     }
 
@@ -151,7 +163,7 @@ public class OptConfigScreen extends Screen {
             setPending(OptConfig.ENTITY_THROTTLE_DISTANCE, 32);
             setPending(OptConfig.TICK_SKIP_DISTANCE, 24);
             setPending(OptConfig.RENDER_DISTANCE, 6);
-            setPending(OptConfig.CHUNK_REBUILDS_PER_FRAME, 2);
+            setPending(OptConfig.CHUNK_REBUILDS_PER_FRAME, 1);
             setPending(OptConfig.CREATE_RENDER_FPS, 20);
             setPending(OptConfig.TEXTURE_DOWNSCALE_ENABLED, true);
             setPending(OptConfig.CONTRAPTION_MEMORY_CLEANUP, true);
