@@ -24,6 +24,19 @@ bool shader_compiler_compile_glsl(const char* glsl_source, ShaderType type,
     shaderc::Compiler compiler;
     shaderc::CompileOptions options;
 
+    // Remplacer dynamiquement les vieilles directives #version de Minecraft par #version 330
+    // pour permettre la compilation SPIR-V (Shaderc exige 330 minimum pour Vulkan/SPIRV).
+    std::string source_str(glsl_source);
+    size_t version_pos = source_str.find("#version");
+    if (version_pos != std::string::npos) {
+        size_t end_line = source_str.find('\n', version_pos);
+        if (end_line != std::string::npos) {
+            source_str.replace(version_pos, end_line - version_pos, "#version 330");
+        }
+    } else {
+        source_str = "#version 330\n" + source_str;
+    }
+
     options.SetOptimizationLevel(shaderc_optimization_level_performance);
     
     // CRITIQUE : Minecraft génère du GLSL Desktop (ex: #version 150).
@@ -42,7 +55,7 @@ bool shader_compiler_compile_glsl(const char* glsl_source, ShaderType type,
     }
 
     shaderc::SpvCompilationResult result = compiler.CompileGlslToSpv(
-        glsl_source, kind, "shader", options);
+        source_str.c_str(), kind, "shader", options);
 
     if (result.GetCompilationStatus() != shaderc_compilation_status_success) {
         std::string err = result.GetErrorMessage();

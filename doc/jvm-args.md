@@ -8,6 +8,9 @@ Il est important de souligner : les arguments JVM sont votre première ligne de 
 
 ## Tableau des Configurations (Selon Processeur et RAM)
 
+> **⚠️ JOUEURS JAVA 21 (Minecraft 1.20.5+) : LE MIRACLE ZGC**
+> Si vous jouez en Java 21 (ex: Minecraft 1.21.1), **utilisez absolument ZGC**. Il élimine **totalement** les freezes mémoire. Remplacez toute la partie `-XX:+UseG1GC ...` de la commande par `-XX:+UseZGC -XX:+ZGenerational`.
+
 Choisissez la commande exacte qui correspond à la puissance de votre téléphone.
 
 | Puissance du Téléphone | RAM Totale | Commande Recommandée |
@@ -58,6 +61,9 @@ Si vous donnez 2 Go à Minecraft, Android n'aura plus de place pour respirer et 
 Let's be honest: JVM arguments are your absolute first line of defense against those horrible Garbage Collector (GC) freezes. **Without these arguments, even the best mod in the world can't save your game from stuttering.**
 
 ## Configurations Table (By Processor & RAM)
+
+> **⚠️ JAVA 21 PLAYERS (Minecraft 1.20.5+) : THE ZGC MIRACLE**
+> If you are on Java 21 (e.g. Minecraft 1.21.1), **absolutely use ZGC**. It **completely** eliminates memory freezes. Replace all the `-XX:+UseG1GC ...` arguments with `-XX:+UseZGC -XX:+ZGenerational`.
 
 Choose the exact command that matches your phone's power.
 

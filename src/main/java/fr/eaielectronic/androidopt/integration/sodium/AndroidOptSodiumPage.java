@@ -21,7 +21,9 @@ public class AndroidOptSodiumPage {
     public static class AndroidOptStorage implements OptionStorage<Object> {
         public static final AndroidOptStorage INSTANCE = new AndroidOptStorage();
         @Override public Object getData() { return this; }
-        @Override public void save() { }
+        @Override public void save() { 
+            OptConfig.SPEC.save();
+        }
     }
 
     public static OptionPage createPage() {

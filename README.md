@@ -14,7 +14,10 @@ Un mod NeoForge 1.21.1 concu pour optimiser Minecraft Java sur les telephones An
 
 ---
 
-## Important : Arguments JVM
+## Important : Arguments JVM (Anti-Freeze & ZGC)
+
+**CRITIQUE POUR ÉVITER LES FREEZES (Java 21)** : Si vous avez des freezes réguliers de plusieurs secondes avec la RAM qui monte et descend (GC à 90%), ajoutez absolument ces arguments dans PojavLauncher pour activer le Z Garbage Collector :
+👉 `-XX:+UseZGC -XX:+ZGenerational`
 
 **Consultez notre [Tableau des Configurations RAM & CPU (doc/jvm-args.md)](doc/jvm-args.md) pour obtenir la commande exacte adaptée à la puissance de votre téléphone.**
 Vous y trouverez les paramètres pour 4 Go, 6 Go, 8 Go+ ainsi que les explications sur la chauffe du CPU (`MaxGCPauseMillis`).
@@ -85,7 +88,10 @@ A NeoForge 1.21.1 mod designed to optimize Minecraft Java on Android phones (Ame
 
 ---
 
-## Important: JVM Arguments
+## Important: JVM Arguments (Anti-Freeze & ZGC)
+
+**CRITICAL TO AVOID FREEZES (Java 21)**: If you experience regular multi-second freezes where RAM usage drops sharply (GC at 90%), you must add these arguments in PojavLauncher to enable the Z Garbage Collector:
+👉 `-XX:+UseZGC -XX:+ZGenerational`
 
 **Please refer to our [RAM & CPU Configurations Table (doc/jvm-args.md)](doc/jvm-args.md) to get the exact command suited for your phone's power.**
 You will find settings for 4 GB, 6 GB, 8 GB+ as well as explanations on CPU heating and GC pauses (`MaxGCPauseMillis`).
