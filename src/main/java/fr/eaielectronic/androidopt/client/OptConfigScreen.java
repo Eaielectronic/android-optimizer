@@ -47,7 +47,7 @@ public class OptConfigScreen extends Screen {
     }
 
     enum Page {
-        HOME, RENDER, MEMORY, CREATE, SOUND, WORLD, SOC, DIAG, THERMAL, DOC
+        HOME, RENDER, MEMORY, CREATE, SOUND, WORLD, SOC, DIAG, THERMAL, DOC, NATIVEGL
     }
 
     @Override
@@ -66,6 +66,7 @@ public class OptConfigScreen extends Screen {
             case DIAG   -> buildDiag();
             case THERMAL-> buildThermal();
             case DOC    -> buildDoc();
+            case NATIVEGL -> buildNativeGl();
         }
 
         if (currentPage != Page.HOME) {
@@ -179,6 +180,10 @@ public class OptConfigScreen extends Screen {
         y += gap;
         addPageBtn("androidopt.page.diag",     Page.DIAG,   lx, y, bw, bh);
         addPageBtn("androidopt.page.thermal",  Page.THERMAL,rx, y, bw, bh);
+        y += gap;
+        if (net.neoforged.fml.ModList.get().isLoaded("nativeglengine")) {
+            addPageBtn("NativeGL Engine", Page.NATIVEGL, cx - bw / 2, y, bw, bh);
+        }
         y += gap + 2;
 
         // Résumé
@@ -459,9 +464,9 @@ public class OptConfigScreen extends Screen {
         addToggle("androidopt.config.thermal_monitor", OptConfig.THERMAL_MONITOR, cx - BTN_W / 2, y, BTN_W, BTN_H);
         
         addIntSlider("androidopt.config.thermal_warning", OptConfig.THERMAL_WARNING_TEMP,
-            35, 55, lx, y+GAP*2, BTN_W, BTN_H);
+            35, 99, lx, y+GAP*2, BTN_W, BTN_H);
         addIntSlider("androidopt.config.thermal_critical", OptConfig.THERMAL_CRITICAL_TEMP,
-            40, 65, rx, y+GAP*2, BTN_W, BTN_H);
+            40, 99, rx, y+GAP*2, BTN_W, BTN_H);
 
         label(cx, y+GAP*4, "§7Température actuelle : " + ThermalMonitor.getHudDisplay());
     }
@@ -497,6 +502,24 @@ public class OptConfigScreen extends Screen {
                     : ServerModeDetector.isRemoteServer() ? "§eServeur distant" : "§7Inconnu";
 
         label(cx, y+12, "§7Heap " + usedMB + "/" + maxMB + " Mo (" + pct + "%) | Mode: " + mode);
+    }
+
+    private void buildNativeGl() {
+        int cx = this.width / 2;
+        int lx = cx - BTN_W - 4, rx = cx + 4;
+        int y  = 44;
+
+        addIntSlider("GPU Budget (%)", OptConfig.NATIVE_GL_GPU_BUDGET_PERCENT,
+            10, 100, cx - BTN_W / 2, y, BTN_W, BTN_H);
+        
+        y += GAP + 8;
+        row(lx, rx, y,       "Hardware TexCompress",  OptConfig.NATIVE_GL_TEX_COMPRESS,
+                              "Vertex Quantizer",      OptConfig.NATIVE_GL_VERTEX_QUANT);
+
+        y += GAP * 2;
+        label(cx, y, "§7NativeGL Engine Configuration");
+        label(cx, y + 12, "§7Le GPU Budget contrôle la quantité de RAM allouée au moteur C++.");
+        label(cx, y + 24, "§7La compression matérielle (ETC2) utilise etcpak natif pour de meilleures perfs.");
     }
 
     @Override
