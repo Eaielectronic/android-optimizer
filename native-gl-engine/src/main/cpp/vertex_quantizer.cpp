@@ -7,6 +7,9 @@
 #define LOG_TAG "NativeGL-VertexQ"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 
+extern bool g_verbose_logging;
+#define LOGV(...) if (g_verbose_logging) { __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__); }
+
 namespace NativeGLEngine {
 
 uint16_t VertexQuantizer::f32_to_f16(float f) {
@@ -73,7 +76,7 @@ void VertexQuantizer::quantize(
         d.r = s.r; d.g = s.g; d.b = s.b; d.a = s.a;
     }
 
-    LOGI("VertexQuantizer: %zu vertices quantifiés (%zu bytes → %zu bytes, ÷%.1f)",
+    LOGV("VertexQuantizer: %zu vertices quantifiés (%zu bytes → %zu bytes, ÷%.1f)",
          count,
          count * sizeof(VertexFP32),
          count * sizeof(VertexQuantized),

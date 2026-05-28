@@ -27,6 +27,7 @@ public final class AndroidOptBridge {
     private static Object thermalMonitorCfg = null;
     private static Object thermalWarningCfg = null;
     private static Object thermalCriticalCfg = null;
+    private static Object verboseLogCfg = null;
     private static Method forgeConfigGetMethod = null;
 
     private AndroidOptBridge() {}
@@ -77,6 +78,9 @@ public final class AndroidOptBridge {
 
                 Field criticalField = optConfigClass.getField("THERMAL_CRITICAL_TEMP");
                 thermalCriticalCfg = criticalField.get(null);
+
+                Field verboseField = optConfigClass.getField("DEBUG_VERBOSE_LOG");
+                verboseLogCfg = verboseField.get(null);
             } catch (NoSuchFieldException e) {
                 // Version ancienne d'androidopt sans thermal — utiliser les valeurs par défaut
                 NativeGLEngineMod.LOGGER.debug("[NativeGLEngine] androidopt sans ThermalMonitor, défauts utilisés");
@@ -119,6 +123,12 @@ public final class AndroidOptBridge {
             try { return (Integer) forgeConfigGetMethod.invoke(thermalCriticalCfg); } catch (Exception ignored) {}
         }
         return 65;
+    }
+    public static boolean isVerboseLogActive() {
+        if (verboseLogCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(verboseLogCfg); } catch (Exception ignored) {}
+        }
+        return false;
     }
 
     /**

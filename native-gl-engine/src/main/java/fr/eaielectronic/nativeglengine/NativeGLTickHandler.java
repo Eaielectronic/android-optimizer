@@ -54,9 +54,13 @@ public class NativeGLTickHandler {
 
         // ═══ Logs verbeux si activé ═══
         boolean verbose = false;
-        try {
-            verbose = NativeGLConfig.VERBOSE_LOG.get();
-        } catch (Exception ignored) {}
+        if (AndroidOptBridge.isAndroidOptPresent()) {
+            verbose = AndroidOptBridge.isVerboseLogActive();
+        } else {
+            try {
+                verbose = NativeGLConfig.VERBOSE_LOG.get();
+            } catch (Exception ignored) {}
+        }
 
         if (verbose) {
             NativeGLEngineMod.LOGGER.info(
@@ -80,6 +84,9 @@ public class NativeGLTickHandler {
                 ShaderCacheManager.getMemoryCacheSize(),
                 ShaderCacheManager.getDiskCacheSize()
             );
+            
+            // Envoyer la verbosité au layer natif C++
+            NativeMemoryBridge.setVerboseLogging(verbose);
         }
 
         // ═══ Status périodique toutes les 600 ticks (~30s) ═══

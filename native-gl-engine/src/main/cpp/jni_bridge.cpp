@@ -15,6 +15,9 @@
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN, LOG_TAG, __VA_ARGS__)
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
+bool g_verbose_logging = false;
+#define LOGV(...) if (g_verbose_logging) { __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__); }
+
 // Forward declarations
 #include "shader_compiler.h"
 #include "shader_cache.h"
@@ -93,6 +96,12 @@ extern "C" JNIEXPORT jlong JNICALL
 Java_fr_eaielectronic_nativeglengine_NativeMemoryBridge_nativeGetGPUUsage(
         JNIEnv* env, jclass clazz) {
     return (jlong) native_memory_get_gpu_usage();
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeMemoryBridge_nativeSetVerbose(
+        JNIEnv* env, jclass clazz, jboolean verbose) {
+    g_verbose_logging = verbose;
 }
 
 extern "C" JNIEXPORT jfloat JNICALL

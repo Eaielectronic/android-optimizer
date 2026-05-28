@@ -20,6 +20,7 @@ public final class NativeMemoryBridge {
     private static native boolean nativeInit();
     private static native long nativeGetGPUBudget();
     private static native long nativeGetGPUUsage();
+    private static native void nativeSetVerbose(boolean verbose);
     private static native float nativeGetGPUPressure();
     private static native long nativeGetSystemAvailableMB();
     private static native int nativeGetTemperature();
@@ -27,6 +28,12 @@ public final class NativeMemoryBridge {
     private static native void nativeDestroy();
 
     // ═══ API publique ═══
+
+    public static void setVerboseLogging(boolean verbose) {
+        if (initialized) {
+            nativeSetVerbose(verbose);
+        }
+    }
 
     public static synchronized void init() {
         if (initialized) return;

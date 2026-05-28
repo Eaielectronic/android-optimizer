@@ -23,6 +23,9 @@
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,   LOG_TAG, __VA_ARGS__)
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN,    LOG_TAG, __VA_ARGS__)
 
+extern bool g_verbose_logging;
+#define LOGV(...) if (g_verbose_logging) { __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__); }
+
 namespace NativeGLEngine {
 
 bool TextureCompressor::s_hasASTCLDR = false;
@@ -57,10 +60,10 @@ void TextureCompressor::detectCapabilities() {
 
     bool hasASTCHDR = (strstr(extensions, "GL_OES_texture_compression_astc") != nullptr);
 
-    LOGI("TextureCompressor capabilities:");
-    LOGI("  ASTC LDR = %s", s_hasASTCLDR ? "OUI ✓" : "NON");
-    LOGI("  ASTC HDR = %s", hasASTCHDR   ? "OUI ✓" : "NON");
-    LOGI("  ETC2     = OUI ✓ (garanti GLES 3.0)");
+    LOGV("TextureCompressor capabilities:");
+    LOGV("  ASTC LDR = %s", s_hasASTCLDR ? "OUI ✓" : "NON");
+    LOGV("  ASTC HDR = %s", hasASTCHDR   ? "OUI ✓" : "NON");
+    LOGV("  ETC2     = OUI ✓ (garanti GLES 3.0)");
 
     s_detected = true;
 }
@@ -111,7 +114,7 @@ bool TextureCompressor::compressETC2(
         false
     );
 
-    LOGI("ETC2 compression: %dx%d → %zu bytes (%.1f MB → %.1f MB)",
+    LOGV("ETC2 compression: %dx%d → %zu bytes (%.1f MB → %.1f MB)",
          width, height, compressed_size,
          (float)(width * height * 4) / 1048576.0f,
          (float)compressed_size / 1048576.0f);
@@ -174,7 +177,7 @@ bool TextureCompressor::compressASTCIfAvailable(
         return false;
     }
 
-    LOGI("ASTC 6×6 compression: %dx%d → %zu bytes (%.1f MB → %.1f MB)",
+    LOGV("ASTC 6x6 compression: %dx%d → %zu bytes (%.1f MB → %.1f MB)",
          width, height, out_size,
          (float)(width * height * 4) / 1048576.0f,
          (float)out_size / 1048576.0f);

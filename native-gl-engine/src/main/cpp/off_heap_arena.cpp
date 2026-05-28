@@ -10,6 +10,9 @@
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN,  LOG_TAG, __VA_ARGS__)
 
+extern bool g_verbose_logging;
+#define LOGV(...) if (g_verbose_logging) { __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__); }
+
 namespace NativeGLEngine {
 
 uint8_t*             OffHeapArena::s_poolBase = nullptr;
@@ -97,7 +100,7 @@ jobject OffHeapArena::allocate(JNIEnv* env, size_t sizeBytes, const char* tag) {
         s_blocks[ptr] = block;
     }
 
-    LOGI("OffHeap alloc: %s → %zu bytes @ %p", tag, sizeBytes, ptr);
+    LOGV("OffHeap alloc: %s → %zu bytes @ %p", tag, sizeBytes, ptr);
     return directBuf;
 }
 
@@ -110,7 +113,7 @@ void OffHeapArena::free(JNIEnv* env, jobject directBuffer) {
     auto it = s_blocks.find(ptr);
     if (it != s_blocks.end()) {
         it->second.inUse = false;
-        LOGI("OffHeap free: %s @ %p (%zu bytes)", it->second.tag, ptr, it->second.size);
+        LOGV("OffHeap free: %s @ %p (%zu bytes)", it->second.tag, ptr, it->second.size);
         if (ptr < (void*)s_poolBase || ptr >= (void*)(s_poolBase + s_poolSize)) {
             ::free(ptr);
             s_blocks.erase(it);
