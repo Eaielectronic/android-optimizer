@@ -41,12 +41,18 @@ Java_fr_eaielectronic_nativeglengine_ShaderCompilerBridge_nativeCompileGLSLtoSPI
     if (!glsl) return nullptr;
 
     std::vector<uint32_t> spirv;
+    std::string out_error;
     bool success = shader_compiler_compile_glsl(glsl, (ShaderType)shaderType, 
-                                                 (SocVendor)socVendor, spirv);
+                                                 (SocVendor)socVendor, spirv, out_error);
     env->ReleaseStringUTFChars(glslSource, glsl);
 
     if (!success) {
-        LOGW("[NativeGLEngine] nativeCompileGLSLtoSPIRV: compilation failed internally.");
+        LOGW("[NativeGLEngine] nativeCompileGLSLtoSPIRV: compilation failed internally: %s", out_error.c_str());
+        // Jette une exception RuntimeException en Java pour qu'elle s'affiche dans debug.log
+        jclass exClass = env->FindClass("java/lang/RuntimeException");
+        if (exClass) {
+            env->ThrowNew(exClass, out_error.c_str());
+        }
         return nullptr;
     }
     if (spirv.empty()) {

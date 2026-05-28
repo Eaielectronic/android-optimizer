@@ -67,6 +67,9 @@ public final class ShaderCompilerBridge {
         } catch (UnsatisfiedLinkError e) {
             NativeGLEngineMod.LOGGER.warn("[NativeGLEngine] JNI compileGLSLtoSPIRV non disponible");
             return null;
+        } catch (RuntimeException e) {
+            NativeGLEngineMod.LOGGER.error("[NativeGLEngine] Shaderc compilation ERROR: {}", e.getMessage());
+            return null;
         }
     }
 

@@ -19,7 +19,8 @@
 #include <spirv_glsl.hpp>
 
 bool shader_compiler_compile_glsl(const char* glsl_source, ShaderType type,
-                                   SocVendor vendor, std::vector<uint32_t>& out_spirv) {
+                                   SocVendor vendor, std::vector<uint32_t>& out_spirv,
+                                   std::string& out_error) {
     shaderc::Compiler compiler;
     shaderc::CompileOptions options;
 
@@ -44,7 +45,9 @@ bool shader_compiler_compile_glsl(const char* glsl_source, ShaderType type,
         glsl_source, kind, "shader", options);
 
     if (result.GetCompilationStatus() != shaderc_compilation_status_success) {
-        LOGW("[NativeGLEngine] Shaderc compilation failed: %s", result.GetErrorMessage().c_str());
+        std::string err = result.GetErrorMessage();
+        LOGW("[NativeGLEngine] Shaderc compilation failed: %s", err.c_str());
+        out_error = err;
         return false;
     }
 

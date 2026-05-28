@@ -4,7 +4,9 @@
 #include "texture_compressor.h"
 #include "bytehook.h"
 #include <GLES3/gl3.h>
-
+#include <GLES3/gl3.h>
+#include <dlfcn.h>
+#include <cstring>
 #define LOG_TAG "NativeGLEngine"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN, LOG_TAG, __VA_ARGS__)
@@ -23,10 +25,20 @@ typedef void (*glTexImage2D_t)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GL
 static glTexImage2D_t orig_glTexImage2D = nullptr;
 
 static bytehook_stub_t stub_glTexImage2D = nullptr;
+static bytehook_stub_t stub_eglGetProcAddress = nullptr;
+
+static void* proxy_eglGetProcAddress(const char* procname) {
+    BYTEHOOK_STACK_SCOPE();
+    
+    if (procname && strcmp(procname, "glTexImage2D") == 0) {
+        return (void*)proxy_glTexImage2D;
+    }
+    
+    return BYTEHOOK_CALL_PREV(proxy_eglGetProcAddress, procname);
+}
 
 // Notre fonction de remplacement
 static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void* pixels) {
-    BYTEHOOK_STACK_SCOPE();
     g_total_calls++;
     
     bool handled = false;
@@ -34,9 +46,10 @@ static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat,
         handled = NativeGLEngine::TextureCompressor::intercept(target, level, internalformat, width, height, format, type, pixels);
     }
     
-    if (!handled) {
-        // Appeler l'original
-        BYTEHOOK_CALL_PREV(proxy_glTexImage2D, target, level, internalformat, width, height, border, format, type, pixels);
+    if (!handled && orig_glTexImage2D) {
+        // Appeler l'original directement, cela évite les problèmes avec BYTEHOOK_CALL_PREV
+        // si la fonction a été appelée via pointeur de fonction direct.
+        orig_glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
     }
 }
 
@@ -47,9 +60,40 @@ bool gl_interceptor_install() {
 
     NativeGLEngine::TextureCompressor::detectCapabilities();
     
-    // Hook glTexImage2D in liblwjgl_opengl.so (or fallback libGL.so/libGLESv3.so)
-    stub_glTexImage2D = bytehook_hook_single(
-        "liblwjgl_opengl.so",
+    // 1. Récupérer le vrai pointeur de glTexImage2D
+    void* handleEGL = dlopen("libEGL.so", RTLD_LAZY);
+    if (handleEGL) {
+        typedef void* (*eglGPA_t)(const char*);
+        eglGPA_t eglGPA = (eglGPA_t)dlsym(handleEGL, "eglGetProcAddress");
+        if (eglGPA) {
+            orig_glTexImage2D = (glTexImage2D_t)eglGPA("glTexImage2D");
+        }
+        dlclose(handleEGL);
+    }
+    if (!orig_glTexImage2D) {
+        void* handleGLES = dlopen("libGLESv3.so", RTLD_LAZY);
+        if (handleGLES) {
+            orig_glTexImage2D = (glTexImage2D_t)dlsym(handleGLES, "glTexImage2D");
+            dlclose(handleGLES);
+        }
+    }
+    
+    if (!orig_glTexImage2D) {
+        LOGE("[NativeGLEngine] Impossible de trouver orig_glTexImage2D !");
+        return false;
+    }
+
+    // 2. Hooker eglGetProcAddress globalement pour MobileGlues (qui utilise dlsym/eglGetProcAddress)
+    stub_eglGetProcAddress = bytehook_hook_all(
+        NULL,
+        "eglGetProcAddress",
+        (void*)proxy_eglGetProcAddress,
+        NULL,
+        NULL
+    );
+
+    // 3. Hook standard PLT
+    stub_glTexImage2D = bytehook_hook_all(
         NULL,
         "glTexImage2D",
         (void*)proxy_glTexImage2D,
@@ -57,26 +101,16 @@ bool gl_interceptor_install() {
         NULL
     );
     
-    if (!stub_glTexImage2D) {
-        // Fallback: try GLESv3 directly if lwjgl just passes through directly without PLT?
-        // Actually LWJGL calls `dlsym` so it calls the real libGLESv3.so
-        // But some LWJGL versions use PLT, so hooking lwjgl works. 
-        // We will just hook libGLESv3.so globally as a fallback.
-        stub_glTexImage2D = bytehook_hook_all(
-            "libGLESv3.so",
-            "glTexImage2D",
-            (void*)proxy_glTexImage2D,
-            NULL,
-            NULL
-        );
-    }
-    
     g_installed = true;
     LOGI("[NativeGLEngine] GL interceptor initialisé (mode bhook C++)");
     return true;
 }
 
 void gl_interceptor_uninstall() {
+    if (stub_eglGetProcAddress) {
+        bytehook_unhook(stub_eglGetProcAddress);
+        stub_eglGetProcAddress = nullptr;
+    }
     if (stub_glTexImage2D) {
         bytehook_unhook(stub_glTexImage2D);
         stub_glTexImage2D = nullptr;

@@ -12,7 +12,8 @@ enum SocVendor { VENDOR_UNKNOWN = 0, VENDOR_QUALCOMM = 1, VENDOR_ARM = 2,
  * Applique des optimisations SPIR-V spécifiques au SoC via spirv-opt.
  */
 bool shader_compiler_compile_glsl(const char* glsl_source, ShaderType type,
-                                   SocVendor vendor, std::vector<uint32_t>& out_spirv);
+                                   SocVendor vendor, std::vector<uint32_t>& out_spirv,
+                                   std::string& out_error);
 
 /**
  * Convertit du SPIR-V vers du ESSL (GLSL for OpenGL ES) via SPIRV-Cross.
