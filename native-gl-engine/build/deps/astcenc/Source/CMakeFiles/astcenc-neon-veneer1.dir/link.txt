@@ -1,2 +1,0 @@
-"/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar" cr libastcenc-neon-veneer1.a "CMakeFiles/astcenc-neon-veneer1.dir/astcenccli_entry.cpp.o"
-"/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib" libastcenc-neon-veneer1.a

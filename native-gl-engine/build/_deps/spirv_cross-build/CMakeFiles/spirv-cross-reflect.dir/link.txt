@@ -1,2 +1,0 @@
-/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libspirv-cross-reflect.a "CMakeFiles/spirv-cross-reflect.dir/spirv_reflect.cpp.o"
-/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libspirv-cross-reflect.a
