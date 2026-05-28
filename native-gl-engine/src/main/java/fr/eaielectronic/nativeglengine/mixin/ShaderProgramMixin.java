@@ -91,6 +91,21 @@ public class ShaderProgramMixin {
         if (glslSource == null) glslSource = ""; // Fallback
         currentGlslSource.remove();
 
+        // ═══ Étape 0 : Résoudre les #moj_import ═══
+        if (preprocessor != null && glslSource.contains("#moj_import")) {
+            try {
+                java.lang.reflect.Method processMethod = preprocessor.getClass().getMethod("process", String.class);
+                Object processed = processMethod.invoke(preprocessor, glslSource);
+                if (processed instanceof java.util.List) {
+                    glslSource = String.join("\n", (java.util.List<String>) processed);
+                } else if (processed instanceof String) {
+                    glslSource = (String) processed;
+                }
+            } catch (Exception e) {
+                NativeGLEngineMod.LOGGER.error("[NativeGLEngine] Erreur résolution #moj_import : {}", e.getMessage());
+            }
+        }
+
         // ═══ Étape 1 : Hash SHA-256 ═══
         String driverVersion = ShaderCompilerBridge.getDriverVersion();
         String socName = AndroidOptBridge.getSocName();
