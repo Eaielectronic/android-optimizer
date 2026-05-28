@@ -22,6 +22,11 @@ public class NativeGLTickHandler {
     public static void onClientTick(ClientTickEvent.Post event) {
         ticks++;
 
+        // ═══ Activer le flag après l'initialisation des mods ═══
+        if (!NativeEngineState.renderingReady && ticks > 5) {
+            NativeEngineState.renderingReady = true;
+        }
+
         // ═══ Chaque tick : drain texture queues ═══
         if (NativeLib.isLoaded()) {
             try {

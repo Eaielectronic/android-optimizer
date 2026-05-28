@@ -3,6 +3,7 @@ package fr.eaielectronic.nativeglengine.mixin;
 import com.mojang.blaze3d.platform.GlStateManager;
 import fr.eaielectronic.nativeglengine.GLInterceptorBridge;
 import fr.eaielectronic.nativeglengine.NativeLib;
+import fr.eaielectronic.nativeglengine.NativeEngineState;
 import fr.eaielectronic.nativeglengine.NativeGLEngineMod;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -42,6 +43,10 @@ public class GlStateManagerMixin {
     ) {
         // ═══ Guard : natif dispo ? ═══
         if (!NativeLib.isLoaded()) return;
+
+        // ═══ Guard : initialisation terminée ? ═══
+        // Empêche d'intercepter les textures d'initialisation de mods comme Veil
+        if (!NativeEngineState.renderingReady) return;
 
         // ═══ Pré-filtre rapide côté Java (évite le JNI inutile) ═══
         if (pixels == null) return;                        // pas de données
