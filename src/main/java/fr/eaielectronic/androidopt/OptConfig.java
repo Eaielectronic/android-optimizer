@@ -57,6 +57,7 @@ public class OptConfig {
 
     public static final ModConfigSpec.BooleanValue WEATHER_SUPPRESSOR;
     public static final ModConfigSpec.BooleanValue CHUNK_UNLOADER;
+    public static final ModConfigSpec.BooleanValue ASYNC_WORLD_SAVE;
     public static final ModConfigSpec.BooleanValue SHOW_HUD;
     public static final ModConfigSpec.BooleanValue SABLE_UDP_FIX;
 
@@ -265,6 +266,10 @@ public class OptConfig {
         CHUNK_UNLOADER = BUILDER
             .comment("Libère les chunks hors portée toutes les 90s.")
             .define("chunkUnloader", true);
+        ASYNC_WORLD_SAVE = BUILDER
+            .comment("Désolidarise la sauvegarde automatique du monde sur un thread séparé.",
+                     "Évite que le jeu freeze à 100% pendant la sauvegarde (Solo/Integrated Server).")
+            .define("asyncWorldSave", true);
         SHOW_HUD = BUILDER
             .comment("Affiche un HUD en jeu avec FPS, heap, budget frame et état des optims.")
             .define("showHud", true);

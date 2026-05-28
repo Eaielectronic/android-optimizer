@@ -26,7 +26,8 @@
     "SodiumOptionsGUIMixin"
   ],
   "mixins": [
-    "ServerBETickMixin"
+    "ServerBETickMixin",
+    "AsyncSaveWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 0

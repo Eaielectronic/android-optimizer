@@ -157,6 +157,7 @@ public class OptConfigScreen extends Screen {
             setPending(OptConfig.AMBIENT_SOUND_SUPPRESSOR, true);
             setPending(OptConfig.WEATHER_SUPPRESSOR, true);
             setPending(OptConfig.CHUNK_UNLOADER, true);
+            setPending(OptConfig.ASYNC_WORLD_SAVE, true);
             setPending(OptConfig.BER_CULL_DISTANCE, 16);
             setPending(OptConfig.FLUID_CULL_DISTANCE, 12);
             setPending(OptConfig.GOGGLE_CULL_DISTANCE, 8);
@@ -317,9 +318,9 @@ public class OptConfigScreen extends Screen {
         row(lx, rx, y,       "androidopt.config.entity_throttler", OptConfig.ENTITY_THROTTLER,
                               "androidopt.config.tick_skipper",OptConfig.TICK_SKIPPER);
         row(lx, rx, y+GAP,   "androidopt.config.chunk_unloader",            OptConfig.CHUNK_UNLOADER,
-                              "androidopt.config.server_be_tick_throttle",  OptConfig.SERVER_BE_TICK_THROTTLE);
-        
-        addToggle("androidopt.config.sable_udp_fix", OptConfig.SABLE_UDP_FIX, cx - BTN_W / 2, y+GAP*2, BTN_W, BTN_H);
+                              "androidopt.config.async_world_save",        OptConfig.ASYNC_WORLD_SAVE);
+        row(lx, rx, y+GAP*2, "androidopt.config.server_be_tick_throttle",  OptConfig.SERVER_BE_TICK_THROTTLE,
+                              "androidopt.config.sable_udp_fix",           OptConfig.SABLE_UDP_FIX);
 
         // Sliders distances
         addIntSlider("androidopt.config.entity_throttle_distance", OptConfig.ENTITY_THROTTLE_DISTANCE,
