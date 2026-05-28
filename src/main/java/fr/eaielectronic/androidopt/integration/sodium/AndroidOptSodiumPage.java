@@ -11,6 +11,7 @@ import org.embeddedt.embeddium.api.options.structure.OptionStorage;
 import org.embeddedt.embeddium.api.options.OptionIdentifier;
 import org.embeddedt.embeddium.api.options.structure.OptionImpact;
 import net.minecraft.network.chat.Component;
+import net.neoforged.fml.ModList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -143,6 +144,48 @@ public class AndroidOptSodiumPage {
         );
 
         groups.add(thermalGroup.build());
+
+        // --- NATIVE GL ENGINE GROUP (CONDITIONNEL) ---
+        if (ModList.get().isLoaded("nativeglengine")) {
+            OptionGroup.Builder nativeGlGroup = OptionGroup.createBuilder();
+
+            nativeGlGroup.add(OptionImpl.createBuilder(Integer.class, AndroidOptStorage.INSTANCE)
+                .setName(Component.literal("GPU Budget (%)"))
+                .setTooltip(Component.literal("Pourcentage de la RAM unifiée allouée au GPU (NativeGL)"))
+                .setControl(option -> new SliderControl(option, 10, 100, 5, ControlValueFormatter.percentage()))
+                .setBinding(
+                    (opts, value) -> OptConfig.NATIVE_GL_GPU_BUDGET_PERCENT.set(value),
+                    (opts) -> OptConfig.NATIVE_GL_GPU_BUDGET_PERCENT.get()
+                )
+                .build()
+            );
+
+            nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+                .setName(Component.literal("Hardware TexCompress"))
+                .setTooltip(Component.literal("Active la compression ASTC/ETC2 matérielle en C++"))
+                .setControl(TickBoxControl::new)
+                .setBinding(
+                    (opts, value) -> OptConfig.NATIVE_GL_TEX_COMPRESS.set(value),
+                    (opts) -> OptConfig.NATIVE_GL_TEX_COMPRESS.get()
+                )
+                .setImpact(OptionImpact.HIGH)
+                .build()
+            );
+
+            nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+                .setName(Component.literal("Vertex Quantizer"))
+                .setTooltip(Component.literal("Active la quantisation SIMD des Vertex en C++"))
+                .setControl(TickBoxControl::new)
+                .setBinding(
+                    (opts, value) -> OptConfig.NATIVE_GL_VERTEX_QUANT.set(value),
+                    (opts) -> OptConfig.NATIVE_GL_VERTEX_QUANT.get()
+                )
+                .setImpact(OptionImpact.MEDIUM)
+                .build()
+            );
+
+            groups.add(nativeGlGroup.build());
+        }
 
         return new OptionPage(OptionIdentifier.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("androidopt", "settings")), Component.literal("Android Opt"), com.google.common.collect.ImmutableList.copyOf(groups));
     }

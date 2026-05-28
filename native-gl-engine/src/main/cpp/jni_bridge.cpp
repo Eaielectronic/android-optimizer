@@ -141,6 +141,19 @@ Java_fr_eaielectronic_nativeglengine_NativeMemoryBridge_nativeDestroy(
     native_memory_destroy();
 }
 
+// Variables globales pour le config sync
+int g_gpu_budget_percent = 75;
+bool g_enable_tex_compress = true;
+bool g_enable_vertex_quant = true;
+
+extern "C" JNIEXPORT void JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeMemoryBridge_nativeUpdateConfig(
+        JNIEnv* env, jclass clazz, jint gpuBudget, jboolean texCompress, jboolean vertexQuant) {
+    g_gpu_budget_percent = gpuBudget;
+    g_enable_tex_compress = texCompress;
+    g_enable_vertex_quant = vertexQuant;
+}
+
 // ════════════════════════════════════════════════════
 // GLInterceptorBridge
 // ════════════════════════════════════════════════════
@@ -155,21 +168,6 @@ extern "C" JNIEXPORT void JNICALL
 Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeUninstallHooks(
         JNIEnv* env, jclass clazz) {
     gl_interceptor_uninstall();
-}
-
-extern "C" JNIEXPORT jboolean JNICALL
-Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeInterceptTexImage2D(
-        JNIEnv* env, jclass clazz,
-        jint target, jint level, jint internalformat,
-        jint width, jint height, jint format, jint type, jlong pixelsPtr) {
-    
-    if (pixelsPtr == 0) return JNI_FALSE;
-    void* pixels = reinterpret_cast<void*>(pixelsPtr);
-    
-    bool handled = NativeGLEngine::TextureCompressor::intercept(
-        target, level, internalformat, width, height, format, type, pixels);
-        
-    return handled ? JNI_TRUE : JNI_FALSE;
 }
 
 extern "C" JNIEXPORT jlong JNICALL

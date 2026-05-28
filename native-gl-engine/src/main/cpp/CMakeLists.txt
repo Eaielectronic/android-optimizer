@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
-project(NativeGLEngine VERSION 0.1.0 LANGUAGES CXX)
+project(NativeGLEngine VERSION 0.1.0 LANGUAGES C CXX)
 
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -36,7 +38,15 @@ FetchContent_Declare(vma
     GIT_SHALLOW    TRUE
 )
 
-FetchContent_MakeAvailable(shaderc spirv_cross vma)
+# ByteHook (bhook) — PLT Hooking Android
+FetchContent_Declare(bhook
+    GIT_REPOSITORY https://github.com/bytedance/bhook.git
+    GIT_TAG        v1.0.9
+    GIT_SHALLOW    TRUE
+)
+
+FetchContent_MakeAvailable(shaderc spirv_cross vma bhook)
+add_subdirectory(${bhook_SOURCE_DIR}/bytehook/src/main/cpp ${CMAKE_CURRENT_BINARY_DIR}/bhook_build)
 
 
 # ─── etcpak (ETC2 encoder) ───
@@ -74,6 +84,7 @@ add_library(NativeGLEngine SHARED
 target_include_directories(NativeGLEngine PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${vma_SOURCE_DIR}/include
+    ${bhook_SOURCE_DIR}/bytehook/src/main/cpp/include
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/etcpak
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/astcenc/Source
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/fp16/include
@@ -84,6 +95,7 @@ target_link_libraries(NativeGLEngine
     shaderc
     spirv-cross-glsl
     spirv-cross-core
+    bytehook
     vulkan
     log
     android

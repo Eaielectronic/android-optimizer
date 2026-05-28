@@ -89,6 +89,15 @@ public class NativeGLTickHandler {
             NativeMemoryBridge.setVerboseLogging(verbose);
         }
 
+        // Sync des configs C++ dynamiques
+        if (AndroidOptBridge.isAndroidOptPresent()) {
+            NativeMemoryBridge.updateConfig(
+                AndroidOptBridge.getGpuBudgetPercent(),
+                AndroidOptBridge.isTexCompressActive(),
+                AndroidOptBridge.isVertexQuantActive()
+            );
+        }
+
         // ═══ Status périodique toutes les 600 ticks (~30s) ═══
         if (ticks % 600 == 0) {
             NativeGLEngineMod.LOGGER.info(

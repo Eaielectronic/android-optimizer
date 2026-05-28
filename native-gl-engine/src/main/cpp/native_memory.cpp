@@ -28,13 +28,19 @@ bool native_memory_init() {
     return true;
 }
 
+extern int g_gpu_budget_percent;
+
 uint64_t native_memory_get_gpu_budget() {
     // Heuristique pour Android (Unified Memory Architecture) :
-    // Le GPU partage la RAM système. On alloue virtuellement 75% 
+    // Le GPU partage la RAM système. On alloue virtuellement le pourcentage configuré
     // de la RAM disponible restante comme "budget GPU".
     int64_t avail_mb = native_memory_get_sys_available_mb();
     if (avail_mb <= 0) return 256 * 1024 * 1024; // Fallback 256MB
-    return (avail_mb * 1024 * 1024) * 3 / 4;
+    
+    // Fallback au cas où la valeur est invalide
+    int percent = g_gpu_budget_percent > 0 ? g_gpu_budget_percent : 75;
+    
+    return (avail_mb * 1024 * 1024) * percent / 100;
 }
 
 uint64_t native_memory_get_gpu_usage() {

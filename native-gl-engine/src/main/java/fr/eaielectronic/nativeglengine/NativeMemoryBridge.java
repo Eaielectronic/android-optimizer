@@ -26,6 +26,9 @@ public final class NativeMemoryBridge {
     private static native int nativeGetTemperature();
     private static native boolean nativeIsThermalThrottling();
     private static native void nativeDestroy();
+    
+    // NEW: Sync config from Java to C++
+    private static native void nativeUpdateConfig(int gpuBudget, boolean texCompress, boolean vertexQuant);
 
     // ═══ API publique ═══
 
@@ -88,6 +91,18 @@ public final class NativeMemoryBridge {
     }
 
     public static boolean isNativeInitialized() { return initialized; }
+
+    public static boolean isThermalThrottling() {
+        if (!initialized) return false;
+        try { return nativeIsThermalThrottling(); }
+        catch (UnsatisfiedLinkError e) { return false; }
+    }
+    
+    public static void updateConfig(int gpuBudget, boolean texCompress, boolean vertexQuant) {
+        if (!initialized) return;
+        try { nativeUpdateConfig(gpuBudget, texCompress, vertexQuant); }
+        catch (UnsatisfiedLinkError ignored) {}
+    }
 
     public static void destroy() {
         if (initialized) {

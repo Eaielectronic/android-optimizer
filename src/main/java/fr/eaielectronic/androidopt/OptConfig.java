@@ -73,6 +73,10 @@ public class OptConfig {
     public static final ModConfigSpec.BooleanValue HUD_SHOW_FREEZE;
     public static final ModConfigSpec.BooleanValue DEBUG_VERBOSE_LOG;
 
+    public static final ModConfigSpec.IntValue     NATIVE_GL_GPU_BUDGET_PERCENT;
+    public static final ModConfigSpec.BooleanValue NATIVE_GL_TEX_COMPRESS;
+    public static final ModConfigSpec.BooleanValue NATIVE_GL_VERTEX_QUANT;
+
     static {
         BUILDER.comment("Android Optimizer — Configuration");
 
@@ -310,6 +314,18 @@ public class OptConfig {
             .comment("Active les logs détaillés de TOUTES les optimisations.",
                      "Utile pour debug, très verbeux. Désactiver en jeu normal.")
             .define("verboseLog", false);
+        BUILDER.pop();
+
+        BUILDER.push("native_engine");
+        NATIVE_GL_GPU_BUDGET_PERCENT = BUILDER
+            .comment("Pourcentage de la RAM unifiée allouée au GPU par le moteur natif.")
+            .defineInRange("gpuBudgetPercent", 75, 10, 100);
+        NATIVE_GL_TEX_COMPRESS = BUILDER
+            .comment("Active la compression matérielle des textures (ASTC/ETC2) via C++.")
+            .define("texCompress", true);
+        NATIVE_GL_VERTEX_QUANT = BUILDER
+            .comment("Active la quantisation des vertices en C++.")
+            .define("vertexQuant", true);
         BUILDER.pop();
 
         SPEC = BUILDER.build();

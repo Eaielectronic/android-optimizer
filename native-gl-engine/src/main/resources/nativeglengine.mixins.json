@@ -5,8 +5,7 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
-        "ShaderProgramMixin",
-        "GlStateManagerMixin"
+        "ShaderProgramMixin"
     ],
     "injectors": {
         "defaultRequire": 1

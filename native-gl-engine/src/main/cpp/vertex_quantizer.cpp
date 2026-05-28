@@ -12,6 +12,8 @@ extern bool g_verbose_logging;
 
 namespace NativeGLEngine {
 
+extern bool g_enable_vertex_quant;
+
 uint16_t VertexQuantizer::f32_to_f16(float f) {
     return fp16_ieee_from_fp32_value(f);
 }
@@ -55,6 +57,7 @@ void VertexQuantizer::quantize(
     VertexQuantized*  dst,
     size_t            count
 ) {
+    if (!g_enable_vertex_quant) return;
     if (!src || !dst || count == 0) return;
 
     for (size_t i = 0; i < count; ++i) {

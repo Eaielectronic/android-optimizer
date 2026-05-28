@@ -28,6 +28,9 @@ public final class AndroidOptBridge {
     private static Object thermalWarningCfg = null;
     private static Object thermalCriticalCfg = null;
     private static Object verboseLogCfg = null;
+    private static Object gpuBudgetCfg = null;
+    private static Object texCompressCfg = null;
+    private static Object vertexQuantCfg = null;
     private static Method forgeConfigGetMethod = null;
 
     private AndroidOptBridge() {}
@@ -81,6 +84,19 @@ public final class AndroidOptBridge {
 
                 Field verboseField = optConfigClass.getField("DEBUG_VERBOSE_LOG");
                 verboseLogCfg = verboseField.get(null);
+
+                try {
+                    Field gpuField = optConfigClass.getField("NATIVE_GL_GPU_BUDGET_PERCENT");
+                    gpuBudgetCfg = gpuField.get(null);
+
+                    Field texField = optConfigClass.getField("NATIVE_GL_TEX_COMPRESS");
+                    texCompressCfg = texField.get(null);
+
+                    Field vertField = optConfigClass.getField("NATIVE_GL_VERTEX_QUANT");
+                    vertexQuantCfg = vertField.get(null);
+                } catch (NoSuchFieldException ignored) {
+                    // Ancienne version sans options NativeGL
+                }
             } catch (NoSuchFieldException e) {
                 // Version ancienne d'androidopt sans thermal — utiliser les valeurs par défaut
                 NativeGLEngineMod.LOGGER.debug("[NativeGLEngine] androidopt sans ThermalMonitor, défauts utilisés");
@@ -129,6 +145,24 @@ public final class AndroidOptBridge {
             try { return (Boolean) forgeConfigGetMethod.invoke(verboseLogCfg); } catch (Exception ignored) {}
         }
         return false;
+    }
+    public static int getGpuBudgetPercent() {
+        if (gpuBudgetCfg != null && forgeConfigGetMethod != null) {
+            try { return (Integer) forgeConfigGetMethod.invoke(gpuBudgetCfg); } catch (Exception ignored) {}
+        }
+        return 75; // Default fallback
+    }
+    public static boolean isTexCompressActive() {
+        if (texCompressCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(texCompressCfg); } catch (Exception ignored) {}
+        }
+        return true;
+    }
+    public static boolean isVertexQuantActive() {
+        if (vertexQuantCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(vertexQuantCfg); } catch (Exception ignored) {}
+        }
+        return true;
     }
 
     /**
