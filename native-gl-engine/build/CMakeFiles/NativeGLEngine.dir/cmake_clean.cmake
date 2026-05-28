@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o.d"
   "CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o"
   "CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o.d"
+  "CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o"
+  "CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o.d"
   "CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o"
   "CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o.d"
   "CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o"

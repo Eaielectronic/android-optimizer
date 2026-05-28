@@ -273,6 +273,44 @@ spirv-cross-c/fast:
 	cd /home/ubuntu/android-optimizer/native-gl-engine/build && $(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross-c.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross-c.dir/build
 .PHONY : spirv-cross-c/fast
 
+# Convenience name for target.
+_deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/rule:
+	cd /home/ubuntu/android-optimizer/native-gl-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/rule
+.PHONY : _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/rule
+
+# Convenience name for target.
+spirv-cross: _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/rule
+.PHONY : spirv-cross
+
+# fast build rule for target.
+spirv-cross/fast:
+	cd /home/ubuntu/android-optimizer/native-gl-engine/build && $(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build
+.PHONY : spirv-cross/fast
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /home/ubuntu/android-optimizer/native-gl-engine/build && $(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/ubuntu/android-optimizer/native-gl-engine/build && $(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/ubuntu/android-optimizer/native-gl-engine/build && $(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 spirv_cfg.o: spirv_cfg.cpp.o
 .PHONY : spirv_cfg.o
 
@@ -549,6 +587,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... spirv-cross"
 	@echo "... spirv-cross-c"
 	@echo "... spirv-cross-core"
 	@echo "... spirv-cross-cpp"
@@ -557,6 +596,9 @@ help:
 	@echo "... spirv-cross-msl"
 	@echo "... spirv-cross-reflect"
 	@echo "... spirv-cross-util"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... spirv_cfg.o"
 	@echo "... spirv_cfg.i"
 	@echo "... spirv_cfg.s"

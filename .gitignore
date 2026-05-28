@@ -51,3 +51,7 @@ android-ndk-r26d/
 plans/
 
 
+native-gl-engine/build/*
+!native-gl-engine/build/libs/
+native-gl-engine/build/libs/*
+!native-gl-engine/build/libs/*.jar

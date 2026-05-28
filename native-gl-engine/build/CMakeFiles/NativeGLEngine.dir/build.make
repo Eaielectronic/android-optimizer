@@ -83,10 +83,24 @@ CMakeFiles/NativeGLEngine.dir/jni_bridge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NativeGLEngine.dir/jni_bridge.cpp.s"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/jni_bridge.cpp -o CMakeFiles/NativeGLEngine.dir/jni_bridge.cpp.s
 
+CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
+CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/shader_compiler.cpp
+CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o"
+	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o -MF CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/shader_compiler.cpp
+
+CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.i"
+	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/shader_compiler.cpp > CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.i
+
+CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.s"
+	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/shader_compiler.cpp -o CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.s
+
 CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/shader_cache.cpp
 CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o -MF CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/shader_cache.cpp
 
 CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/soc_optimizer.cpp
 CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o -MF CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/soc_optimizer.cpp
 
 CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/gl_interceptor.cpp
 CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o -MF CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/gl_interceptor.cpp
 
 CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/native_memory.cpp
 CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o -MF CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/native_memory.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/native_memory.cpp
 
 CMakeFiles/NativeGLEngine.dir/native_memory.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/NativeGLEngine.dir/native_memory.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/texture_manager.cpp
 CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o -MF CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/texture_manager.cpp
 
 CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/NativeGLEngine.dir/texture_manager.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/texture_compressor.cpp
 CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o -MF CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/texture_compressor.cpp
 
 CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/NativeGLEngine.dir/texture_compressor.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/off_heap_arena.cpp
 CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o -MF CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/off_heap_arena.cpp
 
 CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/NativeGLEngine.dir/off_heap_arena.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/vertex_quantizer.cpp
 CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o -MF CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/vertex_quantizer.cpp
 
 CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/NativeGLEngine.dir/vertex_quantizer.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/simd_math_engine.cpp
 CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o -MF CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/simd_math_engine.cpp
 
 CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/draw_call_batcher.cpp
 CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o -MF CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/draw_call_batcher.cpp
 
 CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.s: cmake_force
 CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o: CMakeFiles/NativeGLEngine.dir/flags.make
 CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o: /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/ahardware_buffer_manager.cpp
 CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o: CMakeFiles/NativeGLEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o"
 	/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/ubuntu/android-optimizer/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o -MF CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o.d -o CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o -c /home/ubuntu/android-optimizer/native-gl-engine/src/main/cpp/ahardware_buffer_manager.cpp
 
 CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.i: cmake_force
@@ -240,6 +254,7 @@ CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.s: cmake_force
 # Object files for target NativeGLEngine
 NativeGLEngine_OBJECTS = \
 "CMakeFiles/NativeGLEngine.dir/jni_bridge.cpp.o" \
+"CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o" \
 "CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o" \
 "CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o" \
 "CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o" \
@@ -256,6 +271,7 @@ NativeGLEngine_OBJECTS = \
 NativeGLEngine_EXTERNAL_OBJECTS =
 
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/jni_bridge.cpp.o
+libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.o
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/soc_optimizer.cpp.o
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/gl_interceptor.cpp.o
@@ -268,12 +284,21 @@ libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/simd_math_engine.cpp.o
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/draw_call_batcher.cpp.o
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/ahardware_buffer_manager.cpp.o
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/build.make
+libNativeGLEngine.so: _deps/shaderc-build/libshaderc/libshaderc.a
 libNativeGLEngine.so: _deps/spirv_cross-build/libspirv-cross-glsl.a
 libNativeGLEngine.so: _deps/spirv_cross-build/libspirv-cross-core.a
 libNativeGLEngine.so: libetcpak_lib.a
 libNativeGLEngine.so: deps/astcenc/Source/libastcenc-neon-static.a
+libNativeGLEngine.so: _deps/shaderc-build/libshaderc_util/libshaderc_util.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/glslang/glslang/libglslang.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/glslang/SPIRV/libSPIRV.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/glslang/glslang/libMachineIndependent.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/glslang/glslang/OSDependent/Unix/libOSDependent.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/glslang/glslang/libGenericCodeGen.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/spirv-tools/source/opt/libSPIRV-Tools-opt.a
+libNativeGLEngine.so: _deps/shaderc-build/third_party/spirv-tools/source/libSPIRV-Tools.a
 libNativeGLEngine.so: CMakeFiles/NativeGLEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library libNativeGLEngine.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/android-optimizer/native-gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library libNativeGLEngine.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NativeGLEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

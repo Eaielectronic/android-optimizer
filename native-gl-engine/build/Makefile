@@ -188,6 +188,591 @@ NativeGLEngine/fast:
 .PHONY : NativeGLEngine/fast
 
 #=============================================================================
+# Target rules for targets named check-copyright
+
+# Build rule for target.
+check-copyright: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 check-copyright
+.PHONY : check-copyright
+
+# fast build rule for target.
+check-copyright/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/CMakeFiles/check-copyright.dir/build.make _deps/shaderc-build/CMakeFiles/check-copyright.dir/build
+.PHONY : check-copyright/fast
+
+#=============================================================================
+# Target rules for targets named add-copyright
+
+# Build rule for target.
+add-copyright: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 add-copyright
+.PHONY : add-copyright
+
+# fast build rule for target.
+add-copyright/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/CMakeFiles/add-copyright.dir/build.make _deps/shaderc-build/CMakeFiles/add-copyright.dir/build
+.PHONY : add-copyright/fast
+
+#=============================================================================
+# Target rules for targets named build-version
+
+# Build rule for target.
+build-version: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 build-version
+.PHONY : build-version
+
+# fast build rule for target.
+build-version/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/CMakeFiles/build-version.dir/build.make _deps/shaderc-build/CMakeFiles/build-version.dir/build
+.PHONY : build-version/fast
+
+#=============================================================================
+# Target rules for targets named shaderc-pkg-config
+
+# Build rule for target.
+shaderc-pkg-config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc-pkg-config
+.PHONY : shaderc-pkg-config
+
+# fast build rule for target.
+shaderc-pkg-config/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/CMakeFiles/shaderc-pkg-config.dir/build.make _deps/shaderc-build/CMakeFiles/shaderc-pkg-config.dir/build
+.PHONY : shaderc-pkg-config/fast
+
+#=============================================================================
+# Target rules for targets named shaderc_static-pkg-config
+
+# Build rule for target.
+shaderc_static-pkg-config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc_static-pkg-config
+.PHONY : shaderc_static-pkg-config
+
+# fast build rule for target.
+shaderc_static-pkg-config/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/CMakeFiles/shaderc_static-pkg-config.dir/build.make _deps/shaderc-build/CMakeFiles/shaderc_static-pkg-config.dir/build
+.PHONY : shaderc_static-pkg-config/fast
+
+#=============================================================================
+# Target rules for targets named shaderc_combined-pkg-config
+
+# Build rule for target.
+shaderc_combined-pkg-config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc_combined-pkg-config
+.PHONY : shaderc_combined-pkg-config
+
+# fast build rule for target.
+shaderc_combined-pkg-config/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/CMakeFiles/shaderc_combined-pkg-config.dir/build.make _deps/shaderc-build/CMakeFiles/shaderc_combined-pkg-config.dir/build
+.PHONY : shaderc_combined-pkg-config/fast
+
+#=============================================================================
+# Target rules for targets named spirv-tools-pkg-config
+
+# Build rule for target.
+spirv-tools-pkg-config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-tools-pkg-config
+.PHONY : spirv-tools-pkg-config
+
+# fast build rule for target.
+spirv-tools-pkg-config/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/CMakeFiles/spirv-tools-pkg-config.dir/build.make _deps/shaderc-build/third_party/spirv-tools/CMakeFiles/spirv-tools-pkg-config.dir/build
+.PHONY : spirv-tools-pkg-config/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-spv-amd-sevp
+
+# Build rule for target.
+spv-tools-spv-amd-sevp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-spv-amd-sevp
+.PHONY : spv-tools-spv-amd-sevp
+
+# fast build rule for target.
+spv-tools-spv-amd-sevp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-sevp.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-sevp.dir/build
+.PHONY : spv-tools-spv-amd-sevp/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-spv-amd-stm
+
+# Build rule for target.
+spv-tools-spv-amd-stm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-spv-amd-stm
+.PHONY : spv-tools-spv-amd-stm
+
+# fast build rule for target.
+spv-tools-spv-amd-stm/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-stm.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-stm.dir/build
+.PHONY : spv-tools-spv-amd-stm/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-spv-amd-gs
+
+# Build rule for target.
+spv-tools-spv-amd-gs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-spv-amd-gs
+.PHONY : spv-tools-spv-amd-gs
+
+# fast build rule for target.
+spv-tools-spv-amd-gs/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-gs.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-gs.dir/build
+.PHONY : spv-tools-spv-amd-gs/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-spv-amd-sb
+
+# Build rule for target.
+spv-tools-spv-amd-sb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-spv-amd-sb
+.PHONY : spv-tools-spv-amd-sb
+
+# fast build rule for target.
+spv-tools-spv-amd-sb/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-sb.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-spv-amd-sb.dir/build
+.PHONY : spv-tools-spv-amd-sb/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-debuginfo
+
+# Build rule for target.
+spv-tools-debuginfo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-debuginfo
+.PHONY : spv-tools-debuginfo
+
+# fast build rule for target.
+spv-tools-debuginfo/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-debuginfo.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-debuginfo.dir/build
+.PHONY : spv-tools-debuginfo/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-cldi100
+
+# Build rule for target.
+spv-tools-cldi100: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-cldi100
+.PHONY : spv-tools-cldi100
+
+# fast build rule for target.
+spv-tools-cldi100/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-cldi100.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-cldi100.dir/build
+.PHONY : spv-tools-cldi100/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-shdi100
+
+# Build rule for target.
+spv-tools-shdi100: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-shdi100
+.PHONY : spv-tools-shdi100
+
+# fast build rule for target.
+spv-tools-shdi100/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-shdi100.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-shdi100.dir/build
+.PHONY : spv-tools-shdi100/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-clspvreflection
+
+# Build rule for target.
+spv-tools-clspvreflection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-clspvreflection
+.PHONY : spv-tools-clspvreflection
+
+# fast build rule for target.
+spv-tools-clspvreflection/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-clspvreflection.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-clspvreflection.dir/build
+.PHONY : spv-tools-clspvreflection/fast
+
+#=============================================================================
+# Target rules for targets named spv-tools-vkspreflection
+
+# Build rule for target.
+spv-tools-vkspreflection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spv-tools-vkspreflection
+.PHONY : spv-tools-vkspreflection
+
+# fast build rule for target.
+spv-tools-vkspreflection/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-vkspreflection.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spv-tools-vkspreflection.dir/build
+.PHONY : spv-tools-vkspreflection/fast
+
+#=============================================================================
+# Target rules for targets named spirv-tools-header-DebugInfo
+
+# Build rule for target.
+spirv-tools-header-DebugInfo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-tools-header-DebugInfo
+.PHONY : spirv-tools-header-DebugInfo
+
+# fast build rule for target.
+spirv-tools-header-DebugInfo/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-header-DebugInfo.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-header-DebugInfo.dir/build
+.PHONY : spirv-tools-header-DebugInfo/fast
+
+#=============================================================================
+# Target rules for targets named spirv-tools-header-OpenCLDebugInfo100
+
+# Build rule for target.
+spirv-tools-header-OpenCLDebugInfo100: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-tools-header-OpenCLDebugInfo100
+.PHONY : spirv-tools-header-OpenCLDebugInfo100
+
+# fast build rule for target.
+spirv-tools-header-OpenCLDebugInfo100/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-header-OpenCLDebugInfo100.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-header-OpenCLDebugInfo100.dir/build
+.PHONY : spirv-tools-header-OpenCLDebugInfo100/fast
+
+#=============================================================================
+# Target rules for targets named spirv-tools-header-NonSemanticShaderDebugInfo100
+
+# Build rule for target.
+spirv-tools-header-NonSemanticShaderDebugInfo100: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-tools-header-NonSemanticShaderDebugInfo100
+.PHONY : spirv-tools-header-NonSemanticShaderDebugInfo100
+
+# fast build rule for target.
+spirv-tools-header-NonSemanticShaderDebugInfo100/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-header-NonSemanticShaderDebugInfo100.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-header-NonSemanticShaderDebugInfo100.dir/build
+.PHONY : spirv-tools-header-NonSemanticShaderDebugInfo100/fast
+
+#=============================================================================
+# Target rules for targets named spirv-tools-vimsyntax
+
+# Build rule for target.
+spirv-tools-vimsyntax: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-tools-vimsyntax
+.PHONY : spirv-tools-vimsyntax
+
+# fast build rule for target.
+spirv-tools-vimsyntax/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-vimsyntax.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-vimsyntax.dir/build
+.PHONY : spirv-tools-vimsyntax/fast
+
+#=============================================================================
+# Target rules for targets named core_tables
+
+# Build rule for target.
+core_tables: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_tables
+.PHONY : core_tables
+
+# fast build rule for target.
+core_tables/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/core_tables.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/core_tables.dir/build
+.PHONY : core_tables/fast
+
+#=============================================================================
+# Target rules for targets named enum_string_mapping
+
+# Build rule for target.
+enum_string_mapping: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 enum_string_mapping
+.PHONY : enum_string_mapping
+
+# fast build rule for target.
+enum_string_mapping/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/enum_string_mapping.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/enum_string_mapping.dir/build
+.PHONY : enum_string_mapping/fast
+
+#=============================================================================
+# Target rules for targets named extinst_tables
+
+# Build rule for target.
+extinst_tables: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extinst_tables
+.PHONY : extinst_tables
+
+# fast build rule for target.
+extinst_tables/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/extinst_tables.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/extinst_tables.dir/build
+.PHONY : extinst_tables/fast
+
+#=============================================================================
+# Target rules for targets named spirv-tools-build-version
+
+# Build rule for target.
+spirv-tools-build-version: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-tools-build-version
+.PHONY : spirv-tools-build-version
+
+# fast build rule for target.
+spirv-tools-build-version/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-build-version.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/spirv-tools-build-version.dir/build
+.PHONY : spirv-tools-build-version/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-shared
+
+# Build rule for target.
+SPIRV-Tools-shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-shared
+.PHONY : SPIRV-Tools-shared
+
+# fast build rule for target.
+SPIRV-Tools-shared/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/SPIRV-Tools-shared.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/SPIRV-Tools-shared.dir/build
+.PHONY : SPIRV-Tools-shared/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-static
+
+# Build rule for target.
+SPIRV-Tools-static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-static
+.PHONY : SPIRV-Tools-static
+
+# fast build rule for target.
+SPIRV-Tools-static/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/SPIRV-Tools-static.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/CMakeFiles/SPIRV-Tools-static.dir/build
+.PHONY : SPIRV-Tools-static/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-opt
+
+# Build rule for target.
+SPIRV-Tools-opt: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-opt
+.PHONY : SPIRV-Tools-opt
+
+# fast build rule for target.
+SPIRV-Tools-opt/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/opt/CMakeFiles/SPIRV-Tools-opt.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/opt/CMakeFiles/SPIRV-Tools-opt.dir/build
+.PHONY : SPIRV-Tools-opt/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-reduce
+
+# Build rule for target.
+SPIRV-Tools-reduce: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-reduce
+.PHONY : SPIRV-Tools-reduce
+
+# fast build rule for target.
+SPIRV-Tools-reduce/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/reduce/CMakeFiles/SPIRV-Tools-reduce.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/reduce/CMakeFiles/SPIRV-Tools-reduce.dir/build
+.PHONY : SPIRV-Tools-reduce/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-link
+
+# Build rule for target.
+SPIRV-Tools-link: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-link
+.PHONY : SPIRV-Tools-link
+
+# fast build rule for target.
+SPIRV-Tools-link/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/link/CMakeFiles/SPIRV-Tools-link.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/link/CMakeFiles/SPIRV-Tools-link.dir/build
+.PHONY : SPIRV-Tools-link/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-lint
+
+# Build rule for target.
+SPIRV-Tools-lint: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-lint
+.PHONY : SPIRV-Tools-lint
+
+# fast build rule for target.
+SPIRV-Tools-lint/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/lint/CMakeFiles/SPIRV-Tools-lint.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/lint/CMakeFiles/SPIRV-Tools-lint.dir/build
+.PHONY : SPIRV-Tools-lint/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV-Tools-diff
+
+# Build rule for target.
+SPIRV-Tools-diff: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV-Tools-diff
+.PHONY : SPIRV-Tools-diff
+
+# fast build rule for target.
+SPIRV-Tools-diff/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/spirv-tools/source/diff/CMakeFiles/SPIRV-Tools-diff.dir/build.make _deps/shaderc-build/third_party/spirv-tools/source/diff/CMakeFiles/SPIRV-Tools-diff.dir/build
+.PHONY : SPIRV-Tools-diff/fast
+
+#=============================================================================
+# Target rules for targets named GenericCodeGen
+
+# Build rule for target.
+GenericCodeGen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GenericCodeGen
+.PHONY : GenericCodeGen
+
+# fast build rule for target.
+GenericCodeGen/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/GenericCodeGen.dir/build.make _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/GenericCodeGen.dir/build
+.PHONY : GenericCodeGen/fast
+
+#=============================================================================
+# Target rules for targets named MachineIndependent
+
+# Build rule for target.
+MachineIndependent: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MachineIndependent
+.PHONY : MachineIndependent
+
+# fast build rule for target.
+MachineIndependent/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/MachineIndependent.dir/build.make _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/MachineIndependent.dir/build
+.PHONY : MachineIndependent/fast
+
+#=============================================================================
+# Target rules for targets named glslang
+
+# Build rule for target.
+glslang: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glslang
+.PHONY : glslang
+
+# fast build rule for target.
+glslang/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/glslang.dir/build.make _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/glslang.dir/build
+.PHONY : glslang/fast
+
+#=============================================================================
+# Target rules for targets named glslang-default-resource-limits
+
+# Build rule for target.
+glslang-default-resource-limits: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glslang-default-resource-limits
+.PHONY : glslang-default-resource-limits
+
+# fast build rule for target.
+glslang-default-resource-limits/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/glslang-default-resource-limits.dir/build.make _deps/shaderc-build/third_party/glslang/glslang/CMakeFiles/glslang-default-resource-limits.dir/build
+.PHONY : glslang-default-resource-limits/fast
+
+#=============================================================================
+# Target rules for targets named OSDependent
+
+# Build rule for target.
+OSDependent: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OSDependent
+.PHONY : OSDependent
+
+# fast build rule for target.
+OSDependent/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/glslang/OSDependent/Unix/CMakeFiles/OSDependent.dir/build.make _deps/shaderc-build/third_party/glslang/glslang/OSDependent/Unix/CMakeFiles/OSDependent.dir/build
+.PHONY : OSDependent/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV
+
+# Build rule for target.
+SPIRV: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV
+.PHONY : SPIRV
+
+# fast build rule for target.
+SPIRV/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/SPIRV/CMakeFiles/SPIRV.dir/build.make _deps/shaderc-build/third_party/glslang/SPIRV/CMakeFiles/SPIRV.dir/build
+.PHONY : SPIRV/fast
+
+#=============================================================================
+# Target rules for targets named SPVRemapper
+
+# Build rule for target.
+SPVRemapper: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPVRemapper
+.PHONY : SPVRemapper
+
+# fast build rule for target.
+SPVRemapper/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/third_party/glslang/SPIRV/CMakeFiles/SPVRemapper.dir/build.make _deps/shaderc-build/third_party/glslang/SPIRV/CMakeFiles/SPVRemapper.dir/build
+.PHONY : SPVRemapper/fast
+
+#=============================================================================
+# Target rules for targets named shaderc_util
+
+# Build rule for target.
+shaderc_util: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc_util
+.PHONY : shaderc_util
+
+# fast build rule for target.
+shaderc_util/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/libshaderc_util/CMakeFiles/shaderc_util.dir/build.make _deps/shaderc-build/libshaderc_util/CMakeFiles/shaderc_util.dir/build
+.PHONY : shaderc_util/fast
+
+#=============================================================================
+# Target rules for targets named testdata
+
+# Build rule for target.
+testdata: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testdata
+.PHONY : testdata
+
+# fast build rule for target.
+testdata/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/libshaderc_util/CMakeFiles/testdata.dir/build.make _deps/shaderc-build/libshaderc_util/CMakeFiles/testdata.dir/build
+.PHONY : testdata/fast
+
+#=============================================================================
+# Target rules for targets named shaderc
+
+# Build rule for target.
+shaderc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc
+.PHONY : shaderc
+
+# fast build rule for target.
+shaderc/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/libshaderc/CMakeFiles/shaderc.dir/build.make _deps/shaderc-build/libshaderc/CMakeFiles/shaderc.dir/build
+.PHONY : shaderc/fast
+
+#=============================================================================
+# Target rules for targets named shaderc_shared
+
+# Build rule for target.
+shaderc_shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc_shared
+.PHONY : shaderc_shared
+
+# fast build rule for target.
+shaderc_shared/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/libshaderc/CMakeFiles/shaderc_shared.dir/build.make _deps/shaderc-build/libshaderc/CMakeFiles/shaderc_shared.dir/build
+.PHONY : shaderc_shared/fast
+
+#=============================================================================
+# Target rules for targets named shaderc_combined
+
+# Build rule for target.
+shaderc_combined: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shaderc_combined
+.PHONY : shaderc_combined
+
+# fast build rule for target.
+shaderc_combined/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/libshaderc/CMakeFiles/shaderc_combined.dir/build.make _deps/shaderc-build/libshaderc/CMakeFiles/shaderc_combined.dir/build
+.PHONY : shaderc_combined/fast
+
+#=============================================================================
+# Target rules for targets named glslc
+
+# Build rule for target.
+glslc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glslc
+.PHONY : glslc
+
+# fast build rule for target.
+glslc/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/glslc/CMakeFiles/glslc.dir/build.make _deps/shaderc-build/glslc/CMakeFiles/glslc.dir/build
+.PHONY : glslc/fast
+
+#=============================================================================
+# Target rules for targets named glslc_exe
+
+# Build rule for target.
+glslc_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glslc_exe
+.PHONY : glslc_exe
+
+# fast build rule for target.
+glslc_exe/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/shaderc-build/glslc/CMakeFiles/glslc_exe.dir/build.make _deps/shaderc-build/glslc/CMakeFiles/glslc_exe.dir/build
+.PHONY : glslc_exe/fast
+
+#=============================================================================
 # Target rules for targets named spirv-cross-core
 
 # Build rule for target.
@@ -290,6 +875,19 @@ spirv-cross-c: cmake_check_build_system
 spirv-cross-c/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross-c.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross-c.dir/build
 .PHONY : spirv-cross-c/fast
+
+#=============================================================================
+# Target rules for targets named spirv-cross
+
+# Build rule for target.
+spirv-cross: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spirv-cross
+.PHONY : spirv-cross
+
+# fast build rule for target.
+spirv-cross/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build.make _deps/spirv_cross-build/CMakeFiles/spirv-cross.dir/build
+.PHONY : spirv-cross/fast
 
 #=============================================================================
 # Target rules for targets named Experimental
@@ -923,6 +1521,30 @@ shader_cache.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NativeGLEngine.dir/build.make CMakeFiles/NativeGLEngine.dir/shader_cache.cpp.s
 .PHONY : shader_cache.cpp.s
 
+shader_compiler.o: shader_compiler.cpp.o
+.PHONY : shader_compiler.o
+
+# target to build an object file
+shader_compiler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NativeGLEngine.dir/build.make CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.o
+.PHONY : shader_compiler.cpp.o
+
+shader_compiler.i: shader_compiler.cpp.i
+.PHONY : shader_compiler.i
+
+# target to preprocess a source file
+shader_compiler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NativeGLEngine.dir/build.make CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.i
+.PHONY : shader_compiler.cpp.i
+
+shader_compiler.s: shader_compiler.cpp.s
+.PHONY : shader_compiler.s
+
+# target to generate assembly for a file
+shader_compiler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NativeGLEngine.dir/build.make CMakeFiles/NativeGLEngine.dir/shader_compiler.cpp.s
+.PHONY : shader_compiler.cpp.s
+
 simd_math_engine.o: simd_math_engine.cpp.o
 .PHONY : simd_math_engine.o
 
@@ -1083,12 +1705,58 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
+	@echo "... add-copyright"
+	@echo "... build-version"
+	@echo "... check-copyright"
+	@echo "... core_tables"
+	@echo "... enum_string_mapping"
+	@echo "... extinst_tables"
+	@echo "... shaderc-pkg-config"
+	@echo "... shaderc_combined-pkg-config"
+	@echo "... shaderc_static-pkg-config"
+	@echo "... spirv-tools-build-version"
+	@echo "... spirv-tools-header-DebugInfo"
+	@echo "... spirv-tools-header-NonSemanticShaderDebugInfo100"
+	@echo "... spirv-tools-header-OpenCLDebugInfo100"
+	@echo "... spirv-tools-pkg-config"
+	@echo "... spirv-tools-vimsyntax"
+	@echo "... spv-tools-cldi100"
+	@echo "... spv-tools-clspvreflection"
+	@echo "... spv-tools-debuginfo"
+	@echo "... spv-tools-shdi100"
+	@echo "... spv-tools-spv-amd-gs"
+	@echo "... spv-tools-spv-amd-sb"
+	@echo "... spv-tools-spv-amd-sevp"
+	@echo "... spv-tools-spv-amd-stm"
+	@echo "... spv-tools-vkspreflection"
+	@echo "... testdata"
+	@echo "... GenericCodeGen"
+	@echo "... MachineIndependent"
 	@echo "... NativeGLEngine"
+	@echo "... OSDependent"
+	@echo "... SPIRV"
+	@echo "... SPIRV-Tools-diff"
+	@echo "... SPIRV-Tools-link"
+	@echo "... SPIRV-Tools-lint"
+	@echo "... SPIRV-Tools-opt"
+	@echo "... SPIRV-Tools-reduce"
+	@echo "... SPIRV-Tools-shared"
+	@echo "... SPIRV-Tools-static"
+	@echo "... SPVRemapper"
 	@echo "... astcenc-neon"
 	@echo "... astcenc-neon-static"
 	@echo "... astcenc-neon-veneer1"
 	@echo "... astcenc-neon-veneer2"
 	@echo "... etcpak_lib"
+	@echo "... glslang"
+	@echo "... glslang-default-resource-limits"
+	@echo "... glslc"
+	@echo "... glslc_exe"
+	@echo "... shaderc"
+	@echo "... shaderc_combined"
+	@echo "... shaderc_shared"
+	@echo "... shaderc_util"
+	@echo "... spirv-cross"
 	@echo "... spirv-cross-c"
 	@echo "... spirv-cross-core"
 	@echo "... spirv-cross-cpp"
@@ -1124,6 +1792,9 @@ help:
 	@echo "... shader_cache.o"
 	@echo "... shader_cache.i"
 	@echo "... shader_cache.s"
+	@echo "... shader_compiler.o"
+	@echo "... shader_compiler.i"
+	@echo "... shader_compiler.s"
 	@echo "... simd_math_engine.o"
 	@echo "... simd_math_engine.i"
 	@echo "... simd_math_engine.s"

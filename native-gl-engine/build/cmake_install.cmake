@@ -44,6 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/shaderc-build/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/ubuntu/android-optimizer/native-gl-engine/build/_deps/spirv_cross-build/cmake_install.cmake")
 endif()
 
