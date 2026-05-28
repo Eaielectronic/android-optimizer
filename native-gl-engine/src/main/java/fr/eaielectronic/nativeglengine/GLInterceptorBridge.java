@@ -32,6 +32,14 @@ public final class GLInterceptorBridge {
     private static native long nativeGetDeferredTextures();
     private static native void nativeDrainTextureQueue(int maxUploads);
 
+    /**
+     * Tente de compresser et d'uploader une texture (ASTC/ETC2).
+     * @return true si la texture a été gérée par le compresseur natif, false sinon.
+     */
+    public static native boolean nativeInterceptTexImage2D(
+            int target, int level, int internalformat,
+            int width, int height, int format, int type, long pixelsPtr);
+
     // ═══ API publique ═══
 
     /**

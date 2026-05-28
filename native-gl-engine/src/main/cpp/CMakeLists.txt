@@ -43,6 +43,7 @@ FetchContent_MakeAvailable(shaderc spirv_cross vma)
 add_library(etcpak_lib STATIC
     deps/etcpak/ProcessRGB.cpp
     deps/etcpak/ProcessDxtc.cpp
+    deps/etcpak/Tables.cpp
 )
 target_include_directories(etcpak_lib PUBLIC deps/etcpak)
 target_compile_options(etcpak_lib PRIVATE -O3 -ffast-math)

@@ -45,7 +45,14 @@ Java_fr_eaielectronic_nativeglengine_ShaderCompilerBridge_nativeCompileGLSLtoSPI
                                                  (SocVendor)socVendor, spirv);
     env->ReleaseStringUTFChars(glslSource, glsl);
 
-    if (!success || spirv.empty()) return nullptr;
+    if (!success) {
+        LOGW("[NativeGLEngine] nativeCompileGLSLtoSPIRV: compilation failed internally.");
+        return nullptr;
+    }
+    if (spirv.empty()) {
+        LOGW("[NativeGLEngine] nativeCompileGLSLtoSPIRV: shaderc returned empty SPIR-V (empty source ?)");
+        return nullptr;
+    }
 
     size_t byteSize = spirv.size() * sizeof(uint32_t);
     jbyteArray result = env->NewByteArray(byteSize);
@@ -148,6 +155,21 @@ extern "C" JNIEXPORT void JNICALL
 Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeUninstallHooks(
         JNIEnv* env, jclass clazz) {
     gl_interceptor_uninstall();
+}
+
+extern "C" JNIEXPORT jboolean JNICALL
+Java_fr_eaielectronic_nativeglengine_GLInterceptorBridge_nativeInterceptTexImage2D(
+        JNIEnv* env, jclass clazz,
+        jint target, jint level, jint internalformat,
+        jint width, jint height, jint format, jint type, jlong pixelsPtr) {
+    
+    if (pixelsPtr == 0) return JNI_FALSE;
+    void* pixels = reinterpret_cast<void*>(pixelsPtr);
+    
+    bool handled = NativeGLEngine::TextureCompressor::intercept(
+        target, level, internalformat, width, height, format, type, pixels);
+        
+    return handled ? JNI_TRUE : JNI_FALSE;
 }
 
 extern "C" JNIEXPORT jlong JNICALL

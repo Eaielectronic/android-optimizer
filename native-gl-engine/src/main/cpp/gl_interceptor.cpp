@@ -12,6 +12,7 @@
 #include <android/log.h>
 #include <dlfcn.h>
 #include <atomic>
+#include "texture_compressor.h"
 
 #define LOG_TAG "NativeGLEngine"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
@@ -24,52 +25,19 @@ static std::atomic<uint64_t> g_deferred_textures{0};
 static bool g_installed = false;
 
 bool gl_interceptor_install() {
-    // TODO: Implémenter le PLT hooking quand le NDK sera configuré
-    //
-    // Algorithme :
-    // 1. Trouver le handle LWJGL via dlopen(RTLD_NOLOAD)
-    //    Tester : "liblwjgl_opengl.so", "libGL.so", "libGLESv3.so"
-    // 2. Pour chaque fonction à hooker :
-    //    - Trouver l'adresse originale via dlsym()
-    //    - Sauvegarder le pointeur original
-    //    - Remplacer dans la PLT par notre function patched_*
-    // 3. Fonctions à hooker :
-    //    - glShaderSource + glCompileShader → redirection cache SPIR-V
-    //    - glTexImage2D + glTexSubImage2D → queue si budget GPU tendu
-    //    - glEnable + glDisable → state dedup
-    //    - glDrawArrays + glDrawElements → compteurs stats
+    // Au lieu du PLT hooking, nous allons utiliser des Mixins Java sur GlStateManager.
+    // Cela nous permet d'éviter les crashs ABI Android et de récupérer facilement
+    // les pointeurs mémoire via LWJGL MemoryUtil.
     
-    // Tenter de trouver le handle LWJGL
-    void* handle = nullptr;
-    const char* names[] = {
-        "liblwjgl_opengl.so",
-        "libGL.so",
-        "libGLESv3.so",
-        nullptr
-    };
+    // Détecter les capacités de compression (ASTC, ETC2)
+    NativeGLEngine::TextureCompressor::detectCapabilities();
     
-    for (int i = 0; names[i]; i++) {
-        handle = dlopen(names[i], RTLD_NOLOAD | RTLD_LAZY);
-        if (handle) {
-            LOGI("[NativeGLEngine] Handle GL trouvé : %s", names[i]);
-            break;
-        }
-    }
-    
-    if (!handle) {
-        LOGW("[NativeGLEngine] Aucun handle GL trouvé — hooks non installés");
-        return false;
-    }
-    
-    // TODO: Installer les hooks PLT réels ici
-    // Pour l'instant, on marque comme installé pour les stats
     g_installed = true;
-    LOGI("[NativeGLEngine] GL interceptor installé (mode STUB)");
+    LOGI("[NativeGLEngine] GL interceptor initialisé (mode JNI)");
     return true;
 }
 
 void gl_interceptor_uninstall() {
-    // TODO: Restaurer les pointeurs originaux dans la PLT
     g_installed = false;
     LOGI("[NativeGLEngine] GL interceptor désinstallé");
 }

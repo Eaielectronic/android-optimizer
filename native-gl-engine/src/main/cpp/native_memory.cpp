@@ -23,27 +23,31 @@
 static bool g_initialized = false;
 
 bool native_memory_init() {
-    // TODO: Créer VkInstance + VkDevice + VMA allocator
-    // Voir le plan technique pour l'implémentation détaillée
-    
-    LOGI("[NativeGLEngine] native_memory_init: STUB — Vulkan SDK requis");
+    LOGI("[NativeGLEngine] native_memory_init: Utilisation d'heuristiques de mémoire unifiée (pas de Vulkan requis)");
     g_initialized = true;
     return true;
 }
 
 uint64_t native_memory_get_gpu_budget() {
-    // TODO: vmaGetHeapBudgets() → budget total
-    return 0;
+    // Heuristique pour Android (Unified Memory Architecture) :
+    // Le GPU partage la RAM système. On alloue virtuellement 75% 
+    // de la RAM disponible restante comme "budget GPU".
+    int64_t avail_mb = native_memory_get_sys_available_mb();
+    if (avail_mb <= 0) return 256 * 1024 * 1024; // Fallback 256MB
+    return (avail_mb * 1024 * 1024) * 3 / 4;
 }
 
 uint64_t native_memory_get_gpu_usage() {
-    // TODO: vmaGetHeapBudgets() → usage actuel
+    // Difficile à tracker sans extensions EGL/VK.
+    // On pourrait tracker GLInterceptor mais pour l'instant on retourne 0.
     return 0;
 }
 
 float native_memory_get_gpu_pressure() {
-    // TODO: usage / budget
-    return 0.0f;
+    uint64_t budget = native_memory_get_gpu_budget();
+    uint64_t usage = native_memory_get_gpu_usage();
+    if (budget == 0) return 1.0f;
+    return (float)usage / (float)budget;
 }
 
 int64_t native_memory_get_sys_available_mb() {
