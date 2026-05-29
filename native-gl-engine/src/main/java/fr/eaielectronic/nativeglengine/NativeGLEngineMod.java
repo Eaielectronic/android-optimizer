@@ -43,6 +43,14 @@ public class NativeGLEngineMod {
             GLInterceptorBridge.install();
             LOGGER.info("[NativeGLEngine] Hooks GL installés précocement");
         }
+
+        // CRITIQUE : initialiser le cache shader ICI, dans le constructeur,
+        // AVANT que Minecraft compile ses shaders UI de base (preloadUiShader).
+        // Si on attend onClientSetup, le cacheDir est null pendant les premières
+        // compilations. FMLPaths.GAMEDIR est disponible dès le bootstrap du launcher.
+        ShaderCacheManager.init();
+        LOGGER.info("[NativeGLEngine] Shader cache initialisé précocement ({} entrées en cache disque)",
+            ShaderCacheManager.getDiskCacheSize());
     }
 
     /**
@@ -80,9 +88,9 @@ public class NativeGLEngineMod {
             RendererDetector.Renderer renderer = RendererDetector.detect();
             LOGGER.info("[NativeGLEngine] Renderer détecté : {}", renderer);
 
-            // Initialiser le cache shader
-            ShaderCacheManager.init();
-            LOGGER.info("[NativeGLEngine] Shader cache initialisé ({} entrées en cache disque)",
+            // ShaderCacheManager.init() est déjà appelé dans le constructeur du mod,
+            // avant que Minecraft compile ses shaders UI. On log juste le statut ici.
+            LOGGER.info("[NativeGLEngine] Shader cache opérationnel ({} entrées en cache disque)",
                 ShaderCacheManager.getDiskCacheSize());
 
             // Initialiser le bridge mémoire native (si .so disponible)

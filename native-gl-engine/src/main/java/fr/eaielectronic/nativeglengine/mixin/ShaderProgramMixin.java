@@ -47,23 +47,8 @@ public class ShaderProgramMixin {
         argsOnly = true
     )
     private static InputStream captureGlslSource(InputStream inputStream) {
-        if (inputStream == null) return null;
-        try {
-            byte[] bytes = inputStream.readAllBytes();
-            if (bytes.length > 0) {
-                currentGlslSource.set(new String(bytes, java.nio.charset.StandardCharsets.UTF_8));
-            } else {
-                NativeGLEngineMod.LOGGER.warn("[NativeGLEngine] captureGlslSource: Stream was empty!");
-                currentGlslSource.set("");
-            }
-            // Retourne toujours un flux indépendant pour protéger le reste du pipeline
-            return new java.io.ByteArrayInputStream(bytes);
-        } catch (Exception e) {
-            NativeGLEngineMod.LOGGER.error("[NativeGLEngine] captureGlslSource failed: {}", e.getMessage());
-            currentGlslSource.remove();
-            // Fallback: retourne un flux vide pour éviter un crash complet de la méthode
-            return new java.io.ByteArrayInputStream(new byte[0]);
-        }
+        // BYPASS COMPLET : On ne touche pas au flux pour tester si c'est la cause du crash !
+        return inputStream;
     }
 
     /**
@@ -86,99 +71,8 @@ public class ShaderProgramMixin {
             GlslPreprocessor preprocessor,
             CallbackInfoReturnable<Program> cir
     ) {
-        // Ne rien faire si le cache shader est désactivé
-        // (la config n'est peut-être pas encore chargée au premier appel)
-        try {
-            if (!fr.eaielectronic.nativeglengine.NativeGLConfig.SHADER_CACHE_ENABLED.get()) return;
-        } catch (Exception e) {
-            // Config pas encore prête — continuer avec le cache activé par défaut
-        }
-
-        NativeGLEngineMod.LOGGER.info("[NativeGLEngine] onCompileShader trigger: type={} name={}", type, name);
-
-        String glslSource = currentGlslSource.get();
-        if (glslSource == null) glslSource = ""; // Fallback
-        currentGlslSource.remove();
-
-        if (glslSource.isEmpty()) {
-            return; // Impossible de lire, on laisse Minecraft gérer normalement
-        }
-
-        // ═══ Étape 0 : Résoudre les #moj_import ═══
-        if (preprocessor != null && glslSource.contains("#moj_import")) {
-            try {
-                java.lang.reflect.Method processMethod = preprocessor.getClass().getMethod("process", String.class);
-                Object processed = processMethod.invoke(preprocessor, glslSource);
-                if (processed instanceof java.util.List) {
-                    glslSource = String.join("\n", (java.util.List<String>) processed);
-                } else if (processed instanceof String) {
-                    glslSource = (String) processed;
-                }
-            } catch (Exception e) {
-                NativeGLEngineMod.LOGGER.error("[NativeGLEngine] Erreur résolution #moj_import : {}", e.getMessage());
-            }
-        }
-
-        // ═══ Étape 1 : Hash SHA-256 ═══
-        String driverVersion = ShaderCompilerBridge.getDriverVersion();
-        String socName = AndroidOptBridge.getSocName();
-        String hash = ShaderCacheManager.computeHash(glslSource, socName, driverVersion);
-
-        // ═══ Étape 2 : Cache L1 (mémoire) ═══
-        // Note : compileShader retourne un Program, pas un int.
-        // On ne peut pas court-circuiter avec un ID ici.
-        // On enregistre les stats de cache pour le monitoring HUD.
-        // Le vrai gain viendra quand les hooks GL natifs seront actifs
-        // et pourront fournir le SPIR-V pré-compilé au driver directement.
-        Integer cachedId = ShaderCacheManager.getFromMemoryCache(hash);
-        if (cachedId != null) {
-            cacheHitsMemory++;
-            // Cache SPIR-V disponible — MC compile quand même mais le
-            // driver GPU pourra réutiliser le pipeline cache plus vite
-            return;
-        }
-
-        // ═══ Étape 3 : Cache L2 (disque) ═══
-        Integer diskId = ShaderCacheManager.loadFromDisk(hash);
-        if (diskId != null) {
-            cacheHitsDisk++;
-            ShaderCacheManager.putToMemoryCache(hash, diskId);
-            // Même logique — on laisse MC compiler, le SPIR-V est prêt
-            return;
-        }
-
-        // ═══ Étape 4 : Compilation ═══
-        cacheMisses++;
-
-        // Si le natif est disponible et l'async est activé,
-        // lancer la compilation en arrière-plan
-        if (NativeLib.isLoaded()) {
-            try {
-                if (fr.eaielectronic.nativeglengine.NativeGLConfig.ASYNC_COMPILATION.get()) {
-                    compilationsAsync++;
-
-                    // Compiler en arrière-plan
-                    ShaderCompilerBridge.compileAsync(glslSource, type.ordinal(), hash, (spirv) -> {
-                        if (spirv != null) {
-                            NativeGLEngineMod.LOGGER.debug(
-                                "[NativeGLEngine] Shader '{}' compilé en arrière-plan ({} bytes SPIR-V)",
-                                name, spirv.length);
-                        }
-                    });
-
-                    // On ne cancel PAS ici — on laisse Minecraft compiler normalement
-                    // pendant que notre compilation async tourne.
-                    // Au prochain chargement, le cache disque sera déjà rempli → 0ms.
-                    return;
-                }
-            } catch (Exception ignored) {}
-        }
-
-        // Pas de natif ou pas d'async — laisser Minecraft compiler normalement
-        // mais sauvegarder le hash pour le futur
-        NativeGLEngineMod.LOGGER.debug(
-            "[NativeGLEngine] Shader '{}' compilé par MC (cache miss, natif={})",
-            name, NativeLib.isLoaded());
+        // BYPASS COMPLET : On laisse Minecraft compiler normalement sans cache ni async
+        return;
     }
 
     // ═══ Getters pour les stats ═══

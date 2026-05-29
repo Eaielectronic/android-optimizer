@@ -39,15 +39,18 @@ public final class ShaderCacheManager {
         initialized = true;
 
         try {
-            Path gameDir = Minecraft.getInstance().gameDirectory.toPath();
+            // CRITIQUE : utiliser FMLPaths.GAMEDIR.get() au lieu de Minecraft.getInstance().gameDirectory
+            // car init() est maintenant appelé dans le constructeur du mod, bien AVANT que
+            // Minecraft.getInstance() soit disponible.
+            Path gameDir = net.neoforged.fml.loading.FMLPaths.GAMEDIR.get();
             cacheDir = gameDir.resolve("nativeglengine_shader_cache");
 
             // Créer les sous-répertoires
-            Files.createDirectories(cacheDir.resolve("vulkan"));
-            Files.createDirectories(cacheDir.resolve("gles"));
+            java.nio.file.Files.createDirectories(cacheDir.resolve("vulkan"));
+            java.nio.file.Files.createDirectories(cacheDir.resolve("gles"));
 
             NativeGLEngineMod.LOGGER.info("[NativeGLEngine] Cache shader initialisé : {}", cacheDir);
-        } catch (IOException e) {
+        } catch (java.io.IOException e) {
             NativeGLEngineMod.LOGGER.warn("[NativeGLEngine] Impossible de créer le cache shader : {}", e.getMessage());
             cacheDir = null;
         }
