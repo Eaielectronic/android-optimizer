@@ -8,17 +8,17 @@ Il est important de souligner : les arguments JVM sont votre première ligne de 
 
 ## Tableau des Configurations (Selon Processeur et RAM)
 
-> **⚠️ JOUEURS JAVA 21 (Minecraft 1.20.5+) : LE MIRACLE ZGC**
-> Si vous jouez en Java 21 (ex: Minecraft 1.21.1), **utilisez absolument ZGC**. Il élimine **totalement** les freezes mémoire. Remplacez toute la partie `-XX:+UseG1GC ...` de la commande par `-XX:+UseZGC -XX:+ZGenerational`.
+> **⚠️ AVERTISSEMENT ANDROID : PAS DE ZGC !**
+> Android bloque le Z Garbage Collector (ZGC) pour des raisons de sécurité mémoire (SELinux). Pour éviter les énormes freezes causés par le nettoyage de la RAM, vous devez utiliser le **G1GC** avec ces arguments d'optimisation spécifiques, notamment `InitiatingHeapOccupancyPercent=15` qui force un nettoyage très précoce.
 
 Choisissez la commande exacte qui correspond à la puissance de votre téléphone.
 
 | Puissance du Téléphone | RAM Totale | Commande Recommandée |
 |---|---|---|
-| **Faible**<br>*(Helio, Snapdragon 6xx)* | **4 Go** | `-Xmx1536m -Xms512m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=150 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
-| **Moyenne**<br>*(Snapdragon 7xx, Exynos moyen)* | **6 Go** | `-Xmx2500m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
-| **Forte**<br>*(Snapdragon 8xx, 8 Gen 1)* | **8 Go** | `-Xmx3584m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
-| **Monstre**<br>*(Snapdragon 8 Gen 2 / Gen 3)* | **8 Go+** | `-Xmx3584m -Xms1024m -XX:+UseZGC -XX:+ZGenerational -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Faible**<br>*(Helio, Snapdragon 6xx)* | **4 Go** | `-Xmx1536m -Xms512m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=150 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Moyenne**<br>*(Snapdragon 7xx, Exynos moyen)* | **6 Go** | `-Xmx2500m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Forte**<br>*(Snapdragon 8xx, 8 Gen 1)* | **8 Go** | `-Xmx3584m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Monstre**<br>*(Snapdragon 8 Gen 2 / Gen 3)* | **8 Go+** | `-Xmx3584m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=30 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
 
 > **ATTENTION AU CPU (Surchauffe) : Explication du `MaxGCPauseMillis`**
 > Par défaut, Minecraft utilise 200ms. Si vous le forcez à 50ms, vous obligez le processeur à nettoyer la RAM de manière agressive pour que les freezes soient invisibles.
@@ -62,17 +62,17 @@ Let's be honest: JVM arguments are your absolute first line of defense against t
 
 ## Configurations Table (By Processor & RAM)
 
-> **⚠️ JAVA 21 PLAYERS (Minecraft 1.20.5+) : THE ZGC MIRACLE**
-> If you are on Java 21 (e.g. Minecraft 1.21.1), **absolutely use ZGC**. It **completely** eliminates memory freezes. Replace all the `-XX:+UseG1GC ...` arguments with `-XX:+UseZGC -XX:+ZGenerational`.
+> **⚠️ ANDROID WARNING : NO ZGC !**
+> Android blocks the Z Garbage Collector (ZGC) for memory security reasons (SELinux). To avoid huge freezes caused by RAM cleanup, you must use **G1GC** with these specific optimization arguments, including `InitiatingHeapOccupancyPercent=15` which forces a very early cleanup.
 
 Choose the exact command that matches your phone's power.
 
 | Phone Power | Total RAM | Recommended Command |
 |---|---|---|
-| **Low-end**<br>*(Helio, Snapdragon 6xx)* | **4 GB** | `-Xmx1536m -Xms512m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=150 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
-| **Mid-range**<br>*(Snapdragon 7xx, mid Exynos)* | **6 GB** | `-Xmx2500m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
-| **High-end**<br>*(Snapdragon 8xx, 8 Gen 1)* | **8 GB** | `-Xmx3584m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
-| **Monster**<br>*(Snapdragon 8 Gen 2 / Gen 3)* | **8 GB+** | `-Xmx3584m -Xms1024m -XX:+UseZGC -XX:+ZGenerational -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Low-end**<br>*(Helio, Snapdragon 6xx)* | **4 GB** | `-Xmx1536m -Xms512m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=150 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Mid-range**<br>*(Snapdragon 7xx, mid Exynos)* | **6 GB** | `-Xmx2500m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **High-end**<br>*(Snapdragon 8xx, 8 Gen 1)* | **8 GB** | `-Xmx3584m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
+| **Monster**<br>*(Snapdragon 8 Gen 2 / Gen 3)* | **8 GB+** | `-Xmx3584m -Xms1024m -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=30 -XX:InitiatingHeapOccupancyPercent=15 -XX:+DisableExplicitGC -XX:SoftRefLRUPolicyMSPerMB=2000` |
 
 > **CPU WARNING (Overheating) : Explaining `MaxGCPauseMillis`**
 > By default, Minecraft uses 200ms. If you force it to 50ms, you compel the processor to aggressively clean the RAM so that freezes remain invisible.
