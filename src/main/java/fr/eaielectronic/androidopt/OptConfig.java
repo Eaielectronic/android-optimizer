@@ -77,7 +77,11 @@ public class OptConfig {
     public static final ModConfigSpec.IntValue     NATIVE_GL_GPU_BUDGET_PERCENT;
     public static final ModConfigSpec.BooleanValue NATIVE_GL_TEX_COMPRESS;
     public static final ModConfigSpec.BooleanValue NATIVE_GL_VERTEX_QUANT;
+    public static final ModConfigSpec.BooleanValue NATIVE_GL_OFF_HEAP_ENABLED;
     public static final ModConfigSpec.IntValue     NATIVE_GL_OFF_HEAP_SIZE_MB;
+    public static final ModConfigSpec.BooleanValue NATIVE_GL_SHADER_COMPILER;
+    public static final ModConfigSpec.BooleanValue NATIVE_GL_GL_INTERCEPTOR;
+    public static final ModConfigSpec.BooleanValue NATIVE_GL_ASYNC_BUFFERS;
 
     static {
         BUILDER.comment("Android Optimizer — Configuration");
@@ -332,9 +336,21 @@ public class OptConfig {
         NATIVE_GL_VERTEX_QUANT = BUILDER
             .comment("Active la quantisation des vertices en C++.")
             .define("vertexQuant", true);
+        NATIVE_GL_OFF_HEAP_ENABLED = BUILDER
+            .comment("Active l'arène de mémoire Off-Heap pour réduire la pression sur le GC Java.")
+            .define("offHeapEnabled", true);
         NATIVE_GL_OFF_HEAP_SIZE_MB = BUILDER
             .comment("Taille de l'arène mémoire C++ (Off-Heap) en Mo. Baissez si votre jeu crash au démarrage.")
             .defineInRange("offHeapSizeMB", 150, 50, 500);
+        NATIVE_GL_SHADER_COMPILER = BUILDER
+            .comment("Active la compilation asynchrone des shaders via SPIR-V/Shaderc.")
+            .define("shaderCompiler", true);
+        NATIVE_GL_GL_INTERCEPTOR = BUILDER
+            .comment("Active l'interception et la réécriture des commandes OpenGL bas niveau.")
+            .define("glInterceptor", true);
+        NATIVE_GL_ASYNC_BUFFERS = BUILDER
+            .comment("Active l'envoi asynchrone des buffers de chunks vers le GPU.")
+            .define("asyncBuffers", true);
         BUILDER.pop();
 
         SPEC = BUILDER.build();

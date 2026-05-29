@@ -525,14 +525,21 @@ public class OptConfigScreen extends Screen {
         addIntSlider("GPU Budget (%)", OptConfig.NATIVE_GL_GPU_BUDGET_PERCENT,
             10, 100, cx - BTN_W / 2, y, BTN_W, BTN_H);
         
-        y += GAP + 8;
+        y += GAP;
+        row(lx, rx, y,       "Off-Heap Arena",        OptConfig.NATIVE_GL_OFF_HEAP_ENABLED,
+                              "Shader Compiler",       OptConfig.NATIVE_GL_SHADER_COMPILER);
+        y += GAP;
+        row(lx, rx, y,       "GL Interceptor",        OptConfig.NATIVE_GL_GL_INTERCEPTOR,
+                              "Async Buffers",         OptConfig.NATIVE_GL_ASYNC_BUFFERS);
+        y += GAP;
         row(lx, rx, y,       "Hardware TexCompress",  OptConfig.NATIVE_GL_TEX_COMPRESS,
                               "Vertex Quantizer",      OptConfig.NATIVE_GL_VERTEX_QUANT);
 
+        y += GAP + 4;
         addIntSlider("Off-Heap Arena (MB)", OptConfig.NATIVE_GL_OFF_HEAP_SIZE_MB,
-            50, 500, cx - BTN_W / 2, y + GAP + 8, BTN_W, BTN_H);
+            50, 500, cx - BTN_W / 2, y, BTN_W, BTN_H);
 
-        y += GAP * 3;
+        y += GAP * 2 - 4;
         label(cx, y, "§7NativeGL Engine Configuration");
         label(cx, y + 12, "§7Le GPU Budget contrôle la quantité de RAM allouée au moteur C++.");
         label(cx, y + 24, "§7La compression matérielle (ETC2) utilise etcpak natif pour de meilleures perfs.");

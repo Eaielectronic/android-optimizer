@@ -31,7 +31,11 @@ public final class AndroidOptBridge {
     private static Object gpuBudgetCfg = null;
     private static Object texCompressCfg = null;
     private static Object vertexQuantCfg = null;
+    private static Object offHeapEnabledCfg = null;
     private static Object offHeapSizeCfg = null;
+    private static Object shaderCompilerCfg = null;
+    private static Object glInterceptorCfg = null;
+    private static Object asyncBuffersCfg = null;
     private static Method forgeConfigGetMethod = null;
 
     private AndroidOptBridge() {}
@@ -96,8 +100,20 @@ public final class AndroidOptBridge {
                     Field vertField = optConfigClass.getField("NATIVE_GL_VERTEX_QUANT");
                     vertexQuantCfg = vertField.get(null);
 
+                    Field offHeapEnabledField = optConfigClass.getField("NATIVE_GL_OFF_HEAP_ENABLED");
+                    offHeapEnabledCfg = offHeapEnabledField.get(null);
+
                     Field offHeapField = optConfigClass.getField("NATIVE_GL_OFF_HEAP_SIZE_MB");
                     offHeapSizeCfg = offHeapField.get(null);
+
+                    Field shaderField = optConfigClass.getField("NATIVE_GL_SHADER_COMPILER");
+                    shaderCompilerCfg = shaderField.get(null);
+
+                    Field glIntField = optConfigClass.getField("NATIVE_GL_GL_INTERCEPTOR");
+                    glInterceptorCfg = glIntField.get(null);
+
+                    Field asyncBufField = optConfigClass.getField("NATIVE_GL_ASYNC_BUFFERS");
+                    asyncBuffersCfg = asyncBufField.get(null);
                 } catch (NoSuchFieldException ignored) {
                     // Ancienne version sans options NativeGL
                 }
@@ -168,11 +184,35 @@ public final class AndroidOptBridge {
         }
         return true;
     }
+    public static boolean isOffHeapEnabled() {
+        if (offHeapEnabledCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(offHeapEnabledCfg); } catch (Exception ignored) {}
+        }
+        return true;
+    }
     public static int getOffHeapArenaSizeMB() {
         if (offHeapSizeCfg != null && forgeConfigGetMethod != null) {
             try { return (Integer) forgeConfigGetMethod.invoke(offHeapSizeCfg); } catch (Exception ignored) {}
         }
         return -1; // -1 indicates fallback to NativeGLConfig
+    }
+    public static boolean isShaderCompilerActive() {
+        if (shaderCompilerCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(shaderCompilerCfg); } catch (Exception ignored) {}
+        }
+        return true;
+    }
+    public static boolean isGlInterceptorActive() {
+        if (glInterceptorCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(glInterceptorCfg); } catch (Exception ignored) {}
+        }
+        return true;
+    }
+    public static boolean isAsyncBuffersActive() {
+        if (asyncBuffersCfg != null && forgeConfigGetMethod != null) {
+            try { return (Boolean) forgeConfigGetMethod.invoke(asyncBuffersCfg); } catch (Exception ignored) {}
+        }
+        return true;
     }
 
     /**

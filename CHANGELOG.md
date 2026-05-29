@@ -1,8 +1,13 @@
 # Changelog
 
-## [1.0.5] - 2026-05-26
+## [1.0.6] - 2026-05-29
 
 ### Added
+- **NativeGL Engine Integration** : Intégration complète du moteur C++ `NativeGLEngine` avec ses options dans l'interface de configuration (`OptConfigScreen`).
+- **Off-Heap Arena (C++)** : Implémentation d'une arène mémoire Off-Heap pour réduire la pression sur le Garbage Collector Java. Redirection invisible des allocations de `NativeImage` (Minecraft) vers la mémoire native.
+- **Toggles Dynamiques** : Ajout de boutons ON/OFF dans les configurations pour chaque fonctionnalité C++ (Shader Compiler, GL Interceptor, Async Buffers, Off-Heap Arena) afin de permettre un contrôle total sans valeurs en dur.
+
+## [1.0.5] - 2026-05-26
 - **SodiumCompanion** : Détection de Sodium/Embeddium pour ajuster automatiquement le nombre de threads de rendu des chunks selon le processeur mobile (SoC) et activer l'option "Animate Only Visible Textures".
 - **FerriteCore Companion** : Le MemoryWatchdog détecte l'absence de FerriteCore et abaisse automatiquement le seuil de déclenchement des purges de caches pour éviter l'épuisement de la RAM lors des pics de chargement.
 - **ThermalMonitor** : Surveille activement la température du processeur (via les zones thermiques `/sys/class/thermal`). Force automatiquement le `FrameBudgetManager` en mode CRITICAL ou REDUCED en cas de surchauffe (> 48°C ou > 42°C) pour limiter le thermal throttling. Ajout de l'affichage de la température dans le HUD.

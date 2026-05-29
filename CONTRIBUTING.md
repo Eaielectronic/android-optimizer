@@ -107,7 +107,24 @@ fr.eaielectronic.androidopt/
     ├── BERDistanceMixin.java # Core FPS optimization
     ├── ChunkRebuildMixin.java
     └── ...
+
+native-gl-engine/             # C++ Module (NativeGL Engine)
+├── src/main/cpp/             # Native sources (C++)
+│   ├── off_heap_arena.cpp    # Off-Heap Memory
+│   ├── shader_compiler.cpp   # SPIR-V/Shaderc
+│   └── ...
+└── src/main/java/            # Java Native Bridge
+    └── fr/eaielectronic/nativeglengine/
 ```
+
+## Contributing to NativeGL Engine (C++)
+
+If you wish to contribute to the native C++ engine (`native-gl-engine`), you will additionally need:
+- **CMake 3.22+**
+- **Android NDK r26+** (for Android cross-compilation)
+- A basic understanding of JNI (Java Native Interface) and memory mapping (`mmap`).
+
+The C++ module is located in the `native-gl-engine/` directory and must be built independently or via its specific Gradle wrapper.
 
 ## License
 

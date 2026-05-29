@@ -139,6 +139,11 @@ Fichier : `config/nativeglengine-client.toml`
 | `memory.gpuMemoryMonitor` | `true` | Surveillance VMA |
 | `memory.gpuPressureSoft` | `80` | Seuil cleanup doux (%) |
 | `memory.gpuPressureHard` | `92` | Seuil cleanup agressif (%) |
+| `shader.shaderCompiler` | `true` | Active la compilation asynchrone des shaders |
+| `hooks.glInterceptor` | `true` | Active les hooks GL bas niveau |
+| `memory.offHeapEnabled` | `true` | Active l'Off-Heap Arena pour NativeImage |
+| `memory.offHeapSizeMB` | `150` | Taille de l'arène C++ en Mo |
+| `memory.asyncBuffers` | `true` | Active l'envoi asynchrone des buffers |
 | `debug.verboseLog` | `false` | Logs détaillés |
 | `debug.showHud` | `true` | HUD stats |
 
@@ -212,9 +217,10 @@ Si absent → mode autonome avec valeurs par défaut.
 - [x] Phase 2 — NativeMemoryManager (VMA)
 - [x] Phase 3 — InterceptLayer (GL hooks)
 - [x] Phase 4 — RendererDetector + Config
+- [x] Phase 7 — Module 7: Off-Heap Arena (Zero-GC)
 - [ ] Phase 5 — Implémentation complète Shaderc/SPIRV-Cross
 - [ ] Phase 6 — Mode bypass Vulkan complet
-- [ ] Phase 7 — Compatibilité Minecraft Vulkan (2026/2027)
+- [ ] Phase 8 — Compatibilité Minecraft Vulkan (2026/2027)
 
 ---
 

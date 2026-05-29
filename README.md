@@ -35,6 +35,7 @@ Principales optimisations :
 3. **Nettoyage RAM par reflexion (Create/Sable)** : Quand une machine (Contraption) s'arrete, elle laisse un "monde fantome" en memoire. Le mod utilise la reflexion Java pour detecter et liberer cette memoire. Gain : **~30 a 80 Mo par machine arretee**.
 4. **Correction reseau Sable (UDP)** : Le mod Sable tente d'utiliser un protocole UDP experimental qui bloque le jeu pendant 200 a 300 millisecondes en cas d'echec. Le paquet serveur est intercepte et annule silencieusement, forcant le reseau a utiliser TCP.
 5. **Surveillance Mémoire Intelligente (Watchdog)** : Au lieu d'attendre la saturation de la RAM (qui provoque des freezes de 3 secondes) ou de forcer le GC manuellement, le mod déclenche des **purges asynchrones** des caches Create et des textures dès que la mémoire atteint un seuil (ex: **75%**). Le Garbage Collector natif s'occupe ensuite de petites micro-pauses indolores. Un `System.gc()` n'est forcé qu'en cas d'extrême urgence (seuil critique configurable, ex: 88%) pour éviter le crash.
+6. **Moteur C++ (NativeGL Engine)** : Inclus un moteur natif C++ qui contourne la JVM pour gérer la mémoire (Off-Heap Arena) et compiler les shaders. Résultat : disparition des micro-freezes liés au Garbage Collector sur l'allocation des textures.
 
 ### Gains estimes (teste avec Create)
 
@@ -109,6 +110,7 @@ Key optimizations:
 3. **Reflection-based RAM Sweeper (Create/Sable)**: When a contraption stops, it leaves a "ghost world" in memory. The mod uses Java Reflection to detect and free this memory. Gain: **~30 to 80 MB per stopped machine**.
 4. **Sable Network UDP Fix**: The Sable mod attempts to use an experimental UDP protocol that freezes the game for 200-300ms on failure. The server packet is intercepted and silently cancelled, forcing TCP fallback.
 5. **Smart Memory Watchdog**: Instead of waiting for RAM saturation (causing 3-second freezes) or forcing a manual GC, the mod triggers **asynchronous purges** of Create and texture caches as soon as memory reaches a soft threshold (e.g., **75%**). Java's native Garbage Collector then handles the cleanup in painless micro-pauses. A hard `System.gc()` is only forced in extreme emergencies (configurable critical threshold, e.g., 88%) to prevent an OutOfMemory crash.
+6. **C++ NativeGL Engine**: Includes a native C++ engine that bypasses the JVM to manage memory (Off-Heap Arena) and compile shaders. Result: elimination of Garbage Collector micro-freezes during texture allocation.
 
 ### Estimated Gains (Tested with Create)
 
