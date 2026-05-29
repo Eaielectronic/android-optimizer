@@ -31,6 +31,7 @@ public final class AndroidOptBridge {
     private static Object gpuBudgetCfg = null;
     private static Object texCompressCfg = null;
     private static Object vertexQuantCfg = null;
+    private static Object offHeapSizeCfg = null;
     private static Method forgeConfigGetMethod = null;
 
     private AndroidOptBridge() {}
@@ -94,6 +95,9 @@ public final class AndroidOptBridge {
 
                     Field vertField = optConfigClass.getField("NATIVE_GL_VERTEX_QUANT");
                     vertexQuantCfg = vertField.get(null);
+
+                    Field offHeapField = optConfigClass.getField("NATIVE_GL_OFF_HEAP_SIZE_MB");
+                    offHeapSizeCfg = offHeapField.get(null);
                 } catch (NoSuchFieldException ignored) {
                     // Ancienne version sans options NativeGL
                 }
@@ -163,6 +167,12 @@ public final class AndroidOptBridge {
             try { return (Boolean) forgeConfigGetMethod.invoke(vertexQuantCfg); } catch (Exception ignored) {}
         }
         return true;
+    }
+    public static int getOffHeapArenaSizeMB() {
+        if (offHeapSizeCfg != null && forgeConfigGetMethod != null) {
+            try { return (Integer) forgeConfigGetMethod.invoke(offHeapSizeCfg); } catch (Exception ignored) {}
+        }
+        return -1; // -1 indicates fallback to NativeGLConfig
     }
 
     /**

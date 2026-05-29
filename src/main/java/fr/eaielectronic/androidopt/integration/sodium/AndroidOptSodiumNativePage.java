@@ -64,6 +64,18 @@ public class AndroidOptSodiumNativePage {
         );
 
         perfGroup.add(OptionImpl.createBuilder(Integer.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Off-Heap Arena (MB)"))
+            .setTooltip(Component.literal("Taille du cache natif (C++) pour éviter le Java Garbage Collector. Baissez si crash (Out of Memory)."))
+            .setControl(option -> new SliderControl(option, 50, 500, 10, ControlValueFormatter.number()))
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_OFF_HEAP_SIZE_MB.set(value),
+                (opts) -> OptConfig.NATIVE_GL_OFF_HEAP_SIZE_MB.get()
+            )
+            .setImpact(OptionImpact.HIGH)
+            .build()
+        );
+
+        perfGroup.add(OptionImpl.createBuilder(Integer.class, AndroidOptStorage.INSTANCE)
             .setName(Component.literal("GC Threshold (%)"))
             .setTooltip(Component.literal("Seuil déclenchement du Garbage Collector préventif"))
             .setControl(option -> new SliderControl(option, 50, 95, 1, ControlValueFormatter.percentage()))

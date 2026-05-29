@@ -98,6 +98,17 @@ public class NativeGLEngineMod {
                 NativeMemoryBridge.init();
                 LOGGER.info("[NativeGLEngine] NativeMemoryManager initialisé (VMA)");
 
+                // Initialiser l'OffHeapArena (Module 7) avec la taille configurée
+                long arenaSize = NativeGLConfig.OFF_HEAP_ARENA_SIZE_MB.get().longValue();
+                if (AndroidOptBridge.isAndroidOptPresent()) {
+                    int optArenaSize = AndroidOptBridge.getOffHeapArenaSizeMB();
+                    if (optArenaSize > 0) {
+                        arenaSize = optArenaSize;
+                    }
+                }
+                NativeBufferManager.init(arenaSize);
+                LOGGER.info("[NativeGLEngine] OffHeapArena ({} MB) initialisée", arenaSize);
+
                 // Hooks déjà installés dans le constructeur
                 LOGGER.info("[NativeGLEngine] Hooks GL vérifiés");
             } else {

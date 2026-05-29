@@ -30,8 +30,21 @@ namespace NativeGLEngine {
 
 bool TextureCompressor::s_hasASTCLDR = false;
 bool TextureCompressor::s_hasETC2    = false;
+std::atomic<size_t> TextureCompressor::s_vramOriginalBytes{0};
+std::atomic<size_t> TextureCompressor::s_vramCompressedBytes{0};
 static bool s_detected               = false;
 static std::mutex s_initMutex;
+
+void TextureCompressor::logVRAMStats() {
+    size_t orig = s_vramOriginalBytes.load();
+    size_t comp = s_vramCompressedBytes.load();
+    if (orig > 0) {
+        LOGI("[VRAM Stats] Original: %.1f MB | Compressed: %.1f MB | Saved: %.1f MB (%.1f%%)",
+             orig / 1048576.0f, comp / 1048576.0f,
+             (orig - comp) / 1048576.0f,
+             (float)(orig - comp) / orig * 100.0f);
+    }
+}
 
 inline size_t etc2RGBACompressedSize(GLsizei w, GLsizei h) {
     int bx = (w + 3) / 4;
@@ -114,10 +127,24 @@ bool TextureCompressor::compressETC2(
         false
     );
 
+    size_t original_size = width * height * 4;
+    s_vramOriginalBytes += original_size;
+    s_vramCompressedBytes += compressed_size;
+
     LOGV("ETC2 compression: %dx%d → %zu bytes (%.1f MB → %.1f MB)",
          width, height, compressed_size,
-         (float)(width * height * 4) / 1048576.0f,
+         (float)original_size / 1048576.0f,
          (float)compressed_size / 1048576.0f);
+    
+    // Log périodique si l'économie dépasse 50 MB
+    if (s_vramOriginalBytes > 50 * 1024 * 1024) {
+        static size_t last_logged = 0;
+        size_t orig = s_vramOriginalBytes.load();
+        if (orig - last_logged > 10 * 1024 * 1024) { // Log tous les 10 MB économisés
+            logVRAMStats();
+            last_logged = orig;
+        }
+    }
     return true;
 }
 
@@ -177,9 +204,13 @@ bool TextureCompressor::compressASTCIfAvailable(
         return false;
     }
 
+    size_t original_size = width * height * 4;
+    s_vramOriginalBytes += original_size;
+    s_vramCompressedBytes += out_size;
+
     LOGV("ASTC 6x6 compression: %dx%d → %zu bytes (%.1f MB → %.1f MB)",
          width, height, out_size,
-         (float)(width * height * 4) / 1048576.0f,
+         (float)original_size / 1048576.0f,
          (float)out_size / 1048576.0f);
     return true;
 }

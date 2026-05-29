@@ -77,6 +77,7 @@ public class OptConfig {
     public static final ModConfigSpec.IntValue     NATIVE_GL_GPU_BUDGET_PERCENT;
     public static final ModConfigSpec.BooleanValue NATIVE_GL_TEX_COMPRESS;
     public static final ModConfigSpec.BooleanValue NATIVE_GL_VERTEX_QUANT;
+    public static final ModConfigSpec.IntValue     NATIVE_GL_OFF_HEAP_SIZE_MB;
 
     static {
         BUILDER.comment("Android Optimizer — Configuration");
@@ -331,6 +332,9 @@ public class OptConfig {
         NATIVE_GL_VERTEX_QUANT = BUILDER
             .comment("Active la quantisation des vertices en C++.")
             .define("vertexQuant", true);
+        NATIVE_GL_OFF_HEAP_SIZE_MB = BUILDER
+            .comment("Taille de l'arène mémoire C++ (Off-Heap) en Mo. Baissez si votre jeu crash au démarrage.")
+            .defineInRange("offHeapSizeMB", 150, 50, 500);
         BUILDER.pop();
 
         SPEC = BUILDER.build();

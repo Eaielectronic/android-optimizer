@@ -26,6 +26,7 @@ public class NativeGLConfig {
     public static final ModConfigSpec.BooleanValue GPU_MEMORY_MONITOR;
     public static final ModConfigSpec.IntValue     GPU_PRESSURE_SOFT_PERCENT;
     public static final ModConfigSpec.IntValue     GPU_PRESSURE_HARD_PERCENT;
+    public static final ModConfigSpec.IntValue     OFF_HEAP_ARENA_SIZE_MB;
 
     // ═══ Debug ═══
     public static final ModConfigSpec.BooleanValue VERBOSE_LOG;
@@ -38,7 +39,7 @@ public class NativeGLConfig {
         SHADER_CACHE_ENABLED = BUILDER
             .comment("Active le cache de shaders compilés (SPIR-V / ESSL).",
                      "Élimine les stutters de compilation shader au démarrage.")
-            .define("shaderCacheEnabled", true);
+            .define("shaderCacheEnabled", false);
         ASYNC_COMPILATION = BUILDER
             .comment("Compile les shaders de manière asynchrone (hors render thread).",
                      "Un shader placeholder est affiché pendant la compilation.")
@@ -81,6 +82,10 @@ public class NativeGLConfig {
             .comment("Seuil de pression GPU pour un cleanup agressif (%).",
                      "Au-dessus de ce seuil : vidage complet des caches.")
             .defineInRange("gpuPressureHard", 92, 70, 100);
+        OFF_HEAP_ARENA_SIZE_MB = BUILDER
+            .comment("Taille de l'arène mémoire C++ (Off-Heap) en Mégaoctets.",
+                     "150 par défaut. Baissez si votre jeu crash au démarrage (Out Of Memory OS).")
+            .defineInRange("offHeapArenaSizeMB", 150, 50, 500);
         BUILDER.pop();
 
         BUILDER.push("debug");

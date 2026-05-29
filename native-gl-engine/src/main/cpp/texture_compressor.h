@@ -48,6 +48,12 @@ public:
 
     static bool s_hasASTCLDR;
     static bool s_hasETC2;
+
+    // Métriques VRAM
+    static std::atomic<size_t> s_vramOriginalBytes;
+    static std::atomic<size_t> s_vramCompressedBytes;
+
+    static void logVRAMStats();
 };
 
 } // namespace NativeGLEngine

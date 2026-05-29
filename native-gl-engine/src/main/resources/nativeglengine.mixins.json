@@ -6,7 +6,8 @@
     "mixins": [],
     "client": [
         "ShaderProgramMixin",
-        "GlStateManagerMixin"
+        "GlStateManagerMixin",
+        "NativeImageMixin"
     ],
     "injectors": {
         "defaultRequire": 1
