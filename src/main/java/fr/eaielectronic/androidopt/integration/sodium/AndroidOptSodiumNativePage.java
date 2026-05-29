@@ -128,6 +128,79 @@ public class AndroidOptSodiumNativePage {
 
         groups.add(toggleGroup.build());
 
+        // --- NATIVE GL GROUP ---
+        OptionGroup.Builder nativeGlGroup = OptionGroup.createBuilder();
+
+        nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Off-Heap Arena"))
+            .setTooltip(Component.literal("Active l'arène de mémoire Off-Heap pour réduire la pression sur le GC Java."))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_OFF_HEAP_ENABLED.set(value),
+                (opts) -> OptConfig.NATIVE_GL_OFF_HEAP_ENABLED.get()
+            )
+            .setImpact(OptionImpact.HIGH)
+            .build()
+        );
+
+        nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Shader Compiler"))
+            .setTooltip(Component.literal("Active la compilation asynchrone des shaders via SPIR-V/Shaderc."))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_SHADER_COMPILER.set(value),
+                (opts) -> OptConfig.NATIVE_GL_SHADER_COMPILER.get()
+            )
+            .setImpact(OptionImpact.HIGH)
+            .build()
+        );
+
+        nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("GL Interceptor"))
+            .setTooltip(Component.literal("Active l'interception et la réécriture des commandes OpenGL bas niveau."))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_GL_INTERCEPTOR.set(value),
+                (opts) -> OptConfig.NATIVE_GL_GL_INTERCEPTOR.get()
+            )
+            .build()
+        );
+
+        nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Async Buffers"))
+            .setTooltip(Component.literal("Active l'envoi asynchrone des buffers de chunks vers le GPU."))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_ASYNC_BUFFERS.set(value),
+                (opts) -> OptConfig.NATIVE_GL_ASYNC_BUFFERS.get()
+            )
+            .build()
+        );
+
+        nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Hardware TexCompress"))
+            .setTooltip(Component.literal("Active la compression matérielle des textures (ASTC/ETC2) via C++."))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_TEX_COMPRESS.set(value),
+                (opts) -> OptConfig.NATIVE_GL_TEX_COMPRESS.get()
+            )
+            .build()
+        );
+
+        nativeGlGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Vertex Quantizer"))
+            .setTooltip(Component.literal("Active la quantisation des vertices en C++."))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NATIVE_GL_VERTEX_QUANT.set(value),
+                (opts) -> OptConfig.NATIVE_GL_VERTEX_QUANT.get()
+            )
+            .build()
+        );
+
+        groups.add(nativeGlGroup.build());
+
         // --- THERMAL GROUP ---
         OptionGroup.Builder thermalGroup = OptionGroup.createBuilder();
 
