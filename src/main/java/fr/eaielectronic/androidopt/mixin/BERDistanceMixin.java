@@ -66,25 +66,5 @@ public class BERDistanceMixin {
             }
         }
 
-        if (ConfigGuard.getBool(OptConfig.STOPPED_CONTRAPTION_SKIP, true)
-                && FrameBudgetManager.shouldThrottleEntities()
-                && isStoppedCreateMachine(blockEntity)) {
-            ci.cancel();
-        }
-    }
-
-    private static boolean isStoppedCreateMachine(BlockEntity be) {
-        String className = be.getClass().getName();
-        if (!className.contains("create") && !className.contains("Create")) return false;
-        try {
-            for (java.lang.reflect.Field f : be.getClass().getDeclaredFields()) {
-                String n = f.getName().toLowerCase();
-                if ((n.equals("speed") || n.equals("targetspeed")) && f.getType() == float.class) {
-                    f.setAccessible(true);
-                    return Math.abs(f.getFloat(be)) < 0.01f;
-                }
-            }
-        } catch (Exception ignored) {}
-        return false;
     }
 }

@@ -49,9 +49,9 @@ public class CreateBerCuller {
         
         // Reduire dynamiquement si le jeu rame
         if (FrameBudgetManager.currentLevel == FrameBudgetManager.BudgetLevel.CRITICAL) {
-            cullDist = Math.max(4, cullDist / 2);
+            cullDist = 4; // Culling tres agressif a 4 blocs pour sauver les FPS
         } else if (FrameBudgetManager.currentLevel == FrameBudgetManager.BudgetLevel.LOW) {
-            cullDist = Math.max(8, (int)(cullDist * 0.75));
+            cullDist = Math.max(8, (int)(cullDist * 0.5));
         }
         
         BER_CULL_DIST_SQ = (double) cullDist * cullDist;
