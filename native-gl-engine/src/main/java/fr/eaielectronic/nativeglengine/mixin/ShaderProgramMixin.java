@@ -35,45 +35,79 @@ public class ShaderProgramMixin {
     private static int cacheMisses = 0;
     private static int compilationsAsync = 0;
 
-    private static final ThreadLocal<String> currentGlslSource = new ThreadLocal<>();
+    private static final ThreadLocal<String> currentShaderName = new ThreadLocal<>();
+    private static final ThreadLocal<Integer> currentShaderType = new ThreadLocal<>();
 
-    /**
-     * Intercepte l'InputStream au tout début pour le lire, stocker le GLSL
-     * dans un ThreadLocal, et retourner un nouveau flux pour que MC puisse continuer.
-     */
-    @org.spongepowered.asm.mixin.injection.ModifyVariable(
-        method = "compileShader",
-        at = @At("HEAD"),
-        argsOnly = true
-    )
-    private static InputStream captureGlslSource(InputStream inputStream) {
-        // BYPASS COMPLET : On ne touche pas au flux pour tester si c'est la cause du crash !
-        return inputStream;
-    }
-
-    /**
-     * Intercepte la compilation de shader.
-     * 
-     * Cible : Program.compileShader(Type, String, InputStream, String, GlslPreprocessor)
-     * Signature Mojang Mappings NeoForge 1.21.1 — retourne un Program.
-     */
     @Inject(
-        method = "compileShader",
-        at = @At("HEAD"),
-        cancellable = true,
-        require = 0  // Ne pas crasher si la méthode n'existe pas (compatibilité)
+        method = "compileShaderInternal",
+        at = @At("HEAD")
     )
-    private static void onCompileShader(
+    private static void onCompileShaderInternalHead(
             Program.Type type,
             String name,
             InputStream inputStream,
             String sourceName,
             GlslPreprocessor preprocessor,
-            CallbackInfoReturnable<Program> cir
+            CallbackInfoReturnable<Integer> cir
     ) {
-        // BYPASS COMPLET : On laisse Minecraft compiler normalement sans cache ni async
-        return;
+        currentShaderName.set(name);
+        currentShaderType.set(type.ordinal());
     }
+
+    @org.spongepowered.asm.mixin.injection.ModifyArg(
+        method = "compileShaderInternal",
+        at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/GlStateManager;glShaderSource(ILjava/util/List;)V"),
+        index = 1
+    )
+    private static java.util.List<String> captureProcessedShader(java.util.List<String> processedLines) {
+        if (processedLines == null || processedLines.isEmpty()) {
+            return processedLines;
+        }
+
+        try {
+            if (!fr.eaielectronic.nativeglengine.NativeGLConfig.SHADER_CACHE_ENABLED.get()) {
+                return processedLines;
+            }
+        } catch (Exception e) {
+            // Config pas encore prête
+        }
+
+        String name = currentShaderName.get();
+        Integer typeOrdinal = currentShaderType.get();
+        
+        if (name == null || typeOrdinal == null) {
+            return processedLines;
+        }
+
+        currentShaderName.remove();
+        currentShaderType.remove();
+
+        String glslSource = String.join("\n", processedLines);
+
+        // ═══ Étape 1 : Hash SHA-256 ═══
+        String driverVersion = ShaderCompilerBridge.getDriverVersion();
+        String socName = AndroidOptBridge.getSocName();
+        String hash = ShaderCacheManager.computeHash(glslSource, socName, driverVersion);
+
+        // ═══ Étape 2 : Lancement compilation Async ═══
+        if (NativeLib.isLoaded()) {
+            try {
+                if (fr.eaielectronic.nativeglengine.NativeGLConfig.ASYNC_COMPILATION.get()) {
+                    compilationsAsync++;
+                    ShaderCompilerBridge.compileAsync(glslSource, typeOrdinal, hash, (spirv) -> {
+                        if (spirv != null) {
+                            NativeGLEngineMod.LOGGER.debug(
+                                "[NativeGLEngine] Shader '{}' compilé en arrière-plan ({} bytes SPIR-V)",
+                                name, spirv.length);
+                        }
+                    });
+                }
+            } catch (Exception ignored) {}
+        }
+
+        return processedLines;
+    }
+
 
     // ═══ Getters pour les stats ═══
     // IMPORTANT : dans un Mixin, toute méthode statique non annotée @Inject
