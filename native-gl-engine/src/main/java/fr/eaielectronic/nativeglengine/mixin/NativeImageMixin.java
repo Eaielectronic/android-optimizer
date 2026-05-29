@@ -25,37 +25,24 @@ public class NativeImageMixin {
     @Unique
     private ByteBuffer nativegl$offHeapBuffer = null;
 
-    @Redirect(
+    @Inject(
         method = "<init>(Lcom/mojang/blaze3d/platform/NativeImage$Format;IIZ)V",
-        at = @At(value = "INVOKE", target = "Lorg/lwjgl/system/MemoryUtil;nmemAlloc(J)J"),
-        require = 0
+        at = @At("RETURN")
     )
-    private long androidopt$redirectAlloc(long size) {
+    private void androidopt$onInit(NativeImage.Format format, int width, int height, boolean useCalloc, CallbackInfo ci) {
         if (NativeBufferManager.isInitialized()) {
+            long size = (long)width * (long)height * (long)format.components();
             this.nativegl$offHeapBuffer = NativeBufferManager.allocateCustom(size, "NativeImage");
+            
             if (this.nativegl$offHeapBuffer != null) {
-                return MemoryUtil.memAddress(this.nativegl$offHeapBuffer);
+                // LWJGL a déjà alloué la mémoire dans 'this.pixels'.
+                // On la libère immédiatement et on remplace par notre adresse OffHeap.
+                if (this.pixels != 0L) {
+                    MemoryUtil.nmemFree(this.pixels);
+                }
+                this.pixels = MemoryUtil.memAddress(this.nativegl$offHeapBuffer);
             }
         }
-        return MemoryUtil.nmemAlloc(size);
-    }
-
-    @Redirect(
-        method = "<init>(Lcom/mojang/blaze3d/platform/NativeImage$Format;IIZ)V",
-        at = @At(value = "INVOKE", target = "Lorg/lwjgl/system/MemoryUtil;nmemCalloc(JJ)J"),
-        require = 0
-    )
-    private long androidopt$redirectCalloc(long num, long size) {
-        long totalSize = num * size;
-        if (NativeBufferManager.isInitialized()) {
-            this.nativegl$offHeapBuffer = NativeBufferManager.allocateCustom(totalSize, "NativeImage");
-            if (this.nativegl$offHeapBuffer != null) {
-                // Pour imiter calloc, il faudrait mettre le buffer à zéro.
-                // Par sécurité et rapidité, on part du principe que NativeBufferManager retourne souvent du zeroed (mmap)
-                return MemoryUtil.memAddress(this.nativegl$offHeapBuffer);
-            }
-        }
-        return MemoryUtil.nmemCalloc(num, size);
     }
 
     @Inject(method = "close", at = @At("HEAD"), cancellable = true)

@@ -529,7 +529,10 @@ public class OptConfigScreen extends Screen {
         row(lx, rx, y,       "Hardware TexCompress",  OptConfig.NATIVE_GL_TEX_COMPRESS,
                               "Vertex Quantizer",      OptConfig.NATIVE_GL_VERTEX_QUANT);
 
-        y += GAP * 2;
+        addIntSlider("Off-Heap Arena (MB)", OptConfig.NATIVE_GL_OFF_HEAP_SIZE_MB,
+            50, 500, cx - BTN_W / 2, y + GAP + 8, BTN_W, BTN_H);
+
+        y += GAP * 3;
         label(cx, y, "§7NativeGL Engine Configuration");
         label(cx, y + 12, "§7Le GPU Budget contrôle la quantité de RAM allouée au moteur C++.");
         label(cx, y + 24, "§7La compression matérielle (ETC2) utilise etcpak natif pour de meilleures perfs.");
