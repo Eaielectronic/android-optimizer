@@ -1,10 +1,7 @@
 ### Gradle ###
 .gradle
 # Ignore build/
-build/*
-!build/libs/
-build/libs/*
-!build/libs/*.jar
+build/
 !**/src/**/build/
 
 ### IntelliJ IDEA ###
@@ -50,7 +47,4 @@ android-ndk-r26d/
 plans/
 
 
-native-gl-engine/build/*
-!native-gl-engine/build/libs/
-native-gl-engine/build/libs/*
-!native-gl-engine/build/libs/*.jar
+native-gl-engine/build/
