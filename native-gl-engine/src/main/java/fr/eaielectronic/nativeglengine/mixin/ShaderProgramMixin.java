@@ -47,13 +47,22 @@ public class ShaderProgramMixin {
         argsOnly = true
     )
     private static InputStream captureGlslSource(InputStream inputStream) {
+        if (inputStream == null) return null;
         try {
             byte[] bytes = inputStream.readAllBytes();
-            currentGlslSource.set(new String(bytes, java.nio.charset.StandardCharsets.UTF_8));
+            if (bytes.length > 0) {
+                currentGlslSource.set(new String(bytes, java.nio.charset.StandardCharsets.UTF_8));
+            } else {
+                NativeGLEngineMod.LOGGER.warn("[NativeGLEngine] captureGlslSource: Stream was empty!");
+                currentGlslSource.set("");
+            }
+            // Retourne toujours un flux indépendant pour protéger le reste du pipeline
             return new java.io.ByteArrayInputStream(bytes);
         } catch (Exception e) {
-            NativeGLEngineMod.LOGGER.error("Erreur capture GLSL : {}", e.getMessage());
-            return inputStream;
+            NativeGLEngineMod.LOGGER.error("[NativeGLEngine] captureGlslSource failed: {}", e.getMessage());
+            currentGlslSource.remove();
+            // Fallback: retourne un flux vide pour éviter un crash complet de la méthode
+            return new java.io.ByteArrayInputStream(new byte[0]);
         }
     }
 
@@ -90,6 +99,10 @@ public class ShaderProgramMixin {
         String glslSource = currentGlslSource.get();
         if (glslSource == null) glslSource = ""; // Fallback
         currentGlslSource.remove();
+
+        if (glslSource.isEmpty()) {
+            return; // Impossible de lire, on laisse Minecraft gérer normalement
+        }
 
         // ═══ Étape 0 : Résoudre les #moj_import ═══
         if (preprocessor != null && glslSource.contains("#moj_import")) {

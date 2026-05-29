@@ -31,16 +31,6 @@ static bytehook_stub_t stub_eglGetProcAddress = nullptr;
 // Forward declaration
 static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void* pixels);
 
-static void* proxy_eglGetProcAddress(const char* procname) {
-    BYTEHOOK_STACK_SCOPE();
-    
-    if (procname && strcmp(procname, "glTexImage2D") == 0) {
-        return (void*)proxy_glTexImage2D;
-    }
-    
-    return BYTEHOOK_CALL_PREV(proxy_eglGetProcAddress, procname);
-}
-
 // Notre fonction de remplacement
 static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void* pixels) {
     g_total_calls++;
@@ -87,14 +77,9 @@ bool gl_interceptor_install() {
         return false;
     }
 
-    // 2. Hooker eglGetProcAddress globalement pour MobileGlues (qui utilise dlsym/eglGetProcAddress)
-    stub_eglGetProcAddress = bytehook_hook_all(
-        NULL,
-        "eglGetProcAddress",
-        (void*)proxy_eglGetProcAddress,
-        NULL,
-        NULL
-    );
+    // On ne hook PAS eglGetProcAddress car cela bypasse gl4es/MobileGlues
+    // Ce bypass empêchait la traduction des shaders #version 150 -> #version 300 es
+    // et causait le crash "ERROR: Invalid #version".
 
     // 3. Hook standard PLT
     stub_glTexImage2D = bytehook_hook_all(
