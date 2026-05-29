@@ -7,7 +7,8 @@
     "client": [
         "ShaderProgramMixin",
         "GlStateManagerMixin",
-        "NativeImageMixin"
+        "NativeImageMixin",
+        "ByteBufferBuilderMixin"
     ],
     "injectors": {
         "defaultRequire": 1
