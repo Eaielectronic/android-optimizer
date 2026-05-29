@@ -82,7 +82,32 @@ public class ShaderProgramMixin {
         currentShaderName.remove();
         currentShaderType.remove();
 
-        String glslSource = String.join("\n", processedLines);
+        java.util.List<String> translatedLines = new java.util.ArrayList<>();
+        boolean precisionAdded = false;
+        boolean glHooksEnabled = false;
+        
+        try {
+            glHooksEnabled = fr.eaielectronic.nativeglengine.NativeGLConfig.GL_HOOKS_ENABLED.get();
+        } catch (Exception ignored) {}
+
+        if (glHooksEnabled) {
+            for (String line : processedLines) {
+                String trimmed = line.trim();
+                if (trimmed.startsWith("#version")) {
+                    translatedLines.add("#version 320 es\n");
+                } else {
+                    if (!precisionAdded && !trimmed.isEmpty() && !trimmed.startsWith("//") && !trimmed.startsWith("#")) {
+                        translatedLines.add("precision highp float;\n");
+                        precisionAdded = true;
+                    }
+                    translatedLines.add(line);
+                }
+            }
+        } else {
+            translatedLines.addAll(processedLines);
+        }
+
+        String glslSource = String.join("\n", translatedLines);
 
         // ═══ Étape 1 : Hash SHA-256 ═══
         String driverVersion = ShaderCompilerBridge.getDriverVersion();
@@ -105,7 +130,7 @@ public class ShaderProgramMixin {
             } catch (Exception ignored) {}
         }
 
-        return processedLines;
+        return translatedLines;
     }
 
 
