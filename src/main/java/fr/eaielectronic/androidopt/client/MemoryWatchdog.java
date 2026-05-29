@@ -68,10 +68,16 @@ public class MemoryWatchdog {
         if (ratio >= hardThreshold) {
             consecutiveHighHeap++;
             preventiveGcCount++;
-            AndroidOptMod.LOGGER.warn(
-                "[AndroidOpt] Heap CRITIQUE {}/{} MB ({}%) — GC + purge textures (x{})",
-                usedMB, maxMB, String.format("%.0f", ratio * 100), consecutiveHighHeap);
-            System.gc();
+            
+            // On ne fait SURTOUT PAS System.gc() car c'est ca qui cause les freezes Stop-The-World
+            // On purge juste agressivement les caches de mods pour soulager la JVM
+            long now = System.currentTimeMillis();
+            if (now - lastSoftPurgeMs >= 5000) { 
+                lastSoftPurgeMs = now;
+                CreateCacheCleanupHandler.forceCacheCleanup();
+                TextureCacheEvictor.forceEvict();
+            }
+
         } else if (ratio >= softThreshold || FrameBudgetManager.isCritical()) {
             consecutiveHighHeap = 0;
             // Ne pas forcer le GC manuellement pour eviter de bloquer le thread.
