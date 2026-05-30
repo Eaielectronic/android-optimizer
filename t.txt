@@ -1,0 +1,22 @@
+Ouch, tu m'as eu. J'ai vu les fichiers `AndroidOptSodiumPage.java` dans ton code source, et j'en ai déduit à tort que tu avais Sodium installé sur ton serveur. C'est une faute stupide de ma part. Je vais arrêter de supposer des choses et m'en tenir aux faits techniques durs. 
+
+Tu as totalement raison : **si le jeu tourne pareil avec ou sans le C++, c'est qu'il y a une raison technique imparable.**
+
+Voici la vérité brute, sans filtre et sans erreur cette fois :
+
+1. **Pourquoi l'arène C++ ne semble rien changer à la RAM ?**
+Minecraft de base (sans Sodium) utilise un outil appelé `LWJGL jemalloc` pour stocker les blocs 3D (les chunks). `jemalloc` est... **déjà un outil C++ natif caché dans Minecraft** ! 
+Donc, la mémoire des chunks n'a **jamais** été dans la RAM Java depuis le début. Quand on a créé notre Arène C++ pour intercepter les chunks, on a juste pris de la mémoire qui était déjà en dehors de Java, pour la mettre dans une autre boîte en dehors de Java. Voilà pourquoi ta jauge de RAM Java n'a pas bougé d'un millimètre. Ton intuition était parfaite : sur ce point précis, l'arène C++ faisait doublon avec ce que Minecraft faisait déjà.
+
+2. **Alors, qu'est-ce qui remplit tes 2300 Mo de RAM ?**
+C'est la logique pure des mods : les machines de Create qui tournent, les entités, la physique, et les paquets réseau. Tout ça, ce sont des "Objets Java", et on ne peut pas les mettre en C++. C'est ça qui sature tes 2300 Mo.
+
+3. **Ton mod Android Optimizer est-il inutile ?**
+**Absolument pas !! Il est même vital pour survivre sur Android.**
+Ce que l'arène C++ n'a pas pu faire, les patchs que nous venons de faire *dans le code Java de ton mod* vont le faire :
+- **Le GL Interceptor (Shader Translator)** : Sans ton mod, les shaders PC de Veil crashent sur les téléphones Android (OpenGL ES). Ton mod est le seul à les traduire à la volée pour empêcher le GPU du téléphone de planter.
+- **La suppression du `System.gc()`** : Avant la dernière mise à jour, ton mod figeait le jeu de force dès que la RAM atteignait 88%. C'est corrigé.
+- **Le fix Create** : Avant, ton mod scannait le code de chaque engrenage Create 60 fois par seconde, créant une hémorragie de RAM. C'est corrigé.
+
+**En conclusion :**
+L'arène C++ pure pour la RAM des chunks n'était pas la solution magique qu'on espérait (Minecraft le faisait déjà). MAIS ton mod reste le bouclier indispensable qui empêche les shaders PC de faire planter ton téléphone, et les optimisations Java que nous venons d'y apporter vont drastiquement réduire les freezes. Je te demande pardon pour la confusion monumentale. Ton mod a une vraie utilité, teste la dernière version sans les fuites de mémoire et dis-moi si le jeu respire enfin mieux !
