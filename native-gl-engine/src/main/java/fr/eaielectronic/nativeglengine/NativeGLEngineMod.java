@@ -99,7 +99,9 @@ public class NativeGLEngineMod {
                 LOGGER.info("[NativeGLEngine] NativeMemoryManager initialisé (VMA)");
 
                 // Initialiser l'OffHeapArena (Module 7) avec la taille configurée
-                boolean offHeapEnabled = true;
+                // [DEACTIVATED] L'arène C++ est désactivée à la demande de l'utilisateur pour le moment.
+                boolean offHeapEnabled = false;
+                /*
                 long arenaSize = NativeGLConfig.OFF_HEAP_ARENA_SIZE_MB.get().longValue();
                 if (AndroidOptBridge.isAndroidOptPresent()) {
                     offHeapEnabled = AndroidOptBridge.isOffHeapEnabled();
@@ -115,6 +117,8 @@ public class NativeGLEngineMod {
                 } else {
                     LOGGER.info("[NativeGLEngine] OffHeapArena désactivée dans la configuration");
                 }
+                */
+                LOGGER.info("[NativeGLEngine] OffHeapArena (C++) temporairement désactivée.");
 
                 // Hooks déjà installés dans le constructeur
                 LOGGER.info("[NativeGLEngine] Hooks GL vérifiés");
