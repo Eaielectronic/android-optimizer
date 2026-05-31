@@ -69,13 +69,15 @@ public class MemoryWatchdog {
             consecutiveHighHeap++;
             preventiveGcCount++;
             
-            // On ne fait SURTOUT PAS System.gc() car c'est ca qui cause les freezes Stop-The-World
-            // On purge juste agressivement les caches de mods pour soulager la JVM
+            // L'utilisateur l'a demandé : quand la Heap est vraiment trop haute (Critical), 
+            // on FORCE un System.gc() bloquant pour éviter le crash OOM brutal d'Android.
             long now = System.currentTimeMillis();
             if (now - lastSoftPurgeMs >= 5000) { 
                 lastSoftPurgeMs = now;
+                AndroidOptMod.LOGGER.warn("[AndroidOpt] HEAP CRITIQUE ({}%). Déclenchement du GC d'urgence anti-crash !", String.format("%.0f", ratio * 100));
                 CreateCacheCleanupHandler.forceCacheCleanup();
                 TextureCacheEvictor.forceEvict();
+                System.gc(); // <-- Le fameux GC préventif anti-crash
             }
 
         } else if (ratio >= softThreshold || FrameBudgetManager.isCritical()) {

@@ -247,7 +247,9 @@ public class OptConfigScreen extends Screen {
         addIntSlider("androidopt.config.max_total_ram", OptConfig.MAX_TOTAL_RAM_MB,
             1500, 4096, cx - BTN_W / 2, y+GAP*3, BTN_W, BTN_H);
         addIntSlider("androidopt.config.gc_threshold", OptConfig.GC_THRESHOLD_PERCENT,
-            50, 95, cx - BTN_W / 2, y+GAP*4, BTN_W, BTN_H);
+            50, 95, lx, y+GAP*4, BTN_W, BTN_H);
+        addIntSlider("androidopt.config.gc_critical", OptConfig.GC_CRITICAL_PERCENT,
+            70, 100, rx, y+GAP*4, BTN_W, BTN_H);
 
         Runtime rt = Runtime.getRuntime();
         long usedMB = (rt.totalMemory() - rt.freeMemory()) / (1024*1024);
