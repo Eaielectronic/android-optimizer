@@ -47,7 +47,7 @@ android-ndk-r26d/
 **/src/main/cpp/build/
 
 ### Project Plans ###
-# plans/ — now tracked in git
+plans/
 
 
 native-gl-engine/build/*
