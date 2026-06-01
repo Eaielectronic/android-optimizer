@@ -63,6 +63,13 @@ target_compile_options(etcpak_lib PRIVATE -O3 -ffast-math)
 set(ASTCENC_ISA_NEON ON CACHE BOOL "" FORCE)
 add_subdirectory(deps/astcenc EXCLUDE_FROM_ALL)
 
+# ─── LZ4 Compression (statique, zéro dépendance externe) ───
+add_library(lz4_static STATIC
+    compression/lz4/lz4.c
+    compression/lz4/lz4hc.c
+)
+target_compile_options(lz4_static PRIVATE -O3 -ffast-math)
+
 # ─── Bibliothèque principale ───
 add_library(NativeGLEngine SHARED
     jni_bridge.cpp
@@ -78,11 +85,18 @@ add_library(NativeGLEngine SHARED
     simd_math_engine.cpp
     draw_call_batcher.cpp
     ahardware_buffer_manager.cpp
+    # V9 — Arsenal C++ NDK
+    particles/particle_pool.cpp
+    system/thermal_monitor.cpp
+    system/memory_purge.cpp
+    system/perf_hint.cpp
+    compression/lz4_bridge.cpp
 )
 
 # ─── Headers ───
 target_include_directories(NativeGLEngine PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/compression
     ${vma_SOURCE_DIR}/include
     ${bhook_SOURCE_DIR}/bytehook/src/main/cpp/include
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/etcpak
@@ -96,6 +110,7 @@ target_link_libraries(NativeGLEngine
     spirv-cross-glsl
     spirv-cross-core
     bytehook
+    lz4_static
     vulkan
     log
     android

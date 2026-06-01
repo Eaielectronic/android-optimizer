@@ -27,6 +27,11 @@ bool g_verbose_logging = false;
 #include "soc_optimizer.h"
 #include "texture_compressor.h"
 #include "off_heap_arena.h"
+#include "particles/particle_pool.h"
+#include "system/thermal_monitor.h"
+#include "system/memory_purge.h"
+#include "system/perf_hint.h"
+#include "compression/lz4_bridge.h"
 
 // ════════════════════════════════════════════════════
 // ShaderCompilerBridge
@@ -343,3 +348,149 @@ Java_fr_eaielectronic_nativeglengine_NativeBufferManager_nativeFree(
     NativeGLEngine::OffHeapArena::free(env, buffer);
 }
 
+// ════════════════════════════════════════════════════
+// Particle Pool (V9 — Tâche C3)
+// Pool de 4096 particules en mémoire native contiguë
+// Zéro allocation Java, zéro pression GC
+// ════════════════════════════════════════════════════
+
+static androidopt::ParticlePool g_particlePool;
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeSpawnParticle(
+        JNIEnv* env, jclass clazz,
+        jfloat x, jfloat y, jfloat z,
+        jfloat vx, jfloat vy, jfloat vz,
+        jfloat maxAge, jint texIndex,
+        jint r, jint g, jint b, jint a) {
+    return g_particlePool.spawn(x, y, z, vx, vy, vz, maxAge,
+        (uint16_t)texIndex,
+        (uint8_t)r, (uint8_t)g, (uint8_t)b, (uint8_t)a);
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeTickParticles(
+        JNIEnv* env, jclass clazz, jfloat deltaTime) {
+    return g_particlePool.tickAll(deltaTime);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeClearParticles(
+        JNIEnv* env, jclass clazz) {
+    g_particlePool.clear();
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeGetActiveParticleCount(
+        JNIEnv* env, jclass clazz) {
+    return g_particlePool.activeCount();
+}
+
+extern "C" JNIEXPORT jlong JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeGetTotalParticlesSpawned(
+        JNIEnv* env, jclass clazz) {
+    return (jlong)g_particlePool.totalSpawned();
+}
+
+// ════════════════════════════════════════════════════
+// Thermal Monitor (V9 — Tâche C4)
+// Lecture température CPU via sysfs, sans root
+// ════════════════════════════════════════════════════
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeGetThermalLevel(
+        JNIEnv* env, jclass clazz) {
+    return androidopt::getThermalLevel();
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeGetCpuTemperature(
+        JNIEnv* env, jclass clazz) {
+    return androidopt::getRawTemperature();
+}
+
+// ════════════════════════════════════════════════════
+// Memory Purge (V9 — Tâche C5)
+// mallopt(M_PURGE) + madvise(MADV_DONTNEED)
+// ════════════════════════════════════════════════════
+
+extern "C" JNIEXPORT jlong JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativePurgeNativeMemory(
+        JNIEnv* env, jclass clazz) {
+    return (jlong)androidopt::purgeNativeMemory();
+}
+
+extern "C" JNIEXPORT jlong JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeGetSystemAvailableMemoryMB(
+        JNIEnv* env, jclass clazz) {
+    return (jlong)androidopt::getSystemAvailableMemoryMB();
+}
+
+// ════════════════════════════════════════════════════
+// LZ4 Compression (V9 — Tâche C6)
+// Compression/décompression via DirectByteBuffer
+// ════════════════════════════════════════════════════
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeLz4CompressHC(
+        JNIEnv* env, jclass clazz,
+        jobject srcBuf, jint srcLen, jobject dstBuf, jint level) {
+    void* src = env->GetDirectBufferAddress(srcBuf);
+    void* dst = env->GetDirectBufferAddress(dstBuf);
+    if (!src || !dst) {
+        LOGW("LZ4 compressHC: null DirectByteBuffer address");
+        return -1;
+    }
+    int dstCap = (int)env->GetDirectBufferCapacity(dstBuf);
+    return androidopt::compressHC(src, srcLen, dst, dstCap, level);
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeLz4CompressFast(
+        JNIEnv* env, jclass clazz,
+        jobject srcBuf, jint srcLen, jobject dstBuf, jint acceleration) {
+    void* src = env->GetDirectBufferAddress(srcBuf);
+    void* dst = env->GetDirectBufferAddress(dstBuf);
+    if (!src || !dst) {
+        LOGW("LZ4 compressFast: null DirectByteBuffer address");
+        return -1;
+    }
+    int dstCap = (int)env->GetDirectBufferCapacity(dstBuf);
+    return androidopt::compressFast(src, srcLen, dst, dstCap, acceleration);
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeLz4Decompress(
+        JNIEnv* env, jclass clazz,
+        jobject srcBuf, jint srcLen, jobject dstBuf, jint maxDecompressed) {
+    void* src = env->GetDirectBufferAddress(srcBuf);
+    void* dst = env->GetDirectBufferAddress(dstBuf);
+    if (!src || !dst) {
+        LOGW("LZ4 decompress: null DirectByteBuffer address");
+        return -1;
+    }
+    return androidopt::decompress(src, srcLen, dst, maxDecompressed);
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeLz4CompressBound(
+        JNIEnv* env, jclass clazz, jint srcLen) {
+    return androidopt::compressBound(srcLen);
+}
+
+// ════════════════════════════════════════════════════
+// Thread Performance Boost (V9 — Tâche C7)
+// Bind sur P-Cores via sched_setaffinity
+// ════════════════════════════════════════════════════
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeBoostCurrentThread(
+        JNIEnv* env, jclass clazz) {
+    return androidopt::boostCurrentThread();
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_fr_eaielectronic_nativeglengine_NativeLib_nativeGetPCoreCount(
+        JNIEnv* env, jclass clazz) {
+    return androidopt::getPCoreCount();
+}

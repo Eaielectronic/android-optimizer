@@ -99,4 +99,106 @@ public final class NativeLib {
 
     /** @return message d'erreur si le chargement a échoué, null sinon */
     public static String getLoadError() { return loadError; }
+
+    // ════════════════════════════════════════════════════════════
+    // V9 — Méthodes natives : Particle Pool (C++)
+    // Pool de 4096 particules en RAM native, zéro GC
+    // ════════════════════════════════════════════════════════════
+
+    /** Crée une particule dans le pool natif. @return index ou -1 si plein */
+    public static native int nativeSpawnParticle(
+        float x, float y, float z,
+        float vx, float vy, float vz,
+        float maxAge, int texIndex,
+        int r, int g, int b, int a);
+
+    /** Met à jour toutes les particules (gravité, vélocité, durée de vie).
+     *  @return nombre de particules encore vivantes */
+    public static native int nativeTickParticles(float deltaTime);
+
+    /** Supprime toutes les particules (ex: changement de dimension) */
+    public static native void nativeClearParticles();
+
+    /** @return nombre de particules actives dans le pool */
+    public static native int nativeGetActiveParticleCount();
+
+    /** @return nombre total de particules créées depuis le démarrage */
+    public static native long nativeGetTotalParticlesSpawned();
+
+    // ════════════════════════════════════════════════════════════
+    // V9 — Thermal Monitor (C++)
+    // Lecture température CPU via sysfs, sans root
+    // ════════════════════════════════════════════════════════════
+
+    /**
+     * @return niveau de throttling : 0=froid, 1=tiède, 2=chaud, 3=critique
+     */
+    public static native int nativeGetThermalLevel();
+
+    /** @return température CPU en degrés Celsius */
+    public static native int nativeGetCpuTemperature();
+
+    // ════════════════════════════════════════════════════════════
+    // V9 — Memory Purge (C++)
+    // mallopt(M_PURGE) + madvise(MADV_DONTNEED)
+    // ════════════════════════════════════════════════════════════
+
+    /**
+     * Force la libération de la mémoire native inutilisée.
+     * @return quantité de RAM récupérée en Ko (estimation)
+     */
+    public static native long nativePurgeNativeMemory();
+
+    /** @return mémoire système disponible en Mo */
+    public static native long nativeGetSystemAvailableMemoryMB();
+
+    // ════════════════════════════════════════════════════════════
+    // V9 — LZ4 Compression (C++)
+    // Compression/décompression via DirectByteBuffer
+    // ════════════════════════════════════════════════════════════
+
+    /**
+     * Compresse avec LZ4 HC (meilleur ratio, pour stockage long terme).
+     * @param srcBuf DirectByteBuffer source
+     * @param srcLen nombre d'octets à compresser
+     * @param dstBuf DirectByteBuffer destination (capacité >= lz4CompressBound)
+     * @param level niveau HC (1-12, 9 recommandé)
+     * @return taille compressée en octets, -1 si erreur
+     */
+    public static native int nativeLz4CompressHC(
+        java.nio.ByteBuffer srcBuf, int srcLen,
+        java.nio.ByteBuffer dstBuf, int level);
+
+    /**
+     * Compresse avec LZ4 rapide (pour les données qui changent souvent).
+     * @param acceleration 1=normal, 2+=plus rapide mais moins compressé
+     */
+    public static native int nativeLz4CompressFast(
+        java.nio.ByteBuffer srcBuf, int srcLen,
+        java.nio.ByteBuffer dstBuf, int acceleration);
+
+    /**
+     * Décompresse des données LZ4 (ultra-rapide : >2 Go/s sur ARM64).
+     * @return nombre d'octets décompressés, -1 si erreur
+     */
+    public static native int nativeLz4Decompress(
+        java.nio.ByteBuffer srcBuf, int srcLen,
+        java.nio.ByteBuffer dstBuf, int maxDecompressed);
+
+    /** @return taille max du buffer de destination pour compresser srcLen octets */
+    public static native int nativeLz4CompressBound(int srcLen);
+
+    // ════════════════════════════════════════════════════════════
+    // V9 — Thread Performance Boost (C++)
+    // Bind sur P-Cores via sched_setaffinity
+    // ════════════════════════════════════════════════════════════
+
+    /**
+     * Booste le thread actuel en le plaçant sur les Performance Cores.
+     * @return 0 si succès, -1 si échec
+     */
+    public static native int nativeBoostCurrentThread();
+
+    /** @return nombre de P-Cores détectés sur cet appareil */
+    public static native int nativeGetPCoreCount();
 }
