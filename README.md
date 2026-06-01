@@ -8,7 +8,7 @@ Un mod NeoForge 1.21.1 concu pour optimiser Minecraft Java sur les telephones An
 
 ## Installation
 
-1. Telechargez `androidopt-1.0.0.jar` depuis les [releases](../../releases) ou compilez-le.
+1. Telechargez `androidopt-1.0.5.jar` depuis les [releases](../../releases) ou compilez-le.
 2. Placez-le dans le dossier `mods/` de votre instance Minecraft.
 3. Lancez le jeu — le mod s'adapte automatiquement a votre appareil.
 
@@ -35,7 +35,9 @@ Principales optimisations :
 3. **Nettoyage RAM par reflexion (Create/Sable)** : Quand une machine (Contraption) s'arrete, elle laisse un "monde fantome" en memoire. Le mod utilise la reflexion Java pour detecter et liberer cette memoire. Gain : **~30 a 80 Mo par machine arretee**.
 4. **Correction reseau Sable (UDP)** : Le mod Sable tente d'utiliser un protocole UDP experimental qui bloque le jeu pendant 200 a 300 millisecondes en cas d'echec. Le paquet serveur est intercepte et annule silencieusement, forcant le reseau a utiliser TCP.
 5. **Surveillance Mémoire Intelligente (Watchdog)** : Au lieu d'attendre la saturation de la RAM (qui provoque des freezes de 3 secondes) ou de forcer le GC manuellement, le mod déclenche des **purges asynchrones** des caches Create et des textures dès que la mémoire atteint un seuil (ex: **75%**). Le Garbage Collector natif s'occupe ensuite de petites micro-pauses indolores. Un `System.gc()` n'est forcé qu'en cas d'extrême urgence (seuil critique configurable, ex: 88%) pour éviter le crash.
-6. **Moteur C++ (NativeGL Engine)** : Inclus un moteur natif C++ qui contourne la JVM pour gérer la mémoire (Off-Heap Arena) et compiler les shaders. Résultat : disparition des micro-freezes liés au Garbage Collector sur l'allocation des textures.
+6. **Optimisations Paresseuses (Lazy Loading)** : Indexation asynchrone des items JEI, chargement à la volée des polices Unicode, et éviction intelligente LRU-LFU des modèles 3D complexes non vus récemment pour économiser des centaines de Mo de RAM.
+7. **Compression NBT & BlockEntities Off-Heap** : Utilisation de LZ4 et de l'architecture Agrona SoA (Off-Heap) pour stocker les données d'entités hors de la JVM Java, réduisant radicalement le travail du Garbage Collector.
+8. **Moteur C++ (NativeGL Engine 0.1.1)** : Inclus un moteur natif C++ compilé en ARM64 qui contourne la JVM pour gérer la mémoire (Off-Heap Arena), compiler les shaders, gérer les particules et purger la RAM nativement. Résultat : disparition des micro-freezes.
 
 ### Gains estimes (teste avec Create)
 
@@ -83,7 +85,7 @@ A NeoForge 1.21.1 mod designed to optimize Minecraft Java on Android phones (Ame
 
 ## Installation
 
-1. Download `androidopt-1.0.0.jar` from the [releases](../../releases) or build it yourself.
+1. Download `androidopt-1.0.5.jar` from the [releases](../../releases) or build it yourself.
 2. Place it in your Minecraft instance's `mods/` folder.
 3. Launch the game — the mod automatically detects your phone's processor and applies optimal settings.
 
@@ -110,7 +112,9 @@ Key optimizations:
 3. **Reflection-based RAM Sweeper (Create/Sable)**: When a contraption stops, it leaves a "ghost world" in memory. The mod uses Java Reflection to detect and free this memory. Gain: **~30 to 80 MB per stopped machine**.
 4. **Sable Network UDP Fix**: The Sable mod attempts to use an experimental UDP protocol that freezes the game for 200-300ms on failure. The server packet is intercepted and silently cancelled, forcing TCP fallback.
 5. **Smart Memory Watchdog**: Instead of waiting for RAM saturation (causing 3-second freezes) or forcing a manual GC, the mod triggers **asynchronous purges** of Create and texture caches as soon as memory reaches a soft threshold (e.g., **75%**). Java's native Garbage Collector then handles the cleanup in painless micro-pauses. A hard `System.gc()` is only forced in extreme emergencies (configurable critical threshold, e.g., 88%) to prevent an OutOfMemory crash.
-6. **C++ NativeGL Engine**: Includes a native C++ engine that bypasses the JVM to manage memory (Off-Heap Arena) and compile shaders. Result: elimination of Garbage Collector micro-freezes during texture allocation.
+6. **Lazy Loading Optimizations**: Asynchronous indexing of JEI items, on-demand loading of Unicode fonts, and dynamic LRU-LFU eviction of complex 3D models not recently seen to save hundreds of MBs of RAM.
+7. **Off-Heap NBT & BlockEntities Compression**: Utilizing LZ4 and Agrona SoA architecture (Off-Heap) to store entity data outside the Java JVM, drastically reducing Garbage Collector pressure.
+8. **C++ NativeGL Engine (0.1.1)**: Includes a native C++ engine compiled in ARM64 that bypasses the JVM to manage memory (Off-Heap Arena), compile shaders, manage particles, and purge RAM natively. Result: elimination of micro-freezes.
 
 ### Estimated Gains (Tested with Create)
 

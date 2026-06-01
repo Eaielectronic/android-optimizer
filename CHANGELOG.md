@@ -1,19 +1,26 @@
 # Changelog
 
-## [1.0.6] - 2026-05-29
+## [1.0.5] - 2026-06-01
 
 ### Added
-- **NativeGL Engine Integration** : Intégration complète du moteur C++ `NativeGLEngine` avec ses options dans l'interface de configuration (`OptConfigScreen`).
-- **Off-Heap Arena (C++)** : Implémentation d'une arène mémoire Off-Heap pour réduire la pression sur le Garbage Collector Java. Redirection invisible des allocations de `NativeImage` (Minecraft) vers la mémoire native.
-- **Toggles Dynamiques** : Ajout de boutons ON/OFF dans les configurations pour chaque fonctionnalité C++ (Shader Compiler, GL Interceptor, Async Buffers, Off-Heap Arena) afin de permettre un contrôle total sans valeurs en dur.
+- **NativeGL Engine Integration** : Intégration du moteur C++ `NativeGLEngine` et détection de présence.
+- **Off-Heap Arena (C++)** : Implémentation d'une arène mémoire Off-Heap pour réduire la pression sur le GC.
+- **Lazy JEI Search Indexing** : Indexation paresseuse des items en arrière-plan pour éviter les freezes au démarrage (gain RAM massif).
+- **Lazy Unicode Font Paging** : Chargement à la volée des pages de caractères (Unicode) pour économiser la VRAM.
+- **LRU-LFU 3D Model Eviction** : Éviction dynamique des modèles 3D complexes non vus récemment avec un fallback "FlatSprite" (quad 2D) (gain RAM très significatif).
+- **Distant NBT Off-Heap Compression** : Compression LZ4 et stockage Off-Heap des NBT d'entités inactives/distantes.
+- **Agrona KineticSoABuffer** : Remplacement des objets Java lourds de Create par une architecture SoA Off-Heap pour les BlockEntities Cinétiques.
+- **Audio Pool Bridge** : Pool natif pour les sons afin d'alléger la mémoire Java.
+- **Toggles UI (Sodium/Embeddium/OptConfigScreen)** : Ajout des bascules (ON/OFF) dans les pages d'options pour contrôler ces nouvelles optimisations (JEI, Fonts, Model Eviction, NBT Off-Heap).
+- **SodiumCompanion** : Ajustement automatique du nombre de threads de rendu des chunks selon le SoC mobile.
+- **FerriteCore Companion** : Le MemoryWatchdog détecte l'absence de FerriteCore et abaisse automatiquement le seuil de purge.
+- **ThermalMonitor** : Surveille la température via `/sys/class/thermal` et force le `FrameBudgetManager` en REDUCED/CRITICAL.
 
-## [1.0.5] - 2026-05-26
-- **SodiumCompanion** : Détection de Sodium/Embeddium pour ajuster automatiquement le nombre de threads de rendu des chunks selon le processeur mobile (SoC) et activer l'option "Animate Only Visible Textures".
-- **FerriteCore Companion** : Le MemoryWatchdog détecte l'absence de FerriteCore et abaisse automatiquement le seuil de déclenchement des purges de caches pour éviter l'épuisement de la RAM lors des pics de chargement.
-- **ThermalMonitor** : Surveille activement la température du processeur (via les zones thermiques `/sys/class/thermal`). Force automatiquement le `FrameBudgetManager` en mode CRITICAL ou REDUCED en cas de surchauffe (> 48°C ou > 42°C) pour limiter le thermal throttling. Ajout de l'affichage de la température dans le HUD.
+### Fixed
+- **Comportement de sauvegarde (UI)** : La touche ECHAP dans le menu `OptConfigScreen` annule désormais les modifications en cours. La sauvegarde ne se fait que via les boutons "Appliquer" ou "Terminer" conformément à l'intégration Sodium/Embeddium.
 
 ### Removed
-- **ChunkPreloader** : Suppression complète du chargement anticipé des chunks (`level.getChunk()`). Sur Android avec un stockage eMMC/UFS lent, cela consommait trop de RAM inutilement et bloquait le thread de rendu. Remplacé par un ajustement intelligent du `FreezeDebugger` (qui devient plus clément lors des déplacements rapides du joueur).
+- **ChunkPreloader** : Suppression complète du pré-chargement des chunks (sur Android eMMC/UFS lent, cela consommait trop de RAM) remplacé par le `FreezeDebugger` intelligent.
 
 ## [1.0.4] - 2024-05-25
 

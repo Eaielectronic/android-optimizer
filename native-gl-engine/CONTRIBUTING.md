@@ -64,13 +64,21 @@ Ouvrez une [Issue](https://github.com/Eaielectronic/android-optimizer/issues) av
 
 Les fichiers C++ contiennent des stubs (`TODO`) à implémenter :
 
-| Fichier | Stub à implémenter | Dépendance |
+| Fichier | Fonction principale | Dépendance |
 |---|---|---|
 | `shader_compiler.cpp` | Pipeline GLSL → SPIR-V → ESSL | Shaderc, SPIRV-Cross |
 | `soc_optimizer.cpp` | Passes spirv-opt par SoC | SPIRV-Tools |
 | `native_memory.cpp` | VMA allocator + VK_EXT_memory_budget | Vulkan SDK, VMA |
 | `gl_interceptor.cpp` | PLT hooking réel | dlsym, ELF |
 | `texture_manager.cpp` | Queue MPSC + drain | Aucune |
+| `texture_compressor.cpp`| Compression ASTC/ETC2 | astcenc, etcpak |
+| `vertex_quantizer.cpp` | Quantification de Vertex (FP16/INT8) | FP16 |
+| `draw_call_batcher.cpp` | Fusion des draw calls (glMultiDraw) | Aucune |
+| `particle_pool.cpp`   | Pool mémoire pour particules | Aucune |
+| `system/thermal_monitor.cpp` | Surveillance température SOC | NDK Thermal |
+| `system/perf_hint.cpp` | Affinité CPU et gestion threads | NDK Perf |
+| `system/memory_purge.cpp` | Libération mémoire malloc (M_PURGE) | libc |
+| `compression/lz4_bridge.cpp` | Compression LZ4 rapide | lz4 |
 
 #### JNI — Ajouter un nouveau bridge
 
@@ -139,7 +147,15 @@ native-gl-engine/
 │   │   ├── soc_optimizer.cpp/.h
 │   │   ├── gl_interceptor.cpp/.h
 │   │   ├── native_memory.cpp/.h
-│   │   └── texture_manager.cpp/.h
+│   │   ├── texture_manager.cpp/.h
+│   │   ├── texture_compressor.cpp/.h
+│   │   ├── vertex_quantizer.cpp/.h
+│   │   ├── draw_call_batcher.cpp/.h
+│   │   ├── ahardware_buffer_manager.cpp/.h
+│   │   ├── off_heap_arena.cpp/.h
+│   │   ├── particles/
+│   │   ├── system/
+│   │   └── compression/
 │   ├── resources/
 │   │   ├── nativeglengine.mixins.json
 │   │   └── assets/nativeglengine/

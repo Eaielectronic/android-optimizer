@@ -84,7 +84,7 @@ Before submitting a PR, please verify:
 If you have access to an Android device running PojavLauncher or Amethyst:
 
 1. Build the JAR: `./gradlew build`
-2. Copy `build/libs/androidopt-1.0.0.jar` to the device's `mods/` folder
+2. Copy `build/libs/androidopt-1.0.5.jar` to the device's `mods/` folder
 3. Launch the game and check:
    - Is the SoC detected correctly? (HUD shows green SoC name)
    - Are freezes reduced? (Check the freeze counter in the HUD)

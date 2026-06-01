@@ -18,6 +18,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.1] - 2026-06-01
+
+### Added
+- **Compilation C++ (NDK)** : Compilation réussie de la librairie ARM64 (`libNativeGLEngine.so`) via CMake et `build-native.sh`.
+- **System Optimizations** : Intégration de `thermal_monitor.cpp`, `perf_hint.cpp`, et `memory_purge.cpp` pour gérer la température, l'affinité CPU (threads) et le nettoyage mémoire (mallopt M_PURGE) directement depuis le C++.
+- **LZ4 Bridge** : Intégration de LZ4 et `lz4_bridge.cpp` pour la décompression et compression asynchrone ultrarapide en C++.
+- **Particle Pool** : Intégration du gestionnaire de particules natives `particle_pool.cpp` au build NDK.
+- **Jar Packaging** : La librairie native `libNativeGLEngine.so` est maintenant correctement injectée et packagée au sein du mod NeoForge `nativeglengine-0.1.1.jar`.
+
+---
+
 ## [0.1.0] - 2026-05-27
 
 ### Added — Structure complète du projet

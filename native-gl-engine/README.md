@@ -110,7 +110,7 @@ Détection automatique : MobileGlues, GL4ES, Zink, ANGLE, Desktop.
 
 ## 📥 Installation
 
-1. Télécharger `nativeglengine-0.1.0.jar` depuis les [Releases](../../releases)
+1. Télécharger `nativeglengine-0.1.1.jar` depuis les [Releases](../../releases)
 2. Placer dans `mods/`
 3. *(Optionnel)* Installer [Android Optimizer](https://github.com/Eaielectronic/android-optimizer)
 4. Lancer Minecraft avec **NeoForge 1.21.1**
@@ -196,7 +196,7 @@ Ou : `./build-native.sh`
 
 ```bash
 ./gradlew build
-# → build/libs/nativeglengine-0.1.0.jar
+# → build/libs/nativeglengine-0.1.1.jar
 ```
 
 ---
