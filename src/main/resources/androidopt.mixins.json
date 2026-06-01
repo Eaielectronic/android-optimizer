@@ -23,11 +23,17 @@
     "TextureAtlasResolutionMixin",
     "ContraptionWorldMixin",
     "SableUdpMixin",
-    "SodiumOptionsGUIMixin"
+    "SodiumOptionsGUIMixin",
+    "ModelManagerMixin",
+    "FontSetMixin",
+    "SoundBufferMixin",
+    "IngredientFilterMixin"
   ],
   "mixins": [
     "ServerBETickMixin",
-    "AsyncSaveWorldMixin"
+    "AsyncSaveWorldMixin",
+    "KineticBlockEntityMixin",
+    "EntityNbtMixin"
   ],
   "injectors": {
     "defaultRequire": 0

@@ -77,6 +77,16 @@ public class MemoryWatchdog {
                 AndroidOptMod.LOGGER.warn("[AndroidOpt] HEAP CRITIQUE ({}%). Déclenchement du GC d'urgence anti-crash !", String.format("%.0f", ratio * 100));
                 CreateCacheCleanupHandler.forceCacheCleanup();
                 TextureCacheEvictor.forceEvict();
+                
+                // Éviction des modèles 3D pour libérer de la heap Java
+                fr.eaielectronic.androidopt.memory.models.ModelLifecycleManager.INSTANCE.runEvictionCycle(
+                    fr.eaielectronic.androidopt.memory.models.ModelEvictionPolicy.INSTANCE.getTrackedModelCount(),
+                    (float) (ratio * 100)
+                );
+                
+                // Libération de la mémoire native via jemalloc mallopt(M_PURGE)
+                fr.eaielectronic.androidopt.memory.NativeEngineBridge.purgeNativeMemory();
+                
                 System.gc(); // <-- Le fameux GC préventif anti-crash
             }
 
@@ -93,6 +103,15 @@ public class MemoryWatchdog {
                 
                 CreateCacheCleanupHandler.forceCacheCleanup();
                 TextureCacheEvictor.forceEvict();
+                
+                // Éviction des modèles 3D pour libérer de la heap Java
+                fr.eaielectronic.androidopt.memory.models.ModelLifecycleManager.INSTANCE.runEvictionCycle(
+                    fr.eaielectronic.androidopt.memory.models.ModelEvictionPolicy.INSTANCE.getTrackedModelCount(),
+                    (float) (ratio * 100)
+                );
+                
+                // Libération de la mémoire native via jemalloc mallopt(M_PURGE)
+                fr.eaielectronic.androidopt.memory.NativeEngineBridge.purgeNativeMemory();
             }
         } else {
             consecutiveHighHeap = 0;

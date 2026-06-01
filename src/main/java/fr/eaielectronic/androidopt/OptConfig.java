@@ -30,6 +30,10 @@ public class OptConfig {
     public static final ModConfigSpec.BooleanValue PONDER_CACHE_CLEAR;      // NEW
     public static final ModConfigSpec.BooleanValue TEXTURE_DOWNSCALE_ENABLED;
     public static final ModConfigSpec.IntValue     MAX_TOTAL_RAM_MB;        // NEW
+    public static final ModConfigSpec.BooleanValue LAZY_JEI_INDEX;          // NEW
+    public static final ModConfigSpec.BooleanValue LAZY_FONTS;              // NEW
+    public static final ModConfigSpec.BooleanValue MODEL_EVICTION;          // NEW
+    public static final ModConfigSpec.BooleanValue NBT_OFFHEAP;             // NEW
 
     public static final ModConfigSpec.BooleanValue ENTITY_THROTTLER;
     public static final ModConfigSpec.IntValue     ENTITY_THROTTLE_DISTANCE; // NEW
@@ -161,6 +165,18 @@ public class OptConfig {
             .comment("Divise la résolution des textures par 2 au chargement.",
                      "Gain énorme de RAM GPU (-150 à -300 Mo).")
             .define("textureDownscale", true);
+        LAZY_JEI_INDEX = BUILDER
+            .comment("Active l'indexation paresseuse de JEI pour économiser de la mémoire au démarrage.")
+            .define("lazyJeiIndex", true);
+        LAZY_FONTS = BUILDER
+            .comment("Active le chargement paresseux des glyphes de polices unicode.")
+            .define("lazyFonts", true);
+        MODEL_EVICTION = BUILDER
+            .comment("Active l'éviction automatique des modèles 3D complexes inutilisés.")
+            .define("modelEviction", true);
+        NBT_OFFHEAP = BUILDER
+            .comment("Active la compression NBT off-heap pour les entités éloignées.")
+            .define("nbtOffheap", true);
         BUILDER.pop();
 
         BUILDER.push("ram_budget");

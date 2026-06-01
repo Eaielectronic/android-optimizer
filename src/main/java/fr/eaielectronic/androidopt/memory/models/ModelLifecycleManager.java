@@ -83,8 +83,28 @@ public class ModelLifecycleManager {
      */
     private void evictModel(String modelId) {
         policy.markEvicted(modelId);
-        // Le Mixin sur ModelManager intercepte getModel() et retourne
-        // le FlatSpriteModel quand isEvicted(modelId) == true.
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            if (mc != null && mc.getModelManager() instanceof IEvictableModelManager evictable) {
+                int hashIdx = modelId.indexOf('#');
+                net.minecraft.resources.ResourceLocation rl;
+                String variant;
+                if (hashIdx != -1) {
+                    rl = net.minecraft.resources.ResourceLocation.tryParse(modelId.substring(0, hashIdx));
+                    variant = modelId.substring(hashIdx + 1);
+                } else {
+                    rl = net.minecraft.resources.ResourceLocation.tryParse(modelId);
+                    variant = "inventory";
+                }
+                if (rl != null) {
+                    net.minecraft.client.resources.model.ModelResourceLocation mrl =
+                        new net.minecraft.client.resources.model.ModelResourceLocation(rl, variant);
+                    evictable.androidopt$evictModel(mrl);
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.error("[Model Eviction] Failed to apply eviction for " + modelId, e);
+        }
         LOGGER.debug("[Model Eviction] Evicted: {}", modelId);
     }
 
