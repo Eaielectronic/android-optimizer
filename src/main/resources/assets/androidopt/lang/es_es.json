@@ -63,5 +63,9 @@
   "androidopt.page.thermal": "Térmico y Sobrecalentamiento",
   "androidopt.config.thermal_monitor": "Monitor Térmico",
   "androidopt.config.thermal_warning": "Umbral de Advertencia (°C)",
-  "androidopt.config.thermal_critical": "Umbral Crítico (°C)"
+  "androidopt.config.thermal_critical": "Umbral Crítico (°C)",
+  "androidopt.config.lazy_jei": "Indexación JEI perezosa",
+  "androidopt.config.lazy_fonts": "Paginación fuentes Unicode perezosa",
+  "androidopt.config.model_eviction": "Desalojo de modelos 3D LRU-LFU",
+  "androidopt.config.nbt_offheap": "Comp. NBT de entidades distantes"
 }

@@ -68,5 +68,9 @@
   "androidopt.page.thermal": "Thermal & Overheating",
   "androidopt.config.thermal_monitor": "Thermal Monitor",
   "androidopt.config.thermal_warning": "Warning Threshold (°C)",
-  "androidopt.config.thermal_critical": "Critical Threshold (°C)"
+  "androidopt.config.thermal_critical": "Critical Threshold (°C)",
+  "androidopt.config.lazy_jei": "Lazy JEI Search Indexing",
+  "androidopt.config.lazy_fonts": "Lazy Unicode Font Paging",
+  "androidopt.config.model_eviction": "LRU-LFU 3D Model Eviction",
+  "androidopt.config.nbt_offheap": "Distant NBT Off-Heap Comp."
 }

@@ -63,5 +63,9 @@
   "androidopt.page.thermal": "Wärme & Überhitzung",
   "androidopt.config.thermal_monitor": "Wärmeüberwachung",
   "androidopt.config.thermal_warning": "Warnschwelle (°C)",
-  "androidopt.config.thermal_critical": "Kritische Schwelle (°C)"
+  "androidopt.config.thermal_critical": "Kritische Schwelle (°C)",
+  "androidopt.config.lazy_jei": "Faule JEI-Suchindizierung",
+  "androidopt.config.lazy_fonts": "Faule Unicode-Schriftseitenpaginierung",
+  "androidopt.config.model_eviction": "LRU-LFU 3D-Modellräumung",
+  "androidopt.config.nbt_offheap": "Entfernte NBT-Off-Heap-Komp."
 }

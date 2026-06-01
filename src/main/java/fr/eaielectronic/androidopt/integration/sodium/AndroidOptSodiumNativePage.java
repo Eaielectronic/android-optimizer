@@ -19,7 +19,9 @@ public class AndroidOptSodiumNativePage {
     public static class AndroidOptStorage implements OptionStorage<Object> {
         public static final AndroidOptStorage INSTANCE = new AndroidOptStorage();
         @Override public Object getData() { return this; }
-        @Override public void save() { }
+        @Override public void save() { 
+            OptConfig.SPEC.save();
+        }
     }
 
     public static OptionPage createPage() {
@@ -122,6 +124,50 @@ public class AndroidOptSodiumNativePage {
             .setBinding(
                 (opts, value) -> OptConfig.SABLE_UDP_FIX.set(value),
                 (opts) -> OptConfig.SABLE_UDP_FIX.get()
+            )
+            .build()
+        );
+
+        toggleGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Lazy JEI Index"))
+            .setTooltip(Component.literal("Indexation paresseuse des items JEI pour éviter le freeze au démarrage"))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.LAZY_JEI_INDEX.set(value),
+                (opts) -> OptConfig.LAZY_JEI_INDEX.get()
+            )
+            .build()
+        );
+
+        toggleGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Lazy Fonts"))
+            .setTooltip(Component.literal("Chargement à la demande des pages de glyphes Unicode"))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.LAZY_FONTS.set(value),
+                (opts) -> OptConfig.LAZY_FONTS.get()
+            )
+            .build()
+        );
+
+        toggleGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("Model Eviction"))
+            .setTooltip(Component.literal("Éviction des modèles 3D complexes non utilisés en RAM"))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.MODEL_EVICTION.set(value),
+                (opts) -> OptConfig.MODEL_EVICTION.get()
+            )
+            .build()
+        );
+
+        toggleGroup.add(OptionImpl.createBuilder(Boolean.class, AndroidOptStorage.INSTANCE)
+            .setName(Component.literal("NBT Off-Heap"))
+            .setTooltip(Component.literal("Compression et stockage hors-tas des NBT d'entités distantes"))
+            .setControl(TickBoxControl::new)
+            .setBinding(
+                (opts, value) -> OptConfig.NBT_OFFHEAP.set(value),
+                (opts) -> OptConfig.NBT_OFFHEAP.get()
             )
             .build()
         );

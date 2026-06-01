@@ -68,5 +68,9 @@
   "androidopt.page.thermal": "Thermique & Surchauffe",
   "androidopt.config.thermal_monitor": "Surveillance thermique",
   "androidopt.config.thermal_warning": "Seuil Alerte (°C)",
-  "androidopt.config.thermal_critical": "Seuil Critique (°C)"
+  "androidopt.config.thermal_critical": "Seuil Critique (°C)",
+  "androidopt.config.lazy_jei": "Indexation JEI paresseuse",
+  "androidopt.config.lazy_fonts": "Polices Unicode paresseuses",
+  "androidopt.config.model_eviction": "Éviction Modèles 3D LRU-LFU",
+  "androidopt.config.nbt_offheap": "Comp. NBT Entités Off-Heap"
 }

@@ -241,15 +241,19 @@ public class OptConfigScreen extends Screen {
                               "androidopt.config.texture_cache_evictor",    OptConfig.TEXTURE_CACHE_EVICTOR);
         row(lx, rx, y+GAP,   "androidopt.config.section_buffer_limit", OptConfig.SECTION_BUFFER_LIMIT,
                               "androidopt.config.ponder_cache_clear",  OptConfig.PONDER_CACHE_CLEAR);
+        row(lx, rx, y+GAP*2, "androidopt.config.texture_downscale", OptConfig.TEXTURE_DOWNSCALE_ENABLED,
+                              "androidopt.config.lazy_jei",        OptConfig.LAZY_JEI_INDEX);
+        row(lx, rx, y+GAP*3, "androidopt.config.lazy_fonts",       OptConfig.LAZY_FONTS,
+                              "androidopt.config.model_eviction",   OptConfig.MODEL_EVICTION);
         
-        addToggle("androidopt.config.texture_downscale", OptConfig.TEXTURE_DOWNSCALE_ENABLED, cx - BTN_W / 2, y+GAP*2, BTN_W, BTN_H);
-
+        addToggle("androidopt.config.nbt_offheap", OptConfig.NBT_OFFHEAP, lx, y+GAP*4, BTN_W, BTN_H);
         addIntSlider("androidopt.config.max_total_ram", OptConfig.MAX_TOTAL_RAM_MB,
-            1500, 4096, cx - BTN_W / 2, y+GAP*3, BTN_W, BTN_H);
+            1500, 4096, rx, y+GAP*4, BTN_W, BTN_H);
+
         addIntSlider("androidopt.config.gc_threshold", OptConfig.GC_THRESHOLD_PERCENT,
-            50, 95, lx, y+GAP*4, BTN_W, BTN_H);
+            50, 95, lx, y+GAP*5, BTN_W, BTN_H);
         addIntSlider("androidopt.config.gc_critical", OptConfig.GC_CRITICAL_PERCENT,
-            70, 100, rx, y+GAP*4, BTN_W, BTN_H);
+            70, 100, rx, y+GAP*5, BTN_W, BTN_H);
 
         Runtime rt = Runtime.getRuntime();
         long usedMB = (rt.totalMemory() - rt.freeMemory()) / (1024*1024);
@@ -259,8 +263,8 @@ public class OptConfigScreen extends Screen {
         double ratio = (double) usedMB / maxMB;
         String heapColor = ratio < 0.7 ? "§a" : ratio < 0.85 ? "§e" : "§c";
 
-        label(cx, y+GAP*5+4,  "§7Heap : " + heapColor + usedMB + "§f/" + maxMB + " Mo");
-        label(cx, y+GAP*5+16, "§7Xmx safe max : " + safeXmx + " Mo");
+        label(cx, y+GAP*6+4,  "§7Heap : " + heapColor + usedMB + "§f/" + maxMB + " Mo");
+        label(cx, y+GAP*6+16, "§7Xmx safe max : " + safeXmx + " Mo");
     }
 
 
@@ -570,6 +574,6 @@ public class OptConfigScreen extends Screen {
 
     @Override
     public void onClose() {
-        saveAndClose();
+        minecraft.setScreen(parent);
     }
 }
