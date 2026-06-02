@@ -28,7 +28,7 @@ public class NativeGLEngineMod {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public NativeGLEngineMod(IEventBus modEventBus, ModContainer modContainer) {
-        LOGGER.info("[NativeGLEngine] Initialisation du mod NativeGLEngine v0.1.0");
+        LOGGER.info("[NativeGLEngine] Initialisation du mod NativeGLEngine v0.1.2");
 
         // Enregistrement de la configuration client
         modContainer.registerConfig(ModConfig.Type.CLIENT, NativeGLConfig.SPEC);
