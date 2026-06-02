@@ -25,11 +25,31 @@ extern bool g_enable_tex_compress;
 typedef void (*glTexImage2D_t)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const void*);
 static glTexImage2D_t orig_glTexImage2D = nullptr;
 
+typedef void* (*eglGetProcAddress_t)(const char*);
+
+static eglGetProcAddress_t orig_eglGetProcAddress = nullptr;
+
 static bytehook_stub_t stub_glTexImage2D = nullptr;
 static bytehook_stub_t stub_eglGetProcAddress = nullptr;
 
 // Forward declaration
 static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void* pixels);
+
+// Proxy eglGetProcAddress
+static void* proxy_eglGetProcAddress(const char* procname) {
+    void* ret = nullptr;
+    if (orig_eglGetProcAddress) {
+        ret = orig_eglGetProcAddress(procname);
+    }
+
+    // On hook uniquement glTexImage2D pour ne pas casser la traduction shader de MobileGlues
+    if (ret && procname && strcmp(procname, "glTexImage2D") == 0) {
+        orig_glTexImage2D = (glTexImage2D_t)ret;
+        return (void*)proxy_glTexImage2D;
+    }
+    
+    return ret;
+}
 
 // Notre fonction de remplacement
 static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void* pixels) {
@@ -54,13 +74,12 @@ bool gl_interceptor_install() {
 
     NativeGLEngine::TextureCompressor::detectCapabilities();
     
-    // 1. Récupérer le vrai pointeur de glTexImage2D
+    // 1. Récupérer le vrai pointeur de glTexImage2D et eglGetProcAddress
     void* handleEGL = dlopen("libEGL.so", RTLD_LAZY);
     if (handleEGL) {
-        typedef void* (*eglGPA_t)(const char*);
-        eglGPA_t eglGPA = (eglGPA_t)dlsym(handleEGL, "eglGetProcAddress");
-        if (eglGPA) {
-            orig_glTexImage2D = (glTexImage2D_t)eglGPA("glTexImage2D");
+        orig_eglGetProcAddress = (eglGetProcAddress_t)dlsym(handleEGL, "eglGetProcAddress");
+        if (orig_eglGetProcAddress) {
+            orig_glTexImage2D = (glTexImage2D_t)orig_eglGetProcAddress("glTexImage2D");
         }
         dlclose(handleEGL);
     }
@@ -77,9 +96,14 @@ bool gl_interceptor_install() {
         return false;
     }
 
-    // On ne hook PAS eglGetProcAddress car cela bypasse gl4es/MobileGlues
-    // Ce bypass empêchait la traduction des shaders #version 150 -> #version 300 es
-    // et causait le crash "ERROR: Invalid #version".
+    // 2. Hook eglGetProcAddress pour bypasser le masquage des wrappers comme MobileGlues
+    stub_eglGetProcAddress = bytehook_hook_all(
+        NULL,
+        "eglGetProcAddress",
+        (void*)proxy_eglGetProcAddress,
+        NULL,
+        NULL
+    );
 
     // 3. Hook standard PLT
     stub_glTexImage2D = bytehook_hook_all(

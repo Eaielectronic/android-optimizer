@@ -72,7 +72,7 @@ public class MemoryWatchdog {
             // L'utilisateur l'a demandé : quand la Heap est vraiment trop haute (Critical), 
             // on FORCE un System.gc() bloquant pour éviter le crash OOM brutal d'Android.
             long now = System.currentTimeMillis();
-            if (now - lastSoftPurgeMs >= 5000) { 
+            if (now - lastSoftPurgeMs >= 3000) { 
                 lastSoftPurgeMs = now;
                 AndroidOptMod.LOGGER.warn("[AndroidOpt] HEAP CRITIQUE ({}%). Déclenchement du GC d'urgence anti-crash !", String.format("%.0f", ratio * 100));
                 CreateCacheCleanupHandler.forceCacheCleanup();
@@ -95,7 +95,7 @@ public class MemoryWatchdog {
             // Ne pas forcer le GC manuellement pour eviter de bloquer le thread.
             // On declenche plutot un nettoyage intelligent des caches !
             long now = System.currentTimeMillis();
-            if (now - lastSoftPurgeMs >= 15000) { // Executer au max toutes les 15 secondes
+            if (now - lastSoftPurgeMs >= 5000) { // Executer au max toutes les 5 secondes
                 lastSoftPurgeMs = now;
                 AndroidOptMod.LOGGER.debug(
                     "[AndroidOpt] Heap {}/{} MB ({}%) — Purge intelligente des caches",
