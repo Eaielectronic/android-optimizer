@@ -84,8 +84,9 @@ public class NativeGLConfig {
             .defineInRange("gpuPressureHard", 92, 70, 100);
         OFF_HEAP_ARENA_SIZE_MB = BUILDER
             .comment("Taille de l'arène mémoire C++ (Off-Heap) en Mégaoctets.",
-                     "150 par défaut. Baissez si votre jeu crash au démarrage (Out Of Memory OS).")
-            .defineInRange("offHeapArenaSizeMB", 150, 50, 500);
+                     "0 par défaut (Désactivé pour éviter les crash OOM Android).",
+                     "Réglez entre 50 et 500 si vous avez beaucoup de RAM.")
+            .defineInRange("offHeapArenaSizeMB", 0, 0, 500);
         BUILDER.pop();
 
         BUILDER.push("debug");
