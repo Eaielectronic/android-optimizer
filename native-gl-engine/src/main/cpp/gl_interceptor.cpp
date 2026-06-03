@@ -37,10 +37,8 @@ static void proxy_glTexImage2D(GLenum target, GLint level, GLint internalformat,
 
 // Proxy eglGetProcAddress
 static void* proxy_eglGetProcAddress(const char* procname) {
-    void* ret = nullptr;
-    if (orig_eglGetProcAddress) {
-        ret = orig_eglGetProcAddress(procname);
-    }
+    BYTEHOOK_STACK_SCOPE();
+    void* ret = BYTEHOOK_CALL_PREV(proxy_eglGetProcAddress, procname);
 
     // On hook uniquement glTexImage2D pour ne pas casser la traduction shader de MobileGlues
     if (ret && procname && strcmp(procname, "glTexImage2D") == 0) {

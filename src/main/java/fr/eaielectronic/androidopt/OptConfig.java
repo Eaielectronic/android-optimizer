@@ -354,7 +354,7 @@ public class OptConfig {
             .define("vertexQuant", true);
         NATIVE_GL_OFF_HEAP_ENABLED = BUILDER
             .comment("Active l'arène de mémoire Off-Heap pour réduire la pression sur le GC Java.")
-            .define("offHeapEnabled", false);
+            .define("offHeapEnabled", true);
         NATIVE_GL_OFF_HEAP_SIZE_MB = BUILDER
             .comment("Taille de l'arène mémoire C++ (Off-Heap) en Mo. Baissez si votre jeu crash au démarrage.")
             .defineInRange("offHeapSizeMB", 150, 50, 500);
